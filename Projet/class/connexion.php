@@ -22,4 +22,6 @@ class connexion{
 		}
 		return $pdo;
 	}
+
+	public function 
 }
