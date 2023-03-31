@@ -3,4 +3,6 @@ $path=$_SERVER["DOCUMENT_ROOT"].DIRECTORY_SEPARATOR."Web3".DIRECTORY_SEPARATOR."
 require $path;
 autoloader::register();
 $pdo=connexion::connect();
+$results=connexion::prendreRecettes($pdo);
 echo "Salut";
+echo $results;

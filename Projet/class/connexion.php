@@ -23,5 +23,10 @@ class connexion{
 		return $pdo;
 	}
 
-	public function 
+	public static function prendreRecettes(PDO $pdo):array{
+		$statement=$pdo->prepare("SELECT * FROM recette");
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"\gdb\GameRenderer");
+		return $results;
+	}
 }
