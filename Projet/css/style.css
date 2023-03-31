@@ -16,7 +16,6 @@ html, body{
 
 body{
     margin: auto;
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
 }
@@ -29,14 +28,20 @@ header .nav-content{
     background: black;
 }
 
+header .headerdroite2{
+    padding-left: 1500px;
+}
+
 .navbar-brand{
     text-decoration: none;
-    padding-inline: 150px ;
+}
+#recherche{
+    color: black ;
 }
 
 #content{
     flex: 1 ;
-    background: black ;
+    background: url("../ressources/img/fond.jpg");
     background-size: cover;
     background-position: center;
 
@@ -80,8 +85,9 @@ header .nav-content{
     color: white;
 }
 
-trou{
-    padding-block: 100px;
+.origine{
+    padding-top: 100px;
+    padding-bottom: 200px
 }
 
 .game h1{
@@ -101,11 +107,10 @@ trou{
 
 #accueil{
     width: 600px;
-
     display: flex;
+    padding-left: 600px;
     flex-direction: column;
     align-content: center;
-
     overflow: auto;
 }
 #game-form .mb-3{

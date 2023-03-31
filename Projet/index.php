@@ -17,26 +17,28 @@
 
 <div class="title"></div>
 <form id="accueil" method="POST" enctype="multipart/form-data">
-    <div class="neon">
-        <img src="images/dinosaur.jpg">
+    <div class="origine">
         <div class="neon">
-            <label for="name" class="form-label">Nom</label>
-        </div>
-        <div class="neon">
-            <label for="description" class="form-label">Description</label>
-        </div>
-    </div>
-    <div class="trou"></div>
-    <div class="neon">
-        <img src="images/dinosaur.jpg">
-        <div class="neon">
-            <label for="name" class="form-label">Nom</label>
-        </div>
-        <div class="neon">
-            <label for="description" class="form-label">Description</label>
+            <img src="images/dinosaur.jpg">
+            <div class="neon">
+                <label for="name" class="form-label">Nom</label>
+            </div>
+            <div class="neon">
+                <label for="description" class="form-label">Description</label>
+            </div>
         </div>
     </div>
-
+    <div class="fenetre">
+        <div class="neon">
+            <img src="images/dinosaur.jpg">
+            <div class="neon">
+                <label for="name" class="form-label">Nom</label>
+            </div>
+            <div class="neon">
+                <label for="description" class="form-label">Description</label>
+            </div>
+        </div>
+    </div>
 </form>
 <script>
 
