@@ -1,0 +1,29 @@
+Noms de tout en français fonctions : trucMachin / variables : truc_machin / constantes : TRUC_MACHIN
+
+dossier
+	index.php
+	bdd.sql
+	class
+		truc.php
+	css
+		header.css
+		index.css
+		footer.css
+	javascript
+		header.js
+		index.js
+		footer.js
+	ressources
+		img
+			machin.png
+		json
+			truc.json
+
+
+
+Groupe :
+	Hugo FOLLET : PHP
+	Robin Capitaine : HTML+JS+CSS
+	Valentin DEVISME : BDD+Flex
+
+github : 
