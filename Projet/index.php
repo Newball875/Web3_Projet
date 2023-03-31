@@ -26,6 +26,7 @@
             <label for="description" class="form-label">Description</label>
         </div>
     </div>
+    <div class="trou"></div>
     <div class="neon">
         <img src="images/dinosaur.jpg">
         <div class="neon">

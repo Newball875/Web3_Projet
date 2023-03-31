@@ -9,33 +9,34 @@
 html, body{
     height: 100% ;
     margin: 0px;
-    background: black;
+    background: url("../ressources/img/fond.jpg");
+    background-size: 1500px ;
+    background-position: center;
 }
 
 body{
     margin: auto;
-    max-width: 900px;
-
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
 }
 
 header .nav-content{
     width: 100%;
-    padding: 0 10px;
     display: flex;
     text-decoration: none;
     align-items: center;
+    background: black;
 }
 
 .navbar-brand{
     text-decoration: none;
-    padding-left: 50px ;
+    padding-inline: 150px ;
 }
 
 #content{
     flex: 1 ;
-    background: url("./ressources/img/fond.jpg");
+    background: black ;
     background-size: cover;
     background-position: center;
 
@@ -77,6 +78,10 @@ header .nav-content{
     border-radius: 5px;
     background: cornflowerblue;
     color: white;
+}
+
+trou{
+    padding-block: 100px;
 }
 
 .game h1{
