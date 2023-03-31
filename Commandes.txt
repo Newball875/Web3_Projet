@@ -1,0 +1,19 @@
+Etapes à suivre pour se connecter sur Linux :
+
+Si le projet n'est pas sur le PC :
+	Aller dans le bon répertoire pour télécharger le projet
+	Faire "git init"
+	Faire "git clone https://Pseudo:token@github.com/PseudoDuProprioDuRepertoire/NomProjet
+
+Pour récupérer les dernières MAJs de GitHub :
+	git pull
+
+Pour ajouter des trucs au GitHub :
+	git add *
+	git commit -m "message"
+	git push origin main
+
+Pour retirer des trucs du GitHub :
+	git rm <nomFichier>
+	git commit -m "message"
+	git push origin main
