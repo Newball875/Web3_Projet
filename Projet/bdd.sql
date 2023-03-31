@@ -3,8 +3,9 @@ DROP TABLE IF EXISTS recette;
 CREATE TABLE `recette` (
   `recette_id` varchar(50),
   `description` longtext,
+  `instructions` longtext,
   `image` varchar(255) DEFAULT NULL,
-  `difficulte` varchar(20),
+  `difficulte` decimal(5,2),
   `origine_id` varchar(50)
 );
 
