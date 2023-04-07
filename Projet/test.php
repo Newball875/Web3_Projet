@@ -5,4 +5,4 @@ autoloader::register();
 $pdo=connexion::connect();
 $results=connexion::prendreRecettes($pdo);
 echo "Salut";
-echo $results;
+var_dump($results);
