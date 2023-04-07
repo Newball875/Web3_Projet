@@ -1,9 +1,9 @@
-
 DROP TABLE IF EXISTS recette;
 CREATE TABLE `recette` (
-  `recette_id` varchar(50),
+  `recette_id` int AUTO_INCREMENT;
+  `nom` varchar(50) NOT NULL,
   `description` longtext,
-  `instructions` longtext,
+  `instructions` longtext NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `difficulte` decimal(5,2),
   `origine_id` varchar(50)
@@ -11,43 +11,47 @@ CREATE TABLE `recette` (
 
 DROP TABLE IF EXISTS ustensile;
 CREATE TABLE `ustensile` (
-  `ustensile_id` varchar(50),
+  `ustensile_id` int AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
   `image` varchar(255) DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS ustensile_recette;
 CREATE TABLE `ustensile_recette` (
-  `recette_id` varchar(50),
-  `ustensile_id` varchar(50)
+  `recette_id` int,
+  `ustensile_id` int
 );
 
 DROP TABLE IF EXISTS ingredient;
 CREATE TABLE `ingredient` (
-  `ingredient_id` varchar(50),
+  `ingredient_id` int AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `type` varchar(25)
 );
 
 DROP TABLE IF EXISTS ingredient_recette;
 CREATE TABLE `ingredient_recette` (
-  `recette_id` varchar(50),
-  `ingredient_id` varchar(50)
+  `recette_id` int,
+  `ingredient_id` int
 );
 
 DROP TABLE IF EXISTS tag;
 CREATE TABLE `tag` (
-  `tag_id` varchar(50)
+  `tag_id` int AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS tag_recette;
 CREATE TABLE `tag_recette` (
-  `tag_id` varchar(50),
-  `recette_id` varchar(50)
+  `tag_id` int,
+  `recette_id` int
 );
 
 DROP TABLE IF EXISTS origine;
 CREATE TABLE `origine` (
-  `origine_id` varchar(50),
+  `origine_id` int AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
   `description` longtext,
   `image` varchar(255) DEFAULT NULL
 );
