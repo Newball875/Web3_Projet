@@ -21,8 +21,8 @@ class connexion{
 		return $pdo;
 	}
 
-	public static function prendreRecettes(PDO $pdo):array{
-		$statement=$pdo->prepare("SELECT * FROM recette");
+	public static function prendreRecettes(PDO $pdo, string $commande):array{
+		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
 		return $results;

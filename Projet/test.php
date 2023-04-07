@@ -3,6 +3,9 @@ $path=$_SERVER["DOCUMENT_ROOT"].DIRECTORY_SEPARATOR."Web3".DIRECTORY_SEPARATOR."
 require $path;
 autoloader::register();
 $pdo=connexion::connect();
-$results=connexion::prendreRecettes($pdo);
+$commande="SELECT * FROM recette";
+$results=connexion::prendreRecettes($pdo,$commande);
 echo "Salut";
-var_dump($results);
+foreach($results as $recette):
+	$recette->listeRecette();
+endforeach;
