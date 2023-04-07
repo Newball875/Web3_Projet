@@ -18,26 +18,28 @@
 <div class="title"></div>
 <form id="accueil" method="POST" enctype="multipart/form-data">
     <div class="présentation">
-        <div class="pré-description">
-            <label for="name" class="form-label">Nom</label>
-        </div>
+        <label for="name" class="form-label">Présentation</label>
     </div>
+    <div class="pré-description">
+        <label for="name" class="form-label">Description</label>
+    </div>
+
     <div class="defile">
         <div class="recette-jour">
             <div class="image1">
-                <img src="images/dinosaur.jpg">
+                <img src="ressources/img/beurre_doux.png">
             </div>
             <div class="image2">
-                <img src="images/dinosaur.jpg">
+                <img src="ressources/img/farine.png">
             </div>
             <div class="image3">
-                <img src="images/dinosaur.jpg">
+                <img src="ressources/img/gauffre.jpg">
             </div>
             <div class="image4">
-                <img src="images/dinosaur.jpg">
+                <img src="ressources/img/lait.png">
             </div>
             <div class="image5">
-                <img src="images/dinosaur.jpg">
+                <img src="ressources/img/oeuf.png">
             </div>
         </div>
     </div>
