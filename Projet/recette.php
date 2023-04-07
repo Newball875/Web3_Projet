@@ -1,5 +1,6 @@
 <?php
 $path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
+$chemin_image="ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR;
 require $path;
 autoloader::register();
 $pdo=connexion::connect();
@@ -28,47 +29,30 @@ $id=$_GET["id"];
     <div class="origine">
         <div class="neon">
             <div class="image"> <?php
-                $commande="SELECT recette.image,nom
-                FROM recette
-                WHERE recette_id=$id;";
-                $results=connexion::prendreInfos($pdo,$commande);
-                foreach($results as $info):
-                    $info->affichage("image");
-                endforeach;
+                $results=connexion::prendreImageRecette($pdo,$id);
+                echo "<img src='$chemin_image"."$results->image' alt='$results->nom'>";
             ?>
             </div>
             <div class="nom">
                 <label for="name" class="form-label"><?php
-                    $commande="SELECT nom
-                    FROM recette
-                    WHERE recette_id=$id;";
-                    $results=connexion::prendreInfos($pdo,$commande);
-                    foreach($results as $info):
-                        $info->affichage("nom");
-                    endforeach;
+                    echo connexion::prendreNomRecette($pdo,$id);
                 ?>
                 </label>
             </div>
             <div class="tag">
                 <label for="description" class="form-label"> <?php
-                $commande="SELECT nom
-                FROM tag,tag_recette
-                WHERE tag.tag_id=tag_recette.tag_id and recette_id=$id;";
-                $results=connexion::prendreInfos($pdo,$commande);
+                $results=connexion::prendreListeTag($pdo,$id);
                 foreach($results as $info):
-                    $info->affichage("tag");
+                    echo $info->tag." ";
                 endforeach;
                 ?>
                 </label>
             </div>
             <div class="fenetre">
                 <label for="name" class="form-label">Ingrédients</label> <?php
-                $commande="SELECT nom
-                FROM ingredient,ingredient_recette
-                WHERE ingredient_recette.ingredient_id=ingredient.ingredient_id and recette_id=$id;";
-                $results=connexion::prendreInfos($pdo,$commande);
+                $results=connexion::prendreListeIngredients($pdo,$id);
                 foreach($results as $info):
-                    $info->affichage("liste");
+                    echo "<li>$info->ingredient</li>";
                 endforeach;
                 ?>
             </div>
@@ -80,13 +64,8 @@ $id=$_GET["id"];
             </div>
             <div class="description">
                 <label for="name" class="form-label"> <?php
-                $commande="SELECT instructions as 'text'
-                FROM recette
-                WHERE recette_id=$id;";
-                $results=connexion::prendreInfos($pdo,$commande);
-                foreach($results as $info):
-                    $info->affichage();
-                endforeach;
+                $results=connexion::prendreInstructions($pdo,$id);
+                echo "<p>$results</p>";
                 ?>
                 </label>
             </div>

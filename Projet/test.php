@@ -4,6 +4,9 @@ require $path;
 autoloader::register();
 $pdo=connexion::connect();
 $id=1;
+
+$nom=connexion::prendreNomRecette($pdo,$id);
+echo $nom;
 ?>
 
 <form action="test.php" method="POST" enctype="multipart/form-data">
@@ -21,7 +24,10 @@ $id=1;
 <?php
 $commande="Oui";
 if(isset($_POST["name"])){
-	connexion::ajouterInfos($pdo,$commande);
+	$nom=$_POST["name"];
+	$fichier=$_FILES["image"];
+	$instructions=$_POST["instructions"];
+	connexion::ajouterRecette($pdo,$nom,$instructions,1,$fichier);
 }
 
 /*
