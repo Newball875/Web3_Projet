@@ -13,11 +13,23 @@
         div_bouttons_moins_plus.appendChild(boutton_plus)
     }
 
+    let creerInput = function(type_attribut,class_attribut,name_attribut,placeholder_attribut){
+        let conteneur = document.createElement("input")
+        conteneur.type = type_attribut
+        conteneur.classList.toggle(class_attribut)
+        conteneur.name = name_attribut
+        conteneur.placeholder = placeholder_attribut
+        return conteneur
+    }
+
     let genererContenuDivIngredient = function(conteneur){
         let hi_ingredient = document.createElement("h1")
-        let input_nom_ingredient = document.createElement("input")
-        let input_type_ingredient = document.createElement("input")
-        let input_image_ingredient = document.createElement("input")
+
+        let input_nom_ingredient = creerInput("text","form-control","nom","nom ingredient")
+
+        let input_type_ingredient = creerInput("text","form-control","type","type ingredient")
+
+        let input_image_ingredient = creerInput("text","form-control","image","image ingredient")
 
         conteneur.appendChild(hi_ingredient)
         conteneur.appendChild(input_nom_ingredient)
