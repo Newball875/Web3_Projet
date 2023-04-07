@@ -23,14 +23,14 @@ values ("Pancake Moelleux","    Étape 1\n
 
     Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster.",1,"pancake_moelleux.png");
 
-insert into ingredient(nom)
-values  ("Farine"),
-        ("Sucre semoule"),
-        ("Levure"),
-        ("Beurre doux"),
-        ("Sel"),
-        ("Oeuf"),
-        ("Lait");
+insert into ingredient(nom,image)
+values  ("Farine","farine.png"),
+        ("Sucre semoule","sucre_semoule.png"),
+        ("Levure","levure.png"),
+        ("Beurre doux","beurre_doux.png"),
+        ("Sel","sel.png"),
+        ("Oeuf","oeuf.png"),
+        ("Lait","lait.png");
 
 insert into ingredient_recette(recette_id,ingredient_id)
 values  (1,1),
