@@ -74,7 +74,7 @@ header .headerdroite2{
 
 .nom{
     float: right;
-    margin-right: 70%;
+    margin-right: 79%;
     margin-top: 2%;
     border: 2px solid mistyrose;
     border-radius: 5px;
@@ -98,15 +98,6 @@ header .headerdroite2{
     margin-bottom: 1%;
     width: 660px;
     height: 150px ;
-    border: 2px solid mistyrose;
-    border-radius: 5px;
-    background: rosybrown;
-    color: white;
-}
-
-.étoile{
-    float: right ;
-    margin-right: 1%;
     border: 2px solid mistyrose;
     border-radius: 5px;
     background: rosybrown;

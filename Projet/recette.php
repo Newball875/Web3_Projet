@@ -22,9 +22,6 @@
             <div class="image">
                 <img src="ressources/img/logoweb3.png">
             </div>
-            <div class="étoile">
-                <label for="name" class="form-label">Difficulté</label>
-            </div>
             <div class="nom">
                 <label for="name" class="form-label">Nom</label>
             </div>
