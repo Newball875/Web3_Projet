@@ -41,7 +41,6 @@
             <img src="ressources/img/oeuf.png">
         </div>
 </form>
-<script>
 
     <?php include "class/footer.php" ?>
 

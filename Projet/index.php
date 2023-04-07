@@ -42,7 +42,6 @@
         </div>
     </div>
 </form>
-<script>
 
 <?php include "class/footer.php" ?>
 
