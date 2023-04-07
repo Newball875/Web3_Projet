@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive ;
+    font-weight: bold;
+    color: white;
+}
+
+html, body{
+    height: 100% ;
+    margin: 0px;
+    background: url("../ressources/img/fond.jpg");
+    background-size: 1500px ;
+    background-position: center;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header .nav-content{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    background: black;
+}
+
+header .headerdroite2{
+    padding-left: 1500px;
+}
+
+.navbar-brand{
+    text-decoration: none;
+}
+
+#recherche{
+    color: black ;
+}
+
+#content{
+    flex: 1 ;
+    background: url("../ressources/img/fond.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.title{
+    height: 100px ;
+    display: flex;
+    align-items: center;
+
+    font-size: 2em;
+    color: white;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-title{
+    color: white;
+    font-size: 3em;
+    letter-spacing: 0.3em;
+}
+
+#mark, #log-button{
+    width: 80px;
+    margin: 0 10px;
+}
+
+#main-content{
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#login-form, #error{
+    width: 300px;
+}
+
+#login-form{
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: black;
+}
+#login-form *{
+    width: 100%;
+    margin: 8px 0;
+}
+
+#error{
+    margin: 5px 0;
+    background: black;
+    padding: 0 10px ;
+    font-size: 2em;
+    color: orangered;
+    text-align: center;
+}

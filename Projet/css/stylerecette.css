@@ -28,11 +28,19 @@ header .nav-content{
     background: black;
 }
 
+footer{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    background: black;
+}
+
 header .headerdroite2{
     padding-left: 78%;
 }
 
-.navbar-brand{
+.navbar-brand {
     text-decoration: none;
 }
 
