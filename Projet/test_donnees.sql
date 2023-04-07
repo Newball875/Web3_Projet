@@ -1,25 +1,25 @@
-insert into origine(nom,description)
-values ("Game of thrones","série TV");
+insert into origine(nom,description,image)
+values ("Game of thrones","série TV","GoT.jpg");
 
-insert into recette(nom,instructions,origine_id)
-values ("Pancake Moelleux","    Étape 1
+insert into recette(nom,instructions,origine_id,image)
+values ("Pancake Moelleux","    Étape 1\n
 
-    Faire fondre le beurre, dans une casserole à feu doux ou dans un bol au micro-ondes.
-    Étape 2
+    Faire fondre le beurre, dans une casserole à feu doux ou dans un bol au micro-ondes.\n
+    Étape 2\n
 
-    Mettre la farine, la levure et le sucre dans un saladier. Mélanger et creuser un puits.
-    Étape 3
+    Mettre la farine, la levure et le sucre dans un saladier. Mélanger et creuser un puits.\n
+    Étape 3\n
 
-    Ajouter ensuite les oeufs entiers et fouetter l'ensemble.
-    Étape 4
+    Ajouter ensuite les oeufs entiers et fouetter l'ensemble.\n
+    Étape 4\n
 
-    Incorporer le beurre fondu, fouetter puis délayer progressivement le mélange avec le lait afin d'éviter les grumeaux.
-    Étape 5
+    Incorporer le beurre fondu, fouetter puis délayer progressivement le mélange avec le lait afin d'éviter les grumeaux.\n
+    Étape 5\n
 
-    Laisser reposer la pâte au minimum 1 heure au réfrigérateur.
-    Étape 6
+    Laisser reposer la pâte au minimum 1 heure au réfrigérateur.\n
+    Étape 6\n
 
-    Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster.",1);
+    Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster.",1,"pancake_moelleux.png");
 
 insert into ingredient(nom)
 values  ("Farine"),
