@@ -27,4 +27,8 @@ class connexion{
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
 		return $results;
 	}
+
+	public static function ajouterInfos(PDO $pdo, string $commande):array{
+		
+	}
 }

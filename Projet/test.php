@@ -1,9 +1,36 @@
 <?php
-$path=$_SERVER["DOCUMENT_ROOT"].DIRECTORY_SEPARATOR."Web3".DIRECTORY_SEPARATOR."Web3_Projet".DIRECTORY_SEPARATOR."Projet".DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
+$path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
 require $path;
 autoloader::register();
 $pdo=connexion::connect();
 $id=1;
+?>
+
+<form action="test.php" method="POST" enctype="multipart/form-data">
+	<div>
+		<label for="le_fichier" class="form_label">Uploader une recette :</label>
+		<input type="text" class="form-control" id="name" name="name">
+		<input type="text" class="form-control" id="instructions" name="instructions">
+		<input type="file" class="form-control" id="image" name="image">
+	</div>
+	<div>
+		<button type="submit">Submit</button>
+	</div>
+</form>
+
+<?php
+if(isset($_POST["name"])){
+	echo $_POST["name"]." ".$_POST["instructions"];
+	print_r($_FILES["image"]);
+	echo "<br><br>";
+	echo $_FILES["image"]["name"]."<br>";
+	echo $_FILES["image"]["tmp_name"]."<br>";
+	$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test";
+	$
+
+}
+
+/*
 $commande="SELECT origine_id as id
 FROM recette
 WHERE recette_id=$id;";
@@ -25,3 +52,4 @@ $results=connexion::prendreInfos($pdo,$commande);
 foreach($results as $info):
 	$info->affichage("image");
 endforeach;
+*/
