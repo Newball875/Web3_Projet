@@ -42,24 +42,33 @@ $id=$_GET["id"];
                     $commande="SELECT nom
                     FROM recette
                     WHERE recette_id=$id;";
-                    $results=connexion::prendreRecette($pdo,$commande);
-                    foreach($results as $recette):
-                        $recette->listeRecette();
+                    $results=connexion::prendreInfos($pdo,$commande);
+                    foreach($results as $info):
+                        $info->affichage("nom");
                     endforeach;
                 ?>
                 </label>
             </div>
             <div class="tag">
-                <label for="description" class="form-label">Tag</label>
+                <label for="description" class="form-label"> <?php
+                $commande="SELECT nom
+                FROM tag,tag_recette
+                WHERE tag.tag_id=tag_recette.tag_id and recette_id=$id;";
+                $results=connexion::prendreInfos($pdo,$commande);
+                foreach($results as $info):
+                    $info->affichage("tag");
+                endforeach;
+                ?>
+                </label>
             </div>
             <div class="fenetre">
                 <label for="name" class="form-label">Ingrédients</label> <?php
                 $commande="SELECT nom
                 FROM ingredient,ingredient_recette
                 WHERE ingredient_recette.ingredient_id=ingredient.ingredient_id and recette_id=$id;";
-                $results=connexion::prendreRecette($pdo,$commande);
-                foreach($results as $recette):
-                    $recette->listeRecette();
+                $results=connexion::prendreInfos($pdo,$commande);
+                foreach($results as $info):
+                    $info->affichage("liste");
                 endforeach;
                 ?>
             </div>
@@ -70,14 +79,20 @@ $id=$_GET["id"];
                 <li>.</li>
             </div>
             <div class="description">
-                <label for="name" class="form-label">Bonjour, je m'appellle Robin, je viens d'Arcachon et mon talent c'est les bains moussants</label>
+                <label for="name" class="form-label"> <?php
+                $commande="SELECT instructions as 'text'
+                FROM recette
+                WHERE recette_id=$id;";
+                $results=connexion::prendreInfos($pdo,$commande);
+                foreach($results as $info):
+                    $info->affichage();
+                endforeach;
+                ?>
+                </label>
             </div>
         </div>
     </div>
 </form>
-<script>
-
-    <?php include "class/footer.html" ?>
-
-    </body>
-    </html>
+<?php include "class/footer.html" ?>
+</body>
+</html>

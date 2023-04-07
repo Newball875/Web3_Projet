@@ -41,4 +41,11 @@ class connexion{
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandesTags");
 		return $results;
 	}
+
+	public static function prendreInfos(PDO $pdo, string $commande):array{
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results;
+	}
 }
