@@ -35,20 +35,33 @@ $id=$_GET["id"];
                 foreach($results as $recette):
                     $recette->listeRecette();
                 endforeach;
-
             ?>
             </div>
             <div class="nom">
-                <label for="name" class="form-label">Nom</label>
+                <label for="name" class="form-label"><?php
+                    $commande="SELECT nom
+                    FROM recette
+                    WHERE recette_id=$id;";
+                    $results=connexion::prendreRecette($pdo,$commande);
+                    foreach($results as $recette):
+                        $recette->listeRecette();
+                    endforeach;
+                ?>
+                </label>
             </div>
             <div class="tag">
                 <label for="description" class="form-label">Tag</label>
             </div>
             <div class="fenetre">
-                <label for="name" class="form-label">Ingrédients</label>
-                <li>.</li>
-                <li>.</li>
-                <li>.</li>
+                <label for="name" class="form-label">Ingrédients</label> <?php
+                $commande="SELECT nom
+                FROM ingredient,ingredient_recette
+                WHERE ingredient_recette.ingredient_id=ingredient.ingredient_id and recette_id=$id;";
+                $results=connexion::prendreRecette($pdo,$commande);
+                foreach($results as $recette):
+                    $recette->listeRecette();
+                endforeach;
+                ?>
             </div>
             <div class="fenetre">
                 <label for="name" class="form-label">Ustensiles</label>
