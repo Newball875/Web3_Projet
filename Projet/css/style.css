@@ -35,6 +35,7 @@ header .headerdroite2{
 .navbar-brand{
     text-decoration: none;
 }
+
 #recherche{
     color: black ;
 }
@@ -113,6 +114,7 @@ header .headerdroite2{
     align-content: center;
     overflow: auto;
 }
+
 #game-form .mb-3{
     padding: 5px;
     padding-bottom: 8px;
