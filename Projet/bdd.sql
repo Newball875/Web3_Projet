@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS recette;
 CREATE TABLE `recette` (
   `recette_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
-  `description` longtext,
   `instructions` longtext NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `difficulte` decimal(5,2),
