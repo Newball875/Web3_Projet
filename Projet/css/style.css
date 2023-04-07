@@ -80,6 +80,9 @@ header .headerdroite2{
 }
 
 .neon{
+    float: left ;
+    margin-left: 1%;
+    margin-top: 1%;
     border: 2px solid lightskyblue;
     border-radius: 5px;
     background: cornflowerblue;
@@ -87,6 +90,9 @@ header .headerdroite2{
 }
 
 .neon img{
+    float: left ;
+    margin-left: 1%;
+    margin-top: 1%;
     width: 20px;
 }
 
