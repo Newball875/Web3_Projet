@@ -6,7 +6,7 @@ class commandesRecette{
 			if(isset($this->image)){
 				echo "<img src='./ressources/img/$this->image' alt='<?=$this->nom?>'>";
 			}
-			if(isset($this->nom)){
+			if(isset($this->nom) and !isset($this->image)){
 				echo "<p>$this->nom</p>";
 			}
 			if(isset($this->instructions)){

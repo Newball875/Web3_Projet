@@ -1,5 +1,13 @@
+<?php
+$path=$_SERVER["DOCUMENT_ROOT"].DIRECTORY_SEPARATOR."Web3".DIRECTORY_SEPARATOR."Web3_Projet".DIRECTORY_SEPARATOR."Projet".DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
+require $path;
+autoloader::register();
+$pdo=connexion::connect();
+$id=$_GET["id"];
+?>
+
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -19,8 +27,16 @@
 <form id="accueil" method="POST" enctype="multipart/form-data">
     <div class="origine">
         <div class="neon">
-            <div class="image">
-                <img src="ressources/img/logoweb3.png">
+            <div class="image"> <?php
+                $commande="SELECT recette.image,nom
+                FROM recette
+                WHERE recette_id=$id;";
+                $results=connexion::prendreRecette($pdo,$commande);
+                foreach($results as $recette):
+                    $recette->listeRecette();
+                endforeach;
+
+            ?>
             </div>
             <div class="nom">
                 <label for="name" class="form-label">Nom</label>
