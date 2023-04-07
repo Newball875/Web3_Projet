@@ -26,11 +26,21 @@
 
         <div class="defile">
             <div class="recette-jour">
-                <img src="ressources/img/beurre_doux.png">
+                <a href="recette.php">
+                    <img src="ressources/img/beurre_doux.png">
+                </a>
+                <a href="recette.php">
                 <img src="ressources/img/farine.png">
+                </a>
+                <a href="recette.php">
                 <img src="ressources/img/gauffre.jpg">
+                </a>
+                <a href="recette.php">
                 <img src="ressources/img/lait.png">
+                </a>
+                <a href="recette.php">
                 <img src="ressources/img/oeuf.png">
+                </a>
             </div>
         </div>
         <div class="roulette">
