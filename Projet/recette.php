@@ -93,15 +93,8 @@ $id=$_GET["id"];
         </div>
     </div>
 </form>
-<<<<<<< HEAD
-<?php include "class/footer.html" ?>
-</body>
-</html>
-=======
-<script>
 
     <?php include "class/footer.php" ?>
 
     </body>
     </html>
->>>>>>> 042f00c (accueil)

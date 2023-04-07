@@ -17,3 +17,11 @@ $results=connexion::prendreInfos($pdo,$commande);
 foreach($results as $info):
 	$info->affichage("nom");
 endforeach;
+
+$commande="SELECT origine.image,origine.nom
+FROM origine,recette
+WHERE recette_id=2 and origine.origine_id=recette.origine_id;";
+$results=connexion::prendreInfos($pdo,$commande);
+foreach($results as $info):
+	$info->affichage("image");
+endforeach;
