@@ -10,7 +10,7 @@ html, body{
     height: 100% ;
     margin: 0px;
     background: url("../ressources/img/fond.jpg");
-    background-size: 1500px ;
+    background-size: 100% ;
     background-position: center;
 }
 
@@ -126,5 +126,18 @@ header .headerdroite2{
 
 .error{
     background: lightpink;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
 }
 
