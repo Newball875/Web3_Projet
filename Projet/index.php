@@ -32,7 +32,7 @@
         <div class="neon">
             <img src="images/dinosaur.jpg">
             <div class="neon">
-                <label for="name" class="form-label">Nom</label>
+                <label for="name" class="form-label">Nom1</label>
             </div>
             <div class="neon">
                 <label for="description" class="form-label">Description</label>
