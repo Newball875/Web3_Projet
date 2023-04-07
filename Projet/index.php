@@ -42,7 +42,7 @@
 </form>
 <script>
 
-<?php include "class/footer.html" ?>
+<?php include "class/footer.php" ?>
 
 </body>
 </html>

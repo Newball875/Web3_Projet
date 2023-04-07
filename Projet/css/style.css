@@ -94,26 +94,12 @@ header .headerdroite2{
     margin-left: 1%;
     margin-top: 1%;
     width: 20px;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
 }
 
 .origine{
     padding-top: 100px;
     padding-bottom: 200px
-}
-
-.game h1{
-    font-size: 1.5em;
-}
-.game-description{
-    font-size: 1em;
-}
-.game-content{
-    display: flex;
-}
-.game-content img{
-    margin-right: 5px;
-    min-width: 150px;
-    max-height: 200px;
 }
 
 #accueil{
@@ -123,19 +109,6 @@ header .headerdroite2{
     flex-direction: column;
     align-content: center;
     overflow: auto;
-}
-
-#game-form .mb-3{
-    padding: 5px;
-    padding-bottom: 8px;
-}
-#game-form textarea{
-    min-height: 100px;
-    height: 100px;
-}
-#game-form button{
-    width: 80%;
-
 }
 
 #preview-container{

@@ -10,7 +10,7 @@ html, body{
     height: 100% ;
     margin: 0px;
     background: url("../ressources/img/fond.jpg");
-    background-size: 1500px ;
+    background-size: 100% ;
     background-position: center;
 }
 
@@ -29,7 +29,7 @@ header .nav-content{
 }
 
 header .headerdroite2{
-    padding-left: 1500px;
+    padding-left: 75%;
 }
 
 .navbar-brand{
@@ -62,23 +62,6 @@ header .headerdroite2{
     color: white;
 }
 
-.games-list{
-    max-width: 800px;
-    height: 100%;
-    padding: 0 10px;
-
-    overflow: auto;
-}
-
-.game{
-    margin-bottom: 10px;
-    border-radius: 5px;
-    padding: 5px;
-    background: lightgray;
-    opacity: 0.8;
-    font-size: 0.9em;
-}
-
 .neon{
     border: 2px solid lightskyblue;
     border-radius: 5px;
@@ -99,68 +82,38 @@ header .headerdroite2{
 
 .pré-description{
     float: left;
+    margin-left: 20% ;
+    margin-right: 20% ;
     border: 2px solid lightskyblue;
     border-radius: 5px;
     background: cornflowerblue;
     color: white;
+    padding : 1em;
 }
 
-.recette-jour{
-    border: 2px solid lightskyblue;
+.defile{
+    border: 5px solid violet;
     border-radius: 5px;
-    background: cornflowerblue;
+    background-color: rgba(200,0,200,0.8);
     color: white;
 }
 
 .recette-jour img{
     float: left;
-    margin-left: 2%;
-    width: 25%;
-}
+    opacity: 100%;
+    margin: 5%;
+    width: 10%;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
 
-.game h1{
-    font-size: 1.5em;
-}
-.game-description{
-    font-size: 1em;
-}
-.game-content{
-    display: flex;
-}
-.game-content img{
-    margin-right: 5px;
-    min-width: 150px;
-    max-height: 200px;
 }
 
 #accueil{
-    width: 600px;
+    width: 1200px;
     display: flex;
-    padding-left: 600px;
+    padding-left: 400px;
     flex-direction: column;
     align-content: center;
     overflow: auto;
-}
-
-#game-form .mb-3{
-    padding: 5px;
-    padding-bottom: 8px;
-}
-#game-form textarea{
-    min-height: 100px;
-    height: 100px;
-}
-#game-form button{
-    width: 80%;
-
-}
-
-#preview-container{
-    max-height: 150px;
-    background: white;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    display: flex;
 }
 
 #preview-image {
