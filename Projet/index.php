@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+    <script src="javascript/form_ingredient.js"></script>
+
 
 </head>
 <body>

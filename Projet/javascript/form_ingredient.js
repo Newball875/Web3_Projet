@@ -43,13 +43,17 @@
         let div_liste_ingredients = document.createElement("div")
         div_liste_ingredients.appendChild(creerDivIngredient())
 
+        conteneur.appendChild(div_liste_ingredients)
+
         let boutton_envoyer = document.createElement("button")
         boutton_envoyer.innerHTML = "Envoyer"
+
+        conteneur.appendChild(boutton_envoyer)
 
     }
 
     document.addEventListener('DOMContentLoaded',function(){
-        let form_ingredient = document.querySelectorAll("#form-ingredient")
+        let form_ingredient = document.querySelector("#form-ingredient")
         genererContenuForm(form_ingredient)
     })
 
