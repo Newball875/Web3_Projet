@@ -86,13 +86,36 @@ header .headerdroite2{
     color: white;
 }
 
-.recette-jour img{
-    width: 25%;
+.présentation{
+    float: left;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
 }
 
-.origine{
-    padding-top: 100px;
-    padding-bottom: 200px
+.pré-description{
+    float: left;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+}
+
+.recette-jour{
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+}
+
+.recette-jour img{
+    float: left;
+    margin-left: 2%;
+    width: 25%;
 }
 
 .game h1{
