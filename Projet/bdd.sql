@@ -11,7 +11,7 @@ CREATE TABLE `recette` (
 
 DROP TABLE IF EXISTS ustensile;
 CREATE TABLE `ustensile` (
-  `ustensile_id` int AUTO_INCREMENT,
+  `ustensile_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `image` varchar(255) DEFAULT NULL
 );
@@ -24,7 +24,7 @@ CREATE TABLE `ustensile_recette` (
 
 DROP TABLE IF EXISTS ingredient;
 CREATE TABLE `ingredient` (
-  `ingredient_id` int AUTO_INCREMENT,
+  `ingredient_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `type` varchar(25)
@@ -38,7 +38,7 @@ CREATE TABLE `ingredient_recette` (
 
 DROP TABLE IF EXISTS tag;
 CREATE TABLE `tag` (
-  `tag_id` int AUTO_INCREMENT,
+  `tag_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL
 );
 
@@ -50,7 +50,7 @@ CREATE TABLE `tag_recette` (
 
 DROP TABLE IF EXISTS origine;
 CREATE TABLE `origine` (
-  `origine_id` int AUTO_INCREMENT,
+  `origine_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `description` longtext,
   `image` varchar(255) DEFAULT NULL
