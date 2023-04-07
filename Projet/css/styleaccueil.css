@@ -92,7 +92,7 @@ header .headerdroite2{
 }
 
 .defile{
-    border: 5px solid violet;
+    border: 2px solid violet;
     border-radius: 5px;
     background-color: rgba(200,0,200,0.8);
     color: white;
@@ -100,20 +100,46 @@ header .headerdroite2{
 
 .recette-jour img{
     float: left;
-    opacity: 100%;
-    margin: 5%;
+    margin: 3%;
     width: 10%;
+    padding: 1em;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
     box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+}
 
+.recette-jour img:hover {
+    transform:scale(1.2);
 }
 
 #accueil{
-    width: 1200px;
+    width: 60%;
     display: flex;
-    padding-left: 400px;
+    padding-left: 15%;
+    padding-right: 15%;
     flex-direction: column;
     align-content: center;
     overflow: auto;
+}
+
+.roulette{
+    display: flex;
+    float:left;
+    margin-top: 5%;
+    padding: 1em;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+}
+
+.roulette img{
+    float: left;
+    width: 20%;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
 }
 
 #preview-image {
