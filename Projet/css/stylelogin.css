@@ -10,7 +10,7 @@ html, body{
     height: 100% ;
     margin: 0px;
     background: url("../ressources/img/fond.jpg");
-    background-size: 1500px ;
+    background-size: 100% ;
     background-position: center;
 }
 
@@ -29,7 +29,7 @@ header .nav-content{
 }
 
 header .headerdroite2{
-    padding-left: 1500px;
+    padding-left: 75%;
 }
 
 .navbar-brand{
@@ -63,6 +63,7 @@ header .headerdroite2{
 }
 
 footer{
+    height:50px;
     display: flex;
     justify-content: center;
     align-items: center;

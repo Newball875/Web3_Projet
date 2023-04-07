@@ -26,25 +26,21 @@
 
         <div class="defile">
             <div class="recette-jour">
-                <div class="image1">
-                    <img src="ressources/img/beurre_doux.png">
-                </div>
-                <div class="image2">
-                    <img src="ressources/img/farine.png">
-                </div>
-                <div class="image3">
-                    <img src="ressources/img/gauffre.jpg">
-                </div>
-                <div class="image4">
-                    <img src="ressources/img/lait.png">
-                </div>
-                <div class="image5">
-                    <img src="ressources/img/oeuf.png">
-                </div>
+                <img src="ressources/img/beurre_doux.png">
+                <img src="ressources/img/farine.png">
+                <img src="ressources/img/gauffre.jpg">
+                <img src="ressources/img/lait.png">
+                <img src="ressources/img/oeuf.png">
             </div>
         </div>
+        <div class="roulette">
+            <img src="ressources/img/beurre_doux.png">
+            <img src="ressources/img/farine.png">
+            <img src="ressources/img/gauffre.jpg">
+            <img src="ressources/img/lait.png">
+            <img src="ressources/img/oeuf.png">
+        </div>
 </form>
-<script>
 
     <?php include "class/footer.php" ?>
 
