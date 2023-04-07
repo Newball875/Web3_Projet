@@ -21,27 +21,6 @@ class connexion{
 		return $pdo;
 	}
 
-	public static function prendreRecette(PDO $pdo, string $commande):array{
-		$statement=$pdo->prepare($commande);
-		$statement->execute() or die(var_dump($statement->errorInfo()));
-		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandesRecette");
-		return $results;
-	}
-
-	public static function prendreIngredients(PDO $pdo, string $commande):array{
-		$statement=$pdo->prepare($commande);
-		$statement->execute() or die(var_dump($statement->errorInfo()));
-		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandesIngredients");
-		return $results;
-	}
-
-	public static function prendreTags(PDO $pdo, string $commande):array{
-		$statement=$pdo->prepare($commande);
-		$statement->execute() or die(var_dump($statement->errorInfo()));
-		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandesTags");
-		return $results;
-	}
-
 	public static function prendreInfos(PDO $pdo, string $commande):array{
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));

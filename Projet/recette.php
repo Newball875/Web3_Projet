@@ -31,9 +31,9 @@ $id=$_GET["id"];
                 $commande="SELECT recette.image,nom
                 FROM recette
                 WHERE recette_id=$id;";
-                $results=connexion::prendreRecette($pdo,$commande);
-                foreach($results as $recette):
-                    $recette->listeRecette();
+                $results=connexion::prendreInfos($pdo,$commande);
+                foreach($results as $info):
+                    $info->affichage("image");
                 endforeach;
             ?>
             </div>
