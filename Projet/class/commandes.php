@@ -6,11 +6,11 @@ class commandes{
 			<img src="./ressources/img/<?=$this->image?>" alt="<?=$this->nom?>">
 			<p><?=$this->nom?></p>
 			<p><?=$this->instructions?></p>
-			<p><?=$this->origine?></p>
-			<div><?php
-
-			?>
+			<div>
+				<img src="./ressources/img/<?=$this->media?>" alt="<?=$this->origine?>">
+				<p><?=$this->origine?></p>
 			</div>
+			
 		</div>
 		<?php
 	}
@@ -19,4 +19,7 @@ class commandes{
 
 /*SELECT DISTINCT(recette.nom),recette.image,recette.instructions,origine.nom
 FROM recette,origine,ingredient,ingredient_recette
-WHERE origine.origine_id=recette.origine_id;*/
+WHERE origine.origine_id=recette.origine_id;
+
+
+*/

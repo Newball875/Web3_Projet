@@ -3,9 +3,9 @@ $path=$_SERVER["DOCUMENT_ROOT"].DIRECTORY_SEPARATOR."Web3".DIRECTORY_SEPARATOR."
 require $path;
 autoloader::register();
 $pdo=connexion::connect();
-$commande="SELECT DISTINCT(recette.recette_id) as id,recette.nom,recette.image,recette.instructions,origine.nom as origine
+$commande="SELECT DISTINCT(recette.recette_id) as id,recette.nom,recette.image,recette.instructions,origine.nom as origine,origine.image as media
 FROM recette,origine,ingredient,ingredient_recette
-WHERE origine.origine_id=recette.origine_id;";
+WHERE origine.origine_id=recette.origine_id and recette.recette_id=1;";
 $results=connexion::prendreRecette($pdo,$commande);
 foreach($results as $recette):
 	$recette->listeRecette();
