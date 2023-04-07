@@ -18,6 +18,9 @@
 <?php include "class/header.html" ?>
 
 <div class="title"></div>
+<form id="form-ingredient">
+
+</form>
 <form id="accueil" method="POST" enctype="multipart/form-data">
     <div class="origine">
         <div class="neon">

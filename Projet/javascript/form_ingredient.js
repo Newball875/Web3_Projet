@@ -2,16 +2,8 @@
 
     let liste_ingredients = []
 
-    let genererContenuDivBouttonMoinsPlus = function(conteneur){
-        let boutton_moins = document.createElement("button")
-        boutton_moins.innerHTML = "-"
-
-        let boutton_plus = document.createElement("button")
-        boutton_plus.innerHTML = "+"
-
-        div_bouttons_moins_plus.appendChild(boutton_moins)
-        div_bouttons_moins_plus.appendChild(boutton_plus)
-    }
+    let bouton_moins = undefined
+    let bouton_plus = undefined
 
     let creerInput = function(type_attribut,class_attribut,name_attribut,placeholder_attribut){
         let conteneur = document.createElement("input")
@@ -23,7 +15,8 @@
     }
 
     let genererContenuDivIngredient = function(conteneur){
-        let hi_ingredient = document.createElement("h1")
+        let h1_ingredient = document.createElement("h1")
+        h1_ingredient.innerHTML = "Ingredient"
 
         let input_nom_ingredient = creerInput("text","form-control","nom","nom ingredient")
 
@@ -31,7 +24,7 @@
 
         let input_image_ingredient = creerInput("text","form-control","image","image ingredient")
 
-        conteneur.appendChild(hi_ingredient)
+        conteneur.appendChild(h1_ingredient)
         conteneur.appendChild(input_nom_ingredient)
         conteneur.appendChild(input_type_ingredient)
         conteneur.appendChild(input_image_ingredient)
@@ -40,33 +33,53 @@
     let creerDivIngredient = function(){
         let div_ingredient = document.createElement("div")
         genererContenuDivIngredient(div_ingredient)
-        liste_ingredients.push(div_ingredient)
         return div_ingredient
     }
 
-    let genererContenuForm = function(conteneur){
-        // le conteneur est un formulaire
-        let div_bouttons_moins_plus = document.createElement("div")
 
-        genererContenuDivBouttonMoinsPlus(div_bouttons_moins_plus)
+    let supprimerIngredient = function(conteneur){
+        if(!bouton_moins.disabled){
+            conteneur.removeChild(conteneur.lastChild)
+            liste_ingredients.pop()
+            if(liste_ingredients.length === 1){
+                bouton_moins.disabled = true
+                console.log(bouton_moins.disabled)
+            }
+        }
+    }
 
-        conteneur.appendChild(div_bouttons_moins_plus)
-
-        let div_liste_ingredients = document.createElement("div")
-        div_liste_ingredients.appendChild(creerDivIngredient())
-
-        conteneur.appendChild(div_liste_ingredients)
-
-        let boutton_envoyer = document.createElement("button")
-        boutton_envoyer.innerHTML = "Envoyer"
-
-        conteneur.appendChild(boutton_envoyer)
-
+    let ajouterIngredient = function (conteneur){
+        bouton_moins.disabled = false
+        let nouvel_ingredient = creerDivIngredient();
+        liste_ingredients.push(nouvel_ingredient)
+        conteneur.appendChild(nouvel_ingredient)
     }
 
     document.addEventListener('DOMContentLoaded',function(){
         let form_ingredient = document.querySelector("#form-ingredient")
-        genererContenuForm(form_ingredient)
+        liste_ingredients.push(form_ingredient.firstChild.firstChild)
+        console.log(liste_ingredients.length)
+
+        let conteneur = document.querySelector("#liste-ingredients")
+
+        bouton_moins = document.querySelector("#moins")
+        bouton_plus = document.querySelector("#plus")
+
+        console.log(conteneur)
+        console.log(bouton_moins)
+        bouton_moins.disabled = true
+        bouton_moins.addEventListener('click',function (event){
+            supprimerIngredient(conteneur)
+            console.log(liste_ingredients.length)
+            console.log(liste_ingredients)
+        })
+
+        bouton_plus.addEventListener('click',function (){
+            ajouterIngredient(conteneur)
+            console.log(liste_ingredients.length)
+            console.log(liste_ingredients)
+        })
+
     })
 
 })()
