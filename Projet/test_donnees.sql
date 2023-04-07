@@ -1,5 +1,3 @@
-INSERT INTO `recette` (`recette_id`, `nom`, `description`, `instructions`, `image`, `difficulte`, `origine_id`) VALUES (NULL, 'Pancakes', 'De bons pancakes', 'Fais', 'pancakes.jpg', '1', NULL);
-
 insert into origine(nom,description,image)
 values ("Game of thrones","série TV","GoT.jpg");
 
@@ -21,7 +19,8 @@ values ("Pancake Moelleux","    Étape 1\n
     Laisser reposer la pâte au minimum 1 heure au réfrigérateur.\n
     Étape 6\n
 
-    Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster.",1,"pancake_moelleux.png");
+    Dans une poêle chaude et légèrement huilée, faire cuire comme des crêpes, mais en les faisant plus petites. Réserver au chaud et déguster.",1,"pancake_moelleux.png"),
+    ('Pancakes','De bons pancakes', 1, 'pancakes.jpg');
 
 insert into ingredient(nom,image)
 values  ("Farine","farine.png"),
