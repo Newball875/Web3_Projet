@@ -19,15 +19,9 @@ $id=1;
 </form>
 
 <?php
+$commande="Oui";
 if(isset($_POST["name"])){
-	echo $_POST["name"]." ".$_POST["instructions"];
-	print_r($_FILES["image"]);
-	echo "<br><br>";
-	echo $_FILES["image"]["name"]."<br>";
-	echo $_FILES["image"]["tmp_name"]."<br>";
-	$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test";
-	$
-
+	connexion::ajouterInfos($pdo,$commande);
 }
 
 /*

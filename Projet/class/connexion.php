@@ -28,7 +28,10 @@ class connexion{
 		return $results;
 	}
 
-	public static function ajouterInfos(PDO $pdo, string $commande):array{
-		
+	public static function ajouterInfos(PDO $pdo, string $commande){
+		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
+		echo $nom_dos;
+		//$nom=$nom_dos.$_FILES["image"]["name"];
+		//move_uploaded_file($_FILES["image"]["tmp_name"], $nom);
 	}
 }
