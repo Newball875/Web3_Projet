@@ -1,3 +1,5 @@
+INSERT INTO `recette` (`recette_id`, `nom`, `description`, `instructions`, `image`, `difficulte`, `origine_id`) VALUES (NULL, 'Pancakes', 'De bons pancakes', 'Fais', 'pancakes.jpg', '1', NULL);
+
 insert into origine(nom,description,image)
 values ("Game of thrones","série TV","GoT.jpg");
 
