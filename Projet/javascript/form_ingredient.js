@@ -43,7 +43,6 @@
             liste_ingredients.pop()
             if(liste_ingredients.length === 1){
                 bouton_moins.disabled = true
-                console.log(bouton_moins.disabled)
             }
         }
     }
@@ -56,8 +55,8 @@
     }
 
     document.addEventListener('DOMContentLoaded',function(){
-        let form_ingredient = document.querySelector("#form-ingredient")
-        liste_ingredients.push(form_ingredient.firstChild.firstChild)
+        let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild
+        liste_ingredients.push(li_premier_ingredient)
         console.log(liste_ingredients.length)
 
         let conteneur = document.querySelector("#liste-ingredients")
@@ -65,9 +64,8 @@
         bouton_moins = document.querySelector("#moins")
         bouton_plus = document.querySelector("#plus")
 
-        console.log(conteneur)
-        console.log(bouton_moins)
         bouton_moins.disabled = true
+
         bouton_moins.addEventListener('click',function (event){
             supprimerIngredient(conteneur)
             console.log(liste_ingredients.length)
