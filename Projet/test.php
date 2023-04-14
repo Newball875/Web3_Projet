@@ -2,7 +2,7 @@
 $path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
 require $path;
 Autoloader::register();
-$pdo=connexion::connect();
+$pdo=Connexion::connect();
 $id=1;
 
 $nom=Connexion::prendreNomRecette($pdo,$id);

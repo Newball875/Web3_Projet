@@ -27,28 +27,28 @@
         <div class="defile">
             <div class="recette-jour">
                 <a href="recette.php">
-                    <img src="ressources/img/beurre_doux.png">
+                    <img src="ressources/img/recettes/gauffre.jpg">
                 </a>
                 <a href="recette.php">
-                <img src="ressources/img/farine.png">
+                <img src="ressources/img/recettes/gauffre.jpg">
                 </a>
                 <a href="recette.php">
-                <img src="ressources/img/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
                 </a>
                 <a href="recette.php">
-                <img src="ressources/img/lait.png">
+                <img src="ressources/img/recettes/gauffre.jpg">
                 </a>
                 <a href="recette.php">
-                <img src="ressources/img/oeuf.png">
+                <img src="ressources/img/recettes/gauffre.jpg">
                 </a>
             </div>
         </div>
         <div class="roulette">
-            <img src="ressources/img/beurre_doux.png">
-            <img src="ressources/img/farine.png">
-            <img src="ressources/img/gauffre.jpg">
-            <img src="ressources/img/lait.png">
-            <img src="ressources/img/oeuf.png">
+            <img src="ressources/img/recettes/gauffre.jpg">
+            <img src="ressources/img/recettes/gauffre.jpg">
+            <img src="ressources/img/recettes/gauffre.jpg">
+            <img src="ressources/img/recettes/gauffre.jpg">
+            <img src="ressources/img/recettes/gauffre.jpg">
         </div>
 </form>
 

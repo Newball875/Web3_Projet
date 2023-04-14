@@ -87,11 +87,11 @@ class Connexion{
 		$nom_fic=$fichier["name"];
 		$nom_final=$nom_dos.$fichier["name"];
 		move_uploaded_file($fichier["tmp_name"],$nom_final);
-
+/*
 		$commande="INSERT INTO recette(nom,instructions,origine_id,image)
 		VALUES('$nom','$instructions',$id,'$nom_fic');";
 		$statement = $pdo->prepare($commande);
-		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$statement->execute() or die(var_dump($statement->errorInfo()));*/	
 	}
 
     public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
