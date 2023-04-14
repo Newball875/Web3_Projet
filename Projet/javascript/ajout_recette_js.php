@@ -41,13 +41,17 @@ let genererContenuDivIngredient = function(conteneur){
 		choix=document.createElement("option");
 		choix.innerHTML="<?=$ingredient->nom?>";
 		choix.value="<?=$ingredient->nom?>";
-		choix.disabled=true;
 		select.appendChild(choix)
 		<?php
 	}
 	?>
 
+	let input=document.createElement("input");
+	input.type="number";
+	input.name="quantite";
+
 	conteneur.appendChild(select)
+	conteneur.appendChild(input)
 }
 
 let creerDivIngredient = function(){

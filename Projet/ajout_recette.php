@@ -29,11 +29,14 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 	    <div id="infos">
 		    <label for="le_fichier" class="form_label">Uploader une recette :</label>
 		    <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
-            <textarea id="instructions" name="instructions" rows="5" cols="33"></textarea>
+            <textarea id="instructions" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
 	    	<input type="file" class="form-control" id="image" name="image">
 	    </div>
+        <div>
+        </div>
         <div id="liste-ingredients">
             <h1>Ingrédients</h1>
+            <div>
             <select class="menu_ingredient" name="ingredients">
                 <option value="" disabled>Ingrédients</option>
                 <?php
@@ -42,6 +45,8 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
                 }
                 ?>
             </select>
+            <input type="number" class="form-control" name="quantite">
+            </div>
         </div>
 	    <div id="bouton_final">
 		    <button type="submit">Envoyer</button>
