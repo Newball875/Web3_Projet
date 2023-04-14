@@ -1,5 +1,6 @@
+<?php include "init.php" ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
