@@ -22,7 +22,7 @@
         conteneur.appendChild(option);
     }
 
-    /*let genererContenuDivIngredient = function(conteneur){
+    let genererContenuDivIngredient = function(conteneur){
         let label = document.createElement("label");
         label.innerHTML = "Ingredient";
 
@@ -37,7 +37,7 @@
 
         conteneur.appendChild(label)
         conteneur.appendChild(select)
-    }*/
+    }
 
     let creerDivIngredient = function(){
         let div_ingredient = document.createElement("div")

@@ -22,10 +22,6 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 <div id="titre_ajout">
     <p>Nouvelle recette</p>
 </div>
-<div id="boutons">
-    <button id="moins">-</button>
-    <button id="plus">+</button>
-</div>
 <div>
     <form action="ajout_recette.php" method="POST" enctype="multipart/form-data">
 	    <div id="infos">
@@ -36,9 +32,9 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 	    </div>
         <div>
             <div id="liste-ingredients">
-                <h1>Ingrédient</h1>
+                <h1>Ingrédients</h1>
                     <select class="menu_ingredient" name="ingredients">
-                        <option value="">Ingrédients</option>
+                        <option value="" disabled>Ingrédients</option>
                         <?php
                         foreach($tab_ingredients as $ingredient){
                             echo "<option value='$ingredient->nom'>$ingredient->nom</option>";
@@ -51,6 +47,10 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 		    <button type="submit">Envoyer</button>
     	</div>
     </form>
+    <div id="boutons">
+        <button id="moins">-</button>
+        <button id="plus">+</button>
+    </div>
 </div>
 
 <?php include "class/footer.php"?>

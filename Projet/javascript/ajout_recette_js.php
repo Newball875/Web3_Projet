@@ -1,4 +1,3 @@
-
 <script>
 (function (){
 
@@ -26,29 +25,28 @@ let ajouterOptionSelect = function(conteneur,value){
 
 
 let genererContenuDivIngredient = function(conteneur){
-	let label = document.createElement("label");
-	label.innerHTML = "Ingredient";
-
 	let select = document.createElement("select");
-	select.name = label.innerHTML;
+	select.name = "ingredients";
+	select.class="menu_ingredient";
 
 	let option = document.createElement("option");
 	option.innerHTML = "Ingrédients";
 	option.disabled = true;
 	select.appendChild(option)
 
+	let choix;
+
 	<?php
 	foreach($tab_ingredients as $ingredient){ ?>
-		let choix=document.createElement("select");
+		choix=document.createElement("option");
 		choix.innerHTML="<?=$ingredient->nom?>";
 		choix.value="<?=$ingredient->nom?>";
+		choix.disabled=true;
 		select.appendChild(choix)
-		delete choix;
 		<?php
 	}
 	?>
 
-	conteneur.appendChild(label)
 	conteneur.appendChild(select)
 }
 
