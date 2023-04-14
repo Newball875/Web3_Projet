@@ -29,7 +29,8 @@ header .nav-content{
 }
 
 header .headerdroite2{
-    padding-left: 1500px;
+    padding-left: 75%;
+    padding-right: 5%;
 }
 
 .navbar-brand{
