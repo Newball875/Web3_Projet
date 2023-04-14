@@ -32,7 +32,9 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
             <textarea id="instructions" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
 	    	<input type="file" class="form-control" id="image" name="image">
 	    </div>
-        <div>
+        <div id="origine">
+            <label for="le_media" class="form_label" enctype="multipart/form-data">
+            
         </div>
         <div id="liste-ingredients">
             <h1>Ingrédients</h1>
