@@ -96,7 +96,8 @@ footer{
 
 #login-form{
     padding: 10px;
-
+    margin-left: 40%;
+    margin-right: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,6 +107,7 @@ footer{
 #login-form *{
     width: 100%;
     margin: 8px 0;
+    color: black ;
 }
 
 #error{
@@ -115,4 +117,31 @@ footer{
     font-size: 2em;
     color: orangered;
     text-align: center;
+}
+
+#message{
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.error{
+    background: lightpink;
+}
+
+.hidden{
+    display: none;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
 }

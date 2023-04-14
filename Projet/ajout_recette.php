@@ -15,23 +15,26 @@
 
 <?php include "class/header.html"?>
 
-
-<form id="form-ingredient">
+<div id="bloc">
     <div id="boutons">
         <button id="moins">-</button>
         <button id="plus">+</button>
     </div>
-    <div id="liste-ingredients">
-        <div>
-            <h1>Ingrédient</h1>
-            <input type="text" class="form-control" name="nom" placeholder="nom ingredient">
-            <input type="text" class="form-control" name="type" placeholder="type ingredient">
-            <input type="text" class="form-control" name="image" placeholder="image ingredient">
+    <form id="form-ingredient">
+
+        <div id="liste-ingredients">
+            <div>
+                <h1>Ingrédient</h1>
+                <input type="text" class="form-control" name="nom" placeholder="nom ingredient">
+                <input type="text" class="form-control" name="type" placeholder="type ingredient">
+                <input type="text" class="form-control" name="image" placeholder="image ingredient">
+            </div>
         </div>
-    </div>
-    <button>Envoyer</button>
-</form>
+        <button>Envoyer</button>
+    </form>
+</div>
 
 <?php include "class/footer.php"?>
+
 </body>
 </html>
