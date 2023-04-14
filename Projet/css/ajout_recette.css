@@ -3,7 +3,7 @@
 *{
     font-family: 'Comfortaa', cursive ;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 html, body{
@@ -63,6 +63,12 @@ header .headerdroite2{
     color: white;
 }
 
+#name{
+    float: top;
+    margin-top: 5%;
+    height: 15%;
+}
+
 #infos{
     display: flex;
     float: left;
@@ -78,9 +84,6 @@ header .headerdroite2{
 #boutons{
     width: 10%;
     display: flex;
-    padding-top: 5%;
-    padding-left: 41%;
-    padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
     overflow: auto;
@@ -101,12 +104,7 @@ header .headerdroite2{
     background: cornflowerblue;
     color: white;
     padding : 1em;
-}
-
-.menu_ingredient{
-    flex-direction: column;
-    align-content: center;
-    padding: 1em;
+    color: black;
 }
 
 .error{
