@@ -4,7 +4,6 @@ if(isset($_GET["id"])){
 }
 include "class/head.php";
 ?>
-
 <body>
 <?php include "class/header.html" ?>
 
