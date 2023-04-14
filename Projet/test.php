@@ -10,7 +10,7 @@ echo $nom;
 $id=3;
 $tab=Connexion::prendreImageIngredient($pdo,$id);
 echo $tab->nom;
-echo "<img src='ressources/img/ingredient/$tab->image'>";
+echo "<img src='ressources/img/ingredients/$tab->image'>";
 ?>
 
 <form action="test.php" method="POST" enctype="multipart/form-data">
@@ -28,7 +28,6 @@ echo "<img src='ressources/img/ingredient/$tab->image'>";
 <?php
 $commande="Oui";
 if(isset($_POST["name"])){
-	var_dump($_FILES["image"]);
 	$nom=$_POST["name"];
 	$fichier=$_FILES["image"];
 	$instructions=$_POST["instructions"];

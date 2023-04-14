@@ -83,24 +83,21 @@ class Connexion{
 	}
 
 	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier){
-		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recette".DIRECTORY_SEPARATOR;
+		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
 		$nom_fic=$fichier["name"];
 		$nom_final=$nom_dos.$fichier["name"];
 		move_uploaded_file($fichier["tmp_name"],$nom_final);
-/*
 		$commande="INSERT INTO recette(nom,instructions,origine_id,image)
 		VALUES('$nom','$instructions',$id,'$nom_fic');";
 		$statement = $pdo->prepare($commande);
-		$statement->execute() or die(var_dump($statement->errorInfo()));*/	
+		$statement->execute() or die(var_dump($statement->errorInfo()));
 	}
 
     public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
         $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
-        echo $nom_dos;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
-
         $commande="INSERT INTO ingredient(nom,type,ingredient_id,image)
 		VALUES('$nom','$type',$id,'$nom_fic');";
         $statement = $pdo->prepare($commande);
@@ -109,11 +106,9 @@ class Connexion{
 
     public static function ajouterOrigine(PDO $pdo, string $nom, string $description, int $id ,array $fichier){
         $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
-        echo $nom_dos;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
-
         $commande="INSERT INTO origine(nom,description,origine_id,image)
 		VALUES('$nom','$description',$id,'$nom_fic');";
         $statement = $pdo->prepare($commande);
