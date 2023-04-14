@@ -120,6 +120,7 @@ header .headerdroite2{
     display: flex;
     padding-left: 25%;
     padding-right: 25%;
+    padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
     overflow: auto;

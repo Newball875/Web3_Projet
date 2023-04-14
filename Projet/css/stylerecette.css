@@ -28,14 +28,6 @@ header .nav-content{
     background: black;
 }
 
-footer{
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    background: black;
-}
-
 header .headerdroite2{
     padding-left: 78%;
 }
@@ -132,7 +124,31 @@ header .headerdroite2{
     width: 50%;
     display: flex;
     padding-left: 20%;
+    padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
     overflow: auto;
+}
+
+#origine{
+    width: 50%;
+    display: flex;
+    padding-left: 20%;
+    padding-bottom: 5%;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
 }

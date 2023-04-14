@@ -17,7 +17,7 @@ $id=$_GET["id"];
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/stylerecette.css">
-    <script src="js/stylerecette.js"></script>
+    <script src="javascript/stylerecette.js"></script>
 
 </head>
 <body>
@@ -70,6 +70,9 @@ $id=$_GET["id"];
                 </label>
             </div>
         </div>
+    </div>
+    <div id="origine">
+        Origine
     </div>
 </form>
 

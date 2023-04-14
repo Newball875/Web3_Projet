@@ -62,15 +62,16 @@ header .headerdroite2{
     color: white;
 }
 
-.boutons{
-    float: left;
-    margin-left: 50%;
-    margin-right: 25%;
-    margin-top: 1%;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    color: white;
+#bloc{
+    width: 50%;
+    display: flex;
+    padding-top: 5%;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 5%;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
 }
 
 .liste-ingrédients{
@@ -82,16 +83,6 @@ header .headerdroite2{
     background: cornflowerblue;
     color: white;
     padding : 1em;
-}
-
-#form-ingredient{
-    width: 50%;
-    display: flex;
-    padding-left: 25%;
-    padding-right: 25%;
-    flex-direction: column;
-    align-content: center;
-    overflow: auto;
 }
 
 .error{
