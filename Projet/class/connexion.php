@@ -116,7 +116,7 @@ class Connexion{
     }
 
     public static function ajouterTag(PDO $pdo, string $nom, int $id){
-        $commande="INSERT INTO origine(nom,tag_id)
+        $commande="INSERT INTO tag(nom,tag_id)
 		VALUES('$nom',$id);";
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
