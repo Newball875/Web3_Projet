@@ -63,19 +63,8 @@ header .headerdroite2{
     color: white;
 }
 
-#bloc{
-    width: 50%;
+#infos{
     display: flex;
-    padding-top: 5%;
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-bottom: 5%;
-    flex-direction: column;
-    align-content: center;
-    overflow: auto;
-}
-
-.liste-ingrédients{
     float: left;
     margin-left: 25% ;
     margin-right: 25% ;
@@ -84,6 +73,40 @@ header .headerdroite2{
     background: cornflowerblue;
     color: white;
     padding : 1em;
+}
+
+#boutons{
+    width: 10%;
+    display: flex;
+    padding-top: 5%;
+    padding-left: 41%;
+    padding-bottom: 5%;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+}
+
+#bouton_final{
+    flex-direction: column;
+    align-content: center;
+}
+
+#liste-ingredients{
+    float: left;
+    margin-left: 40% ;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+    padding : 1em;
+}
+
+.menu_ingredient{
+    flex-direction: column;
+    align-content: center;
+    padding: 1em;
 }
 
 .error{

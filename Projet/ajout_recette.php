@@ -32,18 +32,16 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
             <textarea id="instructions" name="instructions" rows="5" cols="33"></textarea>
 	    	<input type="file" class="form-control" id="image" name="image">
 	    </div>
-        <div>
-            <div id="liste-ingredients">
-                <h1>Ingrédients</h1>
-                    <select class="menu_ingredient" name="ingredients">
-                        <option value="" disabled>Ingrédients</option>
-                        <?php
-                        foreach($tab_ingredients as $ingredient){
-                            echo "<option value='$ingredient->nom'>$ingredient->nom</option>";
-                        }
-                        ?>
-                    </select>
-            </div>
+        <div id="liste-ingredients">
+            <h1>Ingrédients</h1>
+            <select class="menu_ingredient" name="ingredients">
+                <option value="" disabled>Ingrédients</option>
+                <?php
+                foreach($tab_ingredients as $ingredient){
+                    echo "<option value='$ingredient->nom'>$ingredient->nom</option>";
+                }
+                ?>
+            </select>
         </div>
 	    <div id="bouton_final">
 		    <button type="submit">Envoyer</button>
