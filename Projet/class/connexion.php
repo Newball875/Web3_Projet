@@ -83,8 +83,7 @@ class Connexion{
 	}
 
 	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier){
-		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
-		echo $nom_dos;
+		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recette".DIRECTORY_SEPARATOR;
 		$nom_fic=$fichier["name"];
 		$nom_final=$nom_dos.$fichier["name"];
 		move_uploaded_file($fichier["tmp_name"],$nom_final);
