@@ -94,7 +94,7 @@ class Connexion{
 	}
 
     public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
-        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
+        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
@@ -105,7 +105,7 @@ class Connexion{
     }
 
     public static function ajouterOrigine(PDO $pdo, string $nom, string $description, int $id ,array $fichier){
-        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
+        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."origine".DIRECTORY_SEPARATOR;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
