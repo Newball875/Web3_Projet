@@ -11,8 +11,16 @@ $id=3;
 $tab=Connexion::prendreImageIngredient($pdo,$id);
 echo $tab->nom;
 echo "<img src='ressources/img/ingredients/$tab->image'>";
-?>
 
+$commande="Oui";
+if(isset($_POST["name"])){
+	$nom=$_POST["name"];
+	$fichier=$_FILES["image"];
+	$instructions=$_POST["instructions"];
+	Connexion::ajouterRecette($pdo,$nom,$instructions,1,$fichier);
+}
+
+/*
 <form action="test.php" method="POST" enctype="multipart/form-data">
 	<div>
 		<label for="le_fichier" class="form_label">Uploader une recette :</label>
@@ -25,16 +33,7 @@ echo "<img src='ressources/img/ingredients/$tab->image'>";
 	</div>
 </form>
 
-<?php
-$commande="Oui";
-if(isset($_POST["name"])){
-	$nom=$_POST["name"];
-	$fichier=$_FILES["image"];
-	$instructions=$_POST["instructions"];
-	Connexion::ajouterRecette($pdo,$nom,$instructions,1,$fichier);
-}
 
-/*
 $commande="SELECT origine_id as id
 FROM recette
 WHERE recette_id=$id;";

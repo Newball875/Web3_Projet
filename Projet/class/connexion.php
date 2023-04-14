@@ -71,6 +71,14 @@ class Connexion{
 		return $results[0]->instructions;
 	}
 
+	public static function prendreTousIngredients(PDO $pdo):array{
+		$commande="SELECT nom
+		FROM ingredient;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results;
+	}
 	
 	public static function prendreImageIngredient(pdo $pdo, int $id){
 		$commande="SELECT nom,image
