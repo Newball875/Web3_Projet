@@ -71,6 +71,17 @@ class Connexion{
 		return $results[0]->instructions;
 	}
 
+	
+	public static function prendreImageIngredient(pdo $pdo, int $id){
+		$commande="SELECT nom,image
+		FROM ingredient
+		WHERE ingredient_id=$id;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results[0];
+	}
+
 	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier){
 		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
 		echo $nom_dos;

@@ -7,6 +7,10 @@ $id=1;
 
 $nom=Connexion::prendreNomRecette($pdo,$id);
 echo $nom;
+$id=3;
+$tab=Connexion::prendreImageIngredient($pdo,$id);
+echo $tab->nom;
+echo "<img src='ressources/img/ingredient/$tab->image'>";
 ?>
 
 <form action="test.php" method="POST" enctype="multipart/form-data">

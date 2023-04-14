@@ -30,7 +30,7 @@ $id=$_GET["id"];
         <div class="neon">
             <div class="image"> <?php
                 $results=Connexion::prendreImageRecette($pdo,$id);
-                echo "<img src='$chemin_image"."$results->image' alt='$results->nom'>";
+                echo "<img src='$chemin_image"."/recettes/"."$results->image' alt='$results->nom'>";
             ?>
             </div>
             <div class="nom">
