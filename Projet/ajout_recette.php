@@ -29,7 +29,7 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 	    <div id="infos">
 		    <label for="le_fichier" class="form_label">Uploader une recette :</label>
 		    <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
-    		<input type="text" class="form-control" id="instructions" name="instructions" placeholder="Instructions">
+            <textarea id="instructions" name="instructions" rows="5" cols="33"></textarea>
 	    	<input type="file" class="form-control" id="image" name="image">
 	    </div>
         <div>
