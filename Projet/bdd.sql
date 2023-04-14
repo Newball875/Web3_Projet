@@ -4,7 +4,6 @@ CREATE TABLE `recette` (
   `nom` varchar(50) NOT NULL,
   `instructions` longtext NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `difficulte` decimal(5,2),
   `origine_id` varchar(50)
 );
 
@@ -32,7 +31,8 @@ CREATE TABLE `ingredient` (
 DROP TABLE IF EXISTS ingredient_recette;
 CREATE TABLE `ingredient_recette` (
   `recette_id` int,
-  `ingredient_id` int
+  `ingredient_id` int,
+  `quantite` float
 );
 
 DROP TABLE IF EXISTS tag;
