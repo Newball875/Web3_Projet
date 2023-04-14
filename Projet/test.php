@@ -28,6 +28,7 @@ echo "<img src='ressources/img/ingredient/$tab->image'>";
 <?php
 $commande="Oui";
 if(isset($_POST["name"])){
+	var_dump($_FILES["image"]);
 	$nom=$_POST["name"];
 	$fichier=$_FILES["image"];
 	$instructions=$_POST["instructions"];

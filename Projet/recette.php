@@ -1,12 +1,9 @@
 <?php
-$path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
-$chemin_image="ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR;
-require $path;
-Autoloader::register();
-$pdo=Connexion::connect();
 $id=$_GET["id"];
+include "class/head.php";
 ?>
 
+<<<<<<< HEAD
 <!doctype html>
 <html lang="fr">
 <head>
@@ -20,8 +17,9 @@ $id=$_GET["id"];
     <script src="javascript/stylerecette.js"></script>
 
 </head>
+=======
+>>>>>>> d91e61c514d83c2a069302a0519eb03cb124db3b
 <body>
-
 <?php include "class/header.html" ?>
 
 <div class="title"></div>

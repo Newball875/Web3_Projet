@@ -83,8 +83,7 @@ class Connexion{
 	}
 
 	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier){
-		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
-		echo $nom_dos;
+		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recette".DIRECTORY_SEPARATOR;
 		$nom_fic=$fichier["name"];
 		$nom_final=$nom_dos.$fichier["name"];
 		move_uploaded_file($fichier["tmp_name"],$nom_final);
@@ -94,4 +93,52 @@ class Connexion{
 		$statement = $pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 	}
+
+    public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
+        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
+        echo $nom_dos;
+        $nom_fic=$fichier["name"];
+        $nom_final=$nom_dos.$fichier["name"];
+        move_uploaded_file($fichier["tmp_name"],$nom_final);
+
+        $commande="INSERT INTO ingredient(nom,type,ingredient_id,image)
+		VALUES('$nom','$type',$id,'$nom_fic');";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function ajouterOrigine(PDO $pdo, string $nom, string $description, int $id ,array $fichier){
+        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."test".DIRECTORY_SEPARATOR;
+        echo $nom_dos;
+        $nom_fic=$fichier["name"];
+        $nom_final=$nom_dos.$fichier["name"];
+        move_uploaded_file($fichier["tmp_name"],$nom_final);
+
+        $commande="INSERT INTO origine(nom,description,origine_id,image)
+		VALUES('$nom','$description',$id,'$nom_fic');";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function ajouterTag(PDO $pdo, string $nom, int $id){
+        $commande="INSERT INTO origine(nom,tag_id)
+		VALUES('$nom',$id);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function lierIngredientRecette(PDO $pdo, int $ing_id, int $recette_id, float $quantite){
+        $commande="INSERT INTO ingredient_recette(recette_id,ingredient_id,quantite)
+		VALUES($recette_id,$ing_id,$quantite);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function lierTagRecette(PDO $pdo, int $tag_id, int $recette_id){
+        $commande="INSERT INTO tag_recette(recette_id,tag_id)
+		VALUES($recette_id,$tag_id);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
 }
