@@ -14,33 +14,29 @@
         return conteneur
     }
 
-    let ajouterOptionSelect(conteneur,value){
+    let ajouterOptionSelect = function(conteneur,value){
         let option = document.createElement("option");
         option.value = value;
+        option.innerHTML = value;
 
+        conteneur.appendChild(option);
     }
+
     let genererContenuDivIngredient = function(conteneur){
         let label = document.createElement("label");
-        label.innerHTML = "Ingrédient";
+        label.innerHTML = "Ingredient";
 
         let select = document.createElement("select");
         select.name = label.innerHTML;
 
         let option = document.createElement("option");
-        option.selected = true;
+        option.innerHTML = "Choisissez";
         option.disabled = true;
 
+        select.appendChild(option)
 
-        // <select name="pay" className="form-control">
-        //     <option selected disabled>Choisissez...</option>
-        //     <option value="carte">Carte</option>
-        //     <option value="paypal">Paypal</option>
-        // </select>
-
-        conteneur.appendChild(h1_ingredient)
-        conteneur.appendChild(input_nom_ingredient)
-        conteneur.appendChild(input_type_ingredient)
-        conteneur.appendChild(input_image_ingredient)
+        conteneur.appendChild(label)
+        conteneur.appendChild(select)
     }
 
     let creerDivIngredient = function(){
