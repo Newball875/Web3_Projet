@@ -79,6 +79,7 @@
             supprimerIngredient(conteneur)
             console.log(liste_ingredients.length)
             console.log(liste_ingredients)
+            bouton_moins.preventDefault()
         })
 
         bouton_plus.addEventListener('click',function (){
