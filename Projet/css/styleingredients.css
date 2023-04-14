@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive ;
+    font-weight: bold;
+    color: white;
+}
+
+html, body{
+    height: 100% ;
+    margin: 0px;
+    background: url("../ressources/img/fond.jpg");
+    background-size: 1500px ;
+    background-position: center;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header .nav-content{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    background: black;
+}
+
+header .headerdroite2{
+    padding-left: 73%;
+}
+
+.navbar-brand {
+    text-decoration: none;
+}
+
+.origine{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.image{
+    float: left;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.image img{
+    height: 100px;
+    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+}
+
+.neon{
+    float: left ;
+    margin-left: 50%;
+    margin-top: 5% ;
+    margin-bottom: 5% ;
+    width : 20% ;
+    padding: 1% ;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: black;
+    color: white;
+}
+
+.bouton{
+    float: left;
+    margin-top: 40% ;
+    margin-left: 35% ;
+}
+
+.fenetre{
+    float:left;
+    margin: 5% ;
+    width : 20% ;
+    padding: 1% ;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: rosybrown;
+    color: white;
+}
+
+.nom{
+    float: right;
+    margin-left: 10%;
+    margin-top: 20%;
+    margin-right: 10%;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: rosybrown;
+    color: white;
+}
+
+#content{
+    flex: 1 ;
+    background: url("../ressources/img/fond.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+#accueil{
+    width: 50%;
+    display: flex;
+    padding-left: 20%;
+    padding-bottom: 5%;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+    scrollbar-width: none;
+    background-color: transparent;
+    overflow-y: scroll;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+}
