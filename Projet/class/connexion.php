@@ -1,6 +1,6 @@
 <?php
 
-class connexion{
+class Connexion{
 	public static function connect():PDO{
 		$db_name="bdd";
 		$db_host="127.0.0.1";

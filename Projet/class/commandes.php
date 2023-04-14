@@ -1,6 +1,6 @@
 <?php
 
-class commandes{
+class Commandes{
 	public function affichage(string $mode=""){
 		switch ($mode){
 			case "image":

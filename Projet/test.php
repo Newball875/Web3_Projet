@@ -1,11 +1,11 @@
 <?php
 $path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
 require $path;
-autoloader::register();
+Autoloader::register();
 $pdo=connexion::connect();
 $id=1;
 
-$nom=connexion::prendreNomRecette($pdo,$id);
+$nom=Connexion::prendreNomRecette($pdo,$id);
 echo $nom;
 ?>
 
@@ -27,7 +27,7 @@ if(isset($_POST["name"])){
 	$nom=$_POST["name"];
 	$fichier=$_FILES["image"];
 	$instructions=$_POST["instructions"];
-	connexion::ajouterRecette($pdo,$nom,$instructions,1,$fichier);
+	Connexion::ajouterRecette($pdo,$nom,$instructions,1,$fichier);
 }
 
 /*

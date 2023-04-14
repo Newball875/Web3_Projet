@@ -2,8 +2,8 @@
 $path=getcwd().DIRECTORY_SEPARATOR."class".DIRECTORY_SEPARATOR."autoloader.php";
 $chemin_image="ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR;
 require $path;
-autoloader::register();
-$pdo=connexion::connect();
+Autoloader::register();
+$pdo=Connexion::connect();
 $id=$_GET["id"];
 ?>
 
@@ -29,19 +29,19 @@ $id=$_GET["id"];
     <div class="origine">
         <div class="neon">
             <div class="image"> <?php
-                $results=connexion::prendreImageRecette($pdo,$id);
+                $results=Connexion::prendreImageRecette($pdo,$id);
                 echo "<img src='$chemin_image"."$results->image' alt='$results->nom'>";
             ?>
             </div>
             <div class="nom">
                 <label for="name" class="form-label"><?php
-                    echo connexion::prendreNomRecette($pdo,$id);
+                    echo Connexion::prendreNomRecette($pdo,$id);
                 ?>
                 </label>
             </div>
             <div class="tag">
                 <label for="description" class="form-label"> <?php
-                $results=connexion::prendreListeTag($pdo,$id);
+                $results=Connexion::prendreListeTag($pdo,$id);
                 foreach($results as $info):
                     echo $info->tag." ";
                 endforeach;
@@ -50,7 +50,7 @@ $id=$_GET["id"];
             </div>
             <div class="fenetre">
                 <label for="name" class="form-label">Ingrédients</label> <?php
-                $results=connexion::prendreListeIngredients($pdo,$id);
+                $results=Connexion::prendreListeIngredients($pdo,$id);
                 foreach($results as $info):
                     echo "<li>$info->ingredient</li>";
                 endforeach;
@@ -64,7 +64,7 @@ $id=$_GET["id"];
             </div>
             <div class="description">
                 <label for="name" class="form-label"> <?php
-                $results=connexion::prendreInstructions($pdo,$id);
+                $results=Connexion::prendreInstructions($pdo,$id);
                 echo "<p>$results</p>";
                 ?>
                 </label>
