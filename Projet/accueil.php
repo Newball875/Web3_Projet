@@ -51,6 +51,7 @@
             <img src="ressources/img/recettes/gauffre.jpg">
             <img src="ressources/img/recettes/gauffre.jpg">
         </div>
+
 </form>
 
     <?php include "class/footer.php" ?>

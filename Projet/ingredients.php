@@ -28,9 +28,6 @@ include "class/init.php";?>
                 <label for="name" class="form-label"> Nom
                 </label>
             </div>
-            <div class="bouton">
-                <button>Envoyer</button>
-            </div>
         </div>
     </div>
 

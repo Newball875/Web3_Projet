@@ -1,4 +1,9 @@
 <?php include_once "init.php" ?>
+<?php
+if(isset($_GET["id"])){
+    $id=$_GET["id"];
+}
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -8,14 +13,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food Culture</title>
 
-    <link rel="stylesheet" href="css/stylerecherche.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/stylerecette.css">
+    <script src="js/stylerecette.js"></script>
 
 </head>
 <body>
-
 <?php include "class/header.html" ?>
 
-
+<div class="title"></div>
+<form id="accueil" method="POST" enctype="multipart/form-data">
+    <div class="origine">
+        <div class="neon">
+            <div class="nom">
+                <label for="name" class="form-label"><?php
+                    echo Connexion::ajouterOrigine($pdo,$id);
+                    ?>
+                </label>
+            </div>
+            <div class="tag">
+                <label for="description" class="form-label"> <?php
+                    $results=Connexion::prendreListeTag($pdo,$id);
+                    foreach($results as $info):
+                        echo $info->tag." ";
+                    endforeach;
+                    ?>
+                </label>
+            </div>
+            <div class="description">
+                <label for="name" class="form-label"> <?php
+                    $results=Connexion::prendreInstructions($pdo,$id);
+                    echo "<p>$results</p>";
+                    ?>
+                </label>
+            </div>
+        </div>
+    </div>
+</form>
 
 <?php include "class/footer.php" ?>
+
+</body>
+</html>
