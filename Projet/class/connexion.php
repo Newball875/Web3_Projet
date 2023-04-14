@@ -119,4 +119,26 @@ class Connexion{
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
+
+    public static function ajouterTag(PDO $pdo, string $nom, int $id){
+        $commande="INSERT INTO origine(nom,tag_id)
+		VALUES('$nom',$id);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function lierIngredientRecette(PDO $pdo, int $ing_id, int $recette_id, float $quantite){
+        $commande="INSERT INTO ingredient_recette(recette_id,ingredient_id,quantite)
+		VALUES($recette_id,$ing_id,$quantite);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+    public static function lierTagRecette(PDO $pdo, int $tag_id, int $recette_id){
+        $commande="INSERT INTO tag_recette(recette_id,tag_id)
+		VALUES($recette_id,$tag_id);";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
 }
