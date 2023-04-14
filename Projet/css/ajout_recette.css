@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive ;
+    font-weight: bold;
+    color: white;
+}
+
+html, body{
+    height: 100% ;
+    margin: 0px;
+    background: url("../ressources/img/fond.jpg");
+    background-size: 100% ;
+    background-position: center;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header .nav-content{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    background: black;
+}
+
+header .headerdroite2{
+    padding-left: 75%;
+}
+
+.navbar-brand{
+    text-decoration: none;
+}
+
+#recherche{
+    color: black ;
+}
+
+#content{
+    flex: 1 ;
+    background: url("../ressources/img/fond.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.title{
+    height: 100px ;
+    display: flex;
+    align-items: center;
+
+    font-size: 2em;
+    color: white;
+}
+
+.boutons{
+    float: left;
+    margin-left: 50%;
+    margin-right: 25%;
+    margin-top: 1%;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+}
+
+.liste-ingrédients{
+    float: left;
+    margin-left: 25% ;
+    margin-right: 25% ;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: white;
+    padding : 1em;
+}
+
+#form-ingredient{
+    width: 50%;
+    display: flex;
+    padding-left: 25%;
+    padding-right: 25%;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+}
+
+.error{
+    background: lightpink;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+}
+
+
+
