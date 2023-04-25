@@ -6,6 +6,8 @@ let liste_ingredients = []
 let bouton_moins = undefined
 let bouton_plus = undefined
 
+let i=1
+
 let creerInput = function(type_attribut,class_attribut,name_attribut,placeholder_attribut){
 	let conteneur = document.createElement("input")
 	conteneur.type = type_attribut
@@ -26,7 +28,7 @@ let ajouterOptionSelect = function(conteneur,value){
 
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
-	select.name = "ingredients";
+	select.name = "ingredients"+i;
 	select.class="menu_ingredient";
 
 	let option = document.createElement("option");
@@ -40,7 +42,7 @@ let genererContenuDivIngredient = function(conteneur){
 	foreach($tab_ingredients as $ingredient){ ?>
 		choix=document.createElement("option");
 		choix.innerHTML="<?=$ingredient->nom?>";
-		choix.value="<?=$ingredient->nom?>";
+		choix.value="<?=$ingredient->id?>";
 		select.appendChild(choix)
 		<?php
 	}
@@ -48,10 +50,11 @@ let genererContenuDivIngredient = function(conteneur){
 
 	let input=document.createElement("input");
 	input.type="number";
-	input.name="quantite";
+	input.name="quantite"+i;
 
 	conteneur.appendChild(select)
 	conteneur.appendChild(input)
+	i=i+1;
 }
 
 let creerDivIngredient = function(){

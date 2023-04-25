@@ -1,6 +1,25 @@
 <?php include_once "class/init.php";
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
+if(isset($_POST) and sizeof($_POST)!=0){
+    $i=0;
+    $liste_ingredients=[];
+    $liste_quantite=[];
+    $nom_liste="ingredients".$i;
+    while(isset($_POST[$nom_liste])){
+        $liste_ingredients[$i]=$_POST[$nom_liste];
+        $liste_quantite[$i]=$_POST["quantite".$i];
+        $i=$i+1;
+        $nom_liste="ingredients".$i;
+    }
+    $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"],1,$_FILES["image"]);
+    $i=0;
+    while($i<sizeof($liste_ingredients)){
+        $ing_id=$liste_ingredients[$i];
+        Connexion::lierIngredientRecette($pdo,$ing_id,$recette_id, $liste_quantite[$i]);
+        $i=$i+1;
+    }
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -39,15 +58,15 @@ $tab_ingredients=Connexion::prendreTousIngredients($pdo);
         <div id="liste-ingredients">
             <h1>Ingrédients</h1>
             <div>
-            <select class="menu_ingredient" name="ingredients">
+            <select class="menu_ingredient" name="ingredients0">
                 <option value="" disabled>Ingrédients</option>
                 <?php
                 foreach($tab_ingredients as $ingredient){
-                    echo "<option value='$ingredient->nom'>$ingredient->nom</option>";
+                    echo "<option value='$ingredient->id'>$ingredient->nom</option>";
                 }
                 ?>
             </select>
-            <input type="number" class="form-control" name="quantite">
+            <input type="number" class="form-control" name="quantite0">
             </div>
         </div>
 	    <div id="bouton_final">

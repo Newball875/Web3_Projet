@@ -72,7 +72,7 @@ class Connexion{
 	}
 
 	public static function prendreTousIngredients(PDO $pdo):array{
-		$commande="SELECT nom
+		$commande="SELECT nom,ingredient_id as id
 		FROM ingredient;";
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
@@ -90,7 +90,7 @@ class Connexion{
 		return $results[0];
 	}
 
-	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier){
+	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier):int{
 		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
 		$nom_fic=$fichier["name"];
 		$nom_final=$nom_dos.$fichier["name"];
@@ -99,6 +99,14 @@ class Connexion{
 		VALUES('$nom','$instructions',$id,'$nom_fic');";
 		$statement = $pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
+
+		$commande="SELECT recette_id as id
+		FROM recette
+		WHERE nom='$nom' and instructions='$instructions' and origine_id=$id and image='$nom_fic';";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results[0]->id;
 	}
 
     public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
