@@ -1,7 +1,8 @@
 <?php include_once "class/init.php";
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
-if(isset($_POST) and sizeof($_POST)!=0){
+$tab_origine=Connexion::prendreTousOrigines($pdo);
+if(sizeof($_POST)>0){
     $i=0;
     $liste_ingredients=[];
     $liste_quantite=[];
@@ -12,7 +13,7 @@ if(isset($_POST) and sizeof($_POST)!=0){
         $i=$i+1;
         $nom_liste="ingredients".$i;
     }
-    $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"],1,$_FILES["image"]);
+    $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"],$_POST["origine"],$_FILES["image"]);
     $i=0;
     while($i<sizeof($liste_ingredients)){
         $ing_id=$liste_ingredients[$i];
@@ -67,6 +68,19 @@ if(isset($_POST) and sizeof($_POST)!=0){
                 ?>
             </select>
             <input type="number" class="form-control" name="quantite0">
+            </div>
+        </div>
+        <div id="choix-origine">
+            <h1>Origine</h1>
+            <div>
+            <select class="origine" name="origine">
+                <option value="" disabled>Origine</option>
+                <?php
+                foreach($tab_origine as $media){
+                    echo "<option value='$media->id'>$media->nom</option>";
+                }
+                ?>
+            </select>
             </div>
         </div>
 	    <div id="bouton_final">

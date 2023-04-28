@@ -79,6 +79,15 @@ class Connexion{
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
 		return $results;
 	}
+
+	public static function prendreTousOrigines(PDO $pdo):array{
+		$commande="SELECT nom,origine_id as id
+		FROM origine;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results;
+	}
 	
 	public static function prendreImageIngredient(pdo $pdo, int $id){
 		$commande="SELECT nom,image
@@ -151,5 +160,4 @@ class Connexion{
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
-
 }
