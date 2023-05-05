@@ -4,7 +4,18 @@ $liste_recherche=[];
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_tags=Connexion::prendreTousTags($pdo);
 if(isset($_POST["recherche"])){
-    $liste_recherche=Connexion::rechercheRecette($pdo,$_POST["recherche"]);
+    $liste_ingredients=[];
+    $liste_tags=[];
+    while(isset($_POST["ingredients".$i])){
+        array_push($liste_ingredients,$_POST["ingredients".$i]);
+        $i=$i+1;
+    }
+    $i=0;
+    while(isset($_POST["tags".$i])){
+        array_push($liste_tags,$_POST["tags".$i]);
+        $i=$i+1;
+    }
+    $liste_recherche=Connexion::rechercheRecette($pdo,$_POST["recherche"],$liste_ingredients,$liste_tags);
 }else{
     $_POST["recherche"]="";
 }

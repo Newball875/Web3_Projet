@@ -170,8 +170,39 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
 
-	public static function rechercheRecette(PDO $pdo, string $nom):array{
-		$commande="SELECT recette_id as id,nom,image FROM recette WHERE nom LIKE '%$nom%';";
+	public static function rechercheRecette(PDO $pdo, string $nom, array $liste_ingredients, array $liste_tags):array{
+		$commande="SELECT DISTINCT(recette.recette_id) as id,nom,image
+		FROM recette,ingredient_recette,tag_recette
+		WHERE nom LIKE '%$nom%'";
+		$i=0;
+		if(sizeof($liste_ingredients)>0){
+			$commande_ingredients=" AND id=ingredient_recette.recette_id AND (";
+			while($i<sizeof($liste_ingredients)){
+				$commande_ingredients=$commande_ingredients+" $liste_ingredients[$i]=ingredient_recette.ingredient_id";
+				$i=$i+1;
+				if($i!=sizeof($liste_ingredients)){
+					$commande_ingredients=$commande_ingredients+" OR";
+				}
+			}
+			$commande_ingredients=$commande_ingredients+")";
+			$commande=$commande+$commande_ingredients;
+		}
+
+		$i=0;
+		if(sizeof($liste_tags)>0){
+			$commande_tags=" AND recette.recette_id=tag_recette.recette_id AND ";
+			while($i<sizeof($liste_tags)){
+				$aux="".$liste_tags[$i]."=tag_recette.tag_id";
+				$commande_tags=$commande_tags." ".$aux;
+				$i=$i+1;
+				if($i!=sizeof($liste_tags)){
+					$commande_tags=$commande_tags." OR";
+				}
+			}
+			$commande=$commande.$commande_tags;
+		}
+		$commande=$commande.";";
+		echo $commande;
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
