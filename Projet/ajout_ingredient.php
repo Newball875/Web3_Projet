@@ -34,6 +34,7 @@ $tab_ingredients= Connexion::ajouterIngredient($pdo,);
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'ingrédient">
             <input type="text" class="form-control" id="type" name="type" placeholder="type">
             <input type="file" class="form-control" id="image" name="image">
+            <input type="text" class="form-control" id="tag" name="tag" placeholder="tag">
         </div>
     </form>
 </div>

@@ -126,7 +126,6 @@ header .headerdroite2{
 }
 
 .menu_ingredient{
-
     color: black;
 }
 
@@ -181,6 +180,14 @@ header .headerdroite2{
 
 .error{
     background: lightpink;
+}
+
+.none{
+    display: none;
+}
+
+.initial{
+    display: initial
 }
 
 footer{
