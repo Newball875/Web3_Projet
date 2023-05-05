@@ -183,6 +183,14 @@ header .headerdroite2{
     background: lightpink;
 }
 
+.none{
+    display: none;
+}
+
+.initial{
+    display: initial
+}
+
 footer{
     height: 5%;
     position:absolute;
