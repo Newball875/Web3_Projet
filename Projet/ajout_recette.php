@@ -13,9 +13,7 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php
-    include_once "javascript/ajout_recette_js.php";
-    ?>
+    <?php include_once "javascript/ajout_recette_js.php"; ?>
 
 </head>
 <body>
@@ -33,26 +31,28 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
             <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
             <input type="file" class="form-control" id="image" name="image">
         </div>
-        <div id="liste-ingredients">
-            <h1>Ingrédients</h1>
-            <div>
-                <select class="menu_ingredient" name="ingredients0">
-                    <option value="">Ingrédients</option>
-                </select>
-                <input type="number" class="form-control" name="quantite0">
+        <div class="liste">
+            <div id="liste-ingredients">
+                <h1>Ingrédients</h1>
+                <div>
+                    <select class="menu_ingredient" name="ingredients0">
+                        <option value="">Ingrédients</option>
+                    </select>
+                    <input type="number" class="form-control" name="quantite0">
+                </div>
             </div>
-        </div>
-        <div id="choix-origine">
-            <h1>Origine</h1>
-            <div>
-                <select class="origine" name="origine">
-                    <option value="" disabled>Origine</option>
-                    <?php
-                    foreach($tab_origine as $media){
-                        echo "<option value='$media->id'>$media->nom</option>";
-                    }
-                    ?>
-                </select>
+            <div id="choix-origine">
+                <h1>Origine</h1>
+                <div>
+                    <select class="origine" name="origine">
+                        <option value="" disabled>Origine</option>
+                        <?php
+                        foreach($tab_origine as $media){
+                            echo "<option value='$media->id'>$media->nom</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
             </div>
         </div>
         <div id="bouton_final">
