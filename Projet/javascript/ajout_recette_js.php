@@ -35,6 +35,7 @@ let insererIngredientBdd = function(conteneur){
             choix=document.createElement("option");
             choix.innerHTML="<?=$ingredient->nom?>";
             choix.value="<?=$ingredient->id?>";
+            choix.classList.toggle("menu_ingredient");
             choix.addEventListener('click',function (){
                 disabledIngredient();
             })
