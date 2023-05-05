@@ -29,20 +29,22 @@ if(isset($_GET["id"])){
                 echo "<img src='$chemin_image"."/recettes/"."$results->image' alt='$results->nom'>";
             ?>
             </div>
-            <div class="nom">
-                <label for="name" class="form-label"><?php
-                    echo Connexion::prendreNomRecette($pdo,$id);
-                ?>
-                </label>
-            </div>
-            <div class="tag">
-                <label for="description" class="form-label"> <?php
-                $results=Connexion::prendreListeTag($pdo,$id);
-                foreach($results as $info):
-                    echo $info->tag." ";
-                endforeach;
-                ?>
-                </label>
+            <div class="informations">
+                <div class="nom">
+                    <label for="name" class="form-label"><?php
+                        echo Connexion::prendreNomRecette($pdo,$id);
+                    ?>
+                    </label>
+                </div>
+                <div class="tag">
+                    <label for="description" class="form-label"> <?php
+                    $results=Connexion::prendreListeTag($pdo,$id);
+                    foreach($results as $info):
+                        echo $info->tag." ";
+                    endforeach;
+                    ?>
+                    </label>
+                </div>
             </div>
             <div class="fenetre">
                 <label for="name" class="form-label">Ingrédients</label> <?php

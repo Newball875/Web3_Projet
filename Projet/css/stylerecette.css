@@ -165,3 +165,12 @@ footer{
     background: black;
     overflow: hidden;
 }
+
+.informations{
+    display: flex;
+    flex-direction: column;
+}
+
+.tag{
+    order: 2;
+}
