@@ -1,10 +1,18 @@
+DROP TABLE IF EXISTS origine;
+CREATE TABLE `origine` (
+   `origine_id` int UNIQUE NOT NULL AUTO_INCREMENT,
+   `nom` varchar(50) NOT NULL,
+   `description` longtext,
+   `image` varchar(255) DEFAULT NULL
+);
+
 DROP TABLE IF EXISTS recette;
 CREATE TABLE `recette` (
   `recette_id` int UNIQUE NOT NULL AUTO_INCREMENT,
   `nom` varchar(50) NOT NULL,
   `instructions` longtext NOT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `origine_id` varchar(50)
+  `origine_id` int
 );
 
 DROP TABLE IF EXISTS ustensile;
@@ -47,13 +55,8 @@ CREATE TABLE `tag_recette` (
   `recette_id` int
 );
 
-DROP TABLE IF EXISTS origine;
-CREATE TABLE `origine` (
-  `origine_id` int UNIQUE NOT NULL AUTO_INCREMENT,
-  `nom` varchar(50) NOT NULL,
-  `description` longtext,
-  `image` varchar(255) DEFAULT NULL
-);
+
+
 
 
 ALTER TABLE `origine`

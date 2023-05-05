@@ -26,7 +26,7 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
     <p>Nouvelle recette</p>
 </div>
 <div>
-    <form action="update_recette.php" method="POST" enctype="multipart/form-data">
+    <form action="update_recette.php" method="POST" enctypew="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Uploader une recette :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
@@ -65,12 +65,12 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
             </div>
         </div>
         <div id="bouton_final">
-            <button type="submit" name="ok" value="1">Envoyer</button>
+            <button type="submit" name="ok" value="1" class="envoyer">Envoyer</button>
         </div>
     </form>
     <div id="boutons">
-        <button id="moins">-</button>
-        <button id="plus">+</button>
+        <button id="moins" class="moins">-</button>
+        <button id="plus" class="plus">+</button>
     </div>
 </div>
 
