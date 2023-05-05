@@ -12,9 +12,11 @@ while(isset($_POST[$nom_liste])){
     $nom_liste="ingredients".$i;
 }
 $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"],$_POST["origine"],$_FILES["image"]);
+
 $i=0;
 while($i<sizeof($liste_ingredients)){
-    $ing_id=$liste_ingredients[$i];
+    $ing_id=$liste_ingredients[$i]; // ici ça ne donne pas l'id de l'ingredient en (int)
+
     Connexion::lierIngredientRecette($pdo,$ing_id,$recette_id, $liste_quantite[$i]);
     $i=$i+1;
 }
