@@ -1,4 +1,4 @@
-<?php include "init.php" ?>
+<?php include "class/init.php" ?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<?php include "class/header.html" ?>
+<?php include "class/header.php" ?>
 
 <div class="title"></div>
 <form id="recherche" method="POST" enctype="multipart/form-data">

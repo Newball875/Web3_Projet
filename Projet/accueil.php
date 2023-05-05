@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<?php include "class/header.html" ?>
+<?php include "class/header.php" ?>
 
 <div class="title"></div>
 <form id="accueil" method="POST" enctype="multipart/form-data">

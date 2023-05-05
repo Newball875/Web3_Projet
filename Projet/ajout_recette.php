@@ -20,7 +20,7 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
 </head>
 <body>
 
-<?php include "class/header.html"?>
+<?php include "class/header.php"?>
 
 <div id="titre_ajout">
     <p>Nouvelle recette</p>
