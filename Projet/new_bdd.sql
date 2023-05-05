@@ -26,8 +26,10 @@ CREATE TABLE `ustensile` (
 
 DROP TABLE IF EXISTS ustensile_recette;
 CREATE TABLE `ustensile_recette` (
-    `recette_id` int,
-    `ustensile_id` int
+    `recette_id` int REFERENCES `recette`(`recette_id`),
+    `ustensile_id` int REFERENCES `ustensile`(`ustensile_id`),
+
+    PRIMARY KEY (`recette_id`,`ustensile_id`)
 );
 
 DROP TABLE IF EXISTS ingredient;
@@ -45,8 +47,6 @@ CREATE TABLE `ingredient_recette` (
     `quantite` float,
 
     PRIMARY KEY (`recette_id`,`ingredient_id`)
-    #     FOREIGN KEY (`ingredient_id`) REFERENCES `ingredient`(`ingredient_id`),
-    #     FOREIGN KEY (`recette_id`) REFERENCES `recette`(`recette_id`)
 );
 
 DROP TABLE IF EXISTS tag;
@@ -57,26 +57,15 @@ CREATE TABLE `tag` (
 
 DROP TABLE IF EXISTS tag_recette;
 CREATE TABLE `tag_recette` (
-    `tag_id` int,
-    `recette_id` int
+    `tag_id` int REFERENCES `tag`(`tag_id`),
+    `recette_id` int REFERENCES `recette`(`recette_id`),
+
+    PRIMARY KEY (`tag_id`,`recette_id`)
 );
 
 
 
-ALTER TABLE `ustensile_recette`
-    ADD CONSTRAINT `pk_ustensile_recette` PRIMARY KEY (`recette_id`,`ustensile_id`),
-    ADD CONSTRAINT `fk_ustensile` FOREIGN KEY (`ustensile_id`) REFERENCES `ustensile`(`ustensile_id`),
-    ADD CONSTRAINT `fk_ustensile_recette` FOREIGN KEY (`recette_id`) REFERENCES `recette`(`recette_id`);
 
-# ALTER TABLE `ingredient_recette`
-#   ADD CONSTRAINT `pk_ingredient_recette` PRIMARY KEY (`recette_id`,`ingredient_id`),
-#   ADD CONSTRAINT `fk_ingredient` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredient`(`ingredient_id`),
-#   ADD CONSTRAINT `fk_ingredient_recette` FOREIGN KEY (`recette_id`) REFERENCES `recette`(`recette_id`);
-
-ALTER TABLE `tag_recette`
-    ADD CONSTRAINT `pk_tag_recette` PRIMARY KEY (`tag_id`,`recette_id`),
-    ADD CONSTRAINT `fk_tag` FOREIGN KEY (`tag_id`) REFERENCES `tag`(`tag_id`),
-    ADD CONSTRAINT `fk_recette` FOREIGN KEY (`recette_id`) REFERENCES `recette`(`recette_id`);
 
 
 

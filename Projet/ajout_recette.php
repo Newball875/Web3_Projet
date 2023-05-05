@@ -42,11 +42,6 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
             <div>
                 <select class="menu_ingredient" name="ingredients0">
                     <option value="" disabled>Ingrédients</option>
-                    <?php
-                    foreach($tab_ingredients as $ingredient){
-                        echo "<option value='$ingredient->id'>$ingredient->nom</option>";
-                    }
-                    ?>
                 </select>
                 <input type="number" class="form-control" name="quantite0">
             </div>

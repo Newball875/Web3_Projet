@@ -1,7 +1,8 @@
 <script>
 (function (){
 
-let liste_ingredients = []
+let liste_ingredients = [];
+let liste_options_ingredient = [];
 
 let bouton_moins = undefined
 let bouton_plus = undefined
@@ -25,6 +26,27 @@ let ajouterOptionSelect = function(conteneur,value){
 	conteneur.appendChild(option);
 }
 
+let insererIngredientBdd = function(conteneur){
+    let choix;
+    let options_ingredient = [];
+
+    <?php
+        foreach($tab_ingredients as $ingredient){ ?>
+            choix=document.createElement("option");
+            choix.innerHTML="<?=$ingredient->nom?>";
+            choix.value="<?=$ingredient->id?>";
+            choix.addEventListener('click',function (){
+                disabledIngredient();
+            })
+            conteneur.appendChild(choix)
+            options_ingredient.push(choix)
+        <?php
+        }
+    ?>
+    console.log(options_ingredient)
+    liste_options_ingredient.push(options_ingredient)
+}
+
 
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
@@ -36,17 +58,7 @@ let genererContenuDivIngredient = function(conteneur){
 	option.disabled = true;
 	select.appendChild(option)
 
-	let choix;
-
-	<?php
-	foreach($tab_ingredients as $ingredient){ ?>
-		choix=document.createElement("option");
-		choix.innerHTML="<?=$ingredient->nom?>";
-		choix.value="<?=$ingredient->id?>";
-		select.appendChild(choix)
-		<?php
-	}
-	?>
+	insererIngredientBdd(select);
 
 	let input=document.createElement("input");
 	input.type="number";
@@ -81,12 +93,24 @@ let ajouterIngredient = function (conteneur){
 	conteneur.appendChild(nouvel_ingredient)
 }
 
+let disabledIngredient = function(){
+    liste_ingredients.forEach(ingredient => {
+        // console.log(ingredient.firstChild.nextElementSibling)
+        let conteneur = ingredient.firstChild
+        console.log(conteneur.value)
+    })
+}
+
 document.addEventListener('DOMContentLoaded',function(){
-	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild
+	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild.nextElementSibling
 	liste_ingredients.push(li_premier_ingredient)
 	console.log(liste_ingredients.length)
+    console.log(liste_ingredients)
+
+    insererIngredientBdd(liste_ingredients[0].firstChild.nextElementSibling)
 
 	let conteneur = document.querySelector("#liste-ingredients")
+
 
 	bouton_moins = document.querySelector("#moins")
 	bouton_plus = document.querySelector("#plus")
@@ -103,6 +127,7 @@ document.addEventListener('DOMContentLoaded',function(){
 		ajouterIngredient(conteneur)
 		console.log(liste_ingredients.length)
 		console.log(liste_ingredients)
+        disabledIngredient()
 	})
 
 })
