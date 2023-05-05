@@ -168,4 +168,8 @@ class Connexion{
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
 		return $results;
 	}
+
+	/*public static function rechercheUniqueIngredient(PDO $pdo, string $nom):array{
+		$commande="SELECT ingredient.ingredient_id as id, ";
+	}*/
 }

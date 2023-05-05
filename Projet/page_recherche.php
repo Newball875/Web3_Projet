@@ -5,12 +5,13 @@ if(!isset($_POST["recherche"])){
 }
 $liste_recherche=Connexion::rechercheRecette($pdo, $_POST["recherche"]);
 $liste_ingredients=[];
+$liste_ingredient_unique=[];
 $i=0;
-var_dump(sizeof($liste_recherche));
 while($i < sizeof($liste_recherche)){
     $liste_ingredients[$i]=Connexion::prendreListeIngredients($pdo, $liste_recherche[$i]->id);
     $i=$i+1;
 }
+$liste
 ?>
 <!doctype html>
 <html lang="fr">
@@ -36,13 +37,27 @@ while($i < sizeof($liste_recherche)){
         <p><?php echo $_POST["recherche"];?>
     </div>
     <div class="filtre">
-        <label for="name" class="form-label">Filtre</label>
+        <label for="name" class="form-label">Filtres</label>
+        <div class="filtre-tag">
+
+        </div>
+        <div class="filtre-ingredient">
+            <ul>
+            <?php
+            $i=0;
+            while($i<sizeof($liste_ingredient_unique)){
+                echo "<li>".$liste_ingredient_unique[$i]."</li>";
+                $i=$i+1;
+            }
+            ?>
+            </ul>
+        </div>
     </div>
 
     <div class="page">
         <?php
         $i=0;
-        while($i < sizeof($liste_recherche)){
+        while($i<sizeof($liste_recherche)){
             $recette=$liste_recherche[$i];
             $j=0;
             echo "<a href=recette.php?id=$recette->id>";
@@ -55,7 +70,7 @@ while($i < sizeof($liste_recherche)){
                 echo $ingredient->quantite."x ".$ingredient->ingredient;
                 $j=$j+1;
                 if($j!=sizeof($liste_ingredients[$i])){
-                    echo ",";
+                    echo ", ";
                 }
             }
             echo "</p>";

@@ -39,6 +39,7 @@ header .headerdroite2{
 .recette{
     display : flex;
     margin-top: 5px;
+    text-decoration: none;
 }
 
 .recette img{

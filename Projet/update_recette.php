@@ -1,5 +1,7 @@
 <?php include_once "class/init.php";
 $i=0;
+var_dump($_POST);
+var_dump($_FILES);
 $liste_ingredients=[];
 $liste_quantite=[];
 $nom_liste="ingredients".$i;
