@@ -176,16 +176,15 @@ class Connexion{
 		WHERE nom LIKE '%$nom%'";
 		$i=0;
 		if(sizeof($liste_ingredients)>0){
-			$commande_ingredients=" AND id=ingredient_recette.recette_id AND (";
+			$commande_ingredients=" AND recette.recette_id=ingredient_recette.recette_id AND ";
 			while($i<sizeof($liste_ingredients)){
-				$commande_ingredients=$commande_ingredients+" $liste_ingredients[$i]=ingredient_recette.ingredient_id";
+				$commande_ingredients=$commande_ingredients." $liste_ingredients[$i]=ingredient_recette.ingredient_id";
 				$i=$i+1;
 				if($i!=sizeof($liste_ingredients)){
-					$commande_ingredients=$commande_ingredients+" OR";
+					$commande_ingredients=$commande_ingredients." OR";
 				}
 			}
-			$commande_ingredients=$commande_ingredients+")";
-			$commande=$commande+$commande_ingredients;
+			$commande=$commande.$commande_ingredients;
 		}
 
 		$i=0;
@@ -202,7 +201,6 @@ class Connexion{
 			$commande=$commande.$commande_tags;
 		}
 		$commande=$commande.";";
-		echo $commande;
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");

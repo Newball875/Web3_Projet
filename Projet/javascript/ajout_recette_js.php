@@ -46,8 +46,8 @@ let insererIngredientBdd = function(conteneur){
 
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
-	select.name = "ingredients"+i;
 	select.classList.toggle("menu_ingredient");
+    select.name = "ingredients"+i;
 
 	let option = document.createElement("option");
 	option.innerHTML = "Ingrédients";
@@ -58,6 +58,7 @@ let genererContenuDivIngredient = function(conteneur){
 
 	let input=document.createElement("input");
 	input.type="number";
+    input.classList.add("form-control");
 	input.name="quantite"+i;
 
 	conteneur.appendChild(select)

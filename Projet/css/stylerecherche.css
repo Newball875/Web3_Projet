@@ -58,6 +58,22 @@ header .headerdroite2{
     margin-left:5px;
 }
 
+.menu_ingredient{
+    color:black;
+}
+
+.menu_tag{
+    color:black;
+}
+
+button{
+    color:black;
+}
+
+button:disabled{
+    color:white;
+}
+
 footer{
     height: 5%;
     position:absolute;
