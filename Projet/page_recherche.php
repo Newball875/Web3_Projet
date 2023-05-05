@@ -1,17 +1,15 @@
 <?php include "class/init.php";
-if(!isset($_POST["recherche"])){
-    header("Location: accueil.php");
-    exit;
-}
-$liste_recherche=Connexion::rechercheRecette($pdo, $_POST["recherche"]);
-$liste_ingredients=[];
-$liste_ingredient_unique=[];
 $i=0;
-while($i < sizeof($liste_recherche)){
-    $liste_ingredients[$i]=Connexion::prendreListeIngredients($pdo, $liste_recherche[$i]->id);
-    $i=$i+1;
+$liste_recherche=[];
+if(isset($_POST["recherche"])){
+    if(isset($_POST["tags"])){
+        
+    }
+    $liste_recherche=Connexion::rechercheRecette($pdo,$_POST["recherche"]);
+}else{
+    $_POST["recherche"]="";
 }
-$liste
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -30,59 +28,32 @@ $liste
 
 <?php include "class/header.php" ?>
 
-<div class="title"></div>
-<form id="recherche" method="POST" enctype="multipart/form-data">
-    <div class="mot">
-        <label for="name" class="form-label">Mot recherché</label>
-        <p><?php echo $_POST["recherche"];?>
-    </div>
-    <div class="filtre">
-        <label for="name" class="form-label">Filtres</label>
-        <div class="filtre-tag">
-
+<div class="titre-recherche">
+    RECHERCHE
+</div>
+<div id="barre-recherche">
+    <form class="form" action="page_recherche.php" method="POST" enctype="multipart/form-data">
+        <input type="text" class="form-control" id="recherche" name="recherche" placeholder="Nom de la recette" value="<?=$_POST["recherche"]?>">
+        <div id="filtre">
+            <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Ingrédients">
+            <input type="text" class="form-control" id="tags" name="tags" placeholder="Tags">
         </div>
-        <div class="filtre-ingredient">
-            <ul>
-            <?php
-            $i=0;
-            while($i<sizeof($liste_ingredient_unique)){
-                echo "<li>".$liste_ingredient_unique[$i]."</li>";
-                $i=$i+1;
-            }
-            ?>
-            </ul>
-        </div>
-    </div>
+        <button type="submit" class="envoyer">Envoyer</button>
+    </form>
+</div>
 
-    <div class="page">
-        <?php
-        $i=0;
-        while($i<sizeof($liste_recherche)){
-            $recette=$liste_recherche[$i];
-            $j=0;
-            echo "<a href=recette.php?id=$recette->id>";
-            echo '<div class="recette">';
-            echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
-            echo "<p>$recette->nom</p>";
-            echo "<p>";
-            while($j<sizeof($liste_ingredients[$i])){
-                $ingredient=$liste_ingredients[$i][$j];
-                echo $ingredient->quantite."x ".$ingredient->ingredient;
-                $j=$j+1;
-                if($j!=sizeof($liste_ingredients[$i])){
-                    echo ", ";
-                }
-            }
-            echo "</p>";
-            echo "</div>";
-            echo "</a>";
-            $i=$i+1;
-        }
-        ?>
-    </div>
-</form>
-
-<?php include "class/footer.php" ?>
+<div id="resultats-recherche"> <?php
+    foreach($liste_recherche as $recette){
+        echo "<a href='recette.php?id=$recette->id'>";
+        echo '<div class="recette">';
+        echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
+        echo "<p>$recette->nom</p>";
+        echo "</div>";
+        echo "</a>";
+    }
+?>
+</div>
+<?php include "class/footer.php"; ?>
 
 </body>
 </html>

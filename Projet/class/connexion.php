@@ -169,7 +169,4 @@ class Connexion{
 		return $results;
 	}
 
-	/*public static function rechercheUniqueIngredient(PDO $pdo, string $nom):array{
-		$commande="SELECT ingredient.ingredient_id as id, ";
-	}*/
 }
