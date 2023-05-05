@@ -2,7 +2,6 @@
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);
-var_dump($_FILES);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -27,16 +26,12 @@ var_dump($_FILES);
     <p>Nouvelle recette</p>
 </div>
 <div>
-    <form class="form" action="ajout_recette.php" method="POST" enctypew="multipart/form-data">
+    <form class="form" action="update_recette.php" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Uploader une recette :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
             <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
             <input type="file" class="form-control" id="image" name="image">
-        </div>
-        <div id="origine">
-            <label for="le_media" class="form_label" enctype="multipart/form-data">
-
         </div>
         <div id="liste-ingredients">
             <h1>Ingrédients</h1>
@@ -61,7 +56,7 @@ var_dump($_FILES);
             </div>
         </div>
         <div id="bouton_final">
-            <button type="submit" name="ok" value="1" class="envoyer">Envoyer</button>
+            <button type="submit" class="envoyer">Envoyer</button>
         </div>
     </form>
     <div id="boutons">
