@@ -69,35 +69,9 @@ header .headerdroite2{
     height: 15%;
 }
 
-#titre_ajout{
-    display: flex;
-    float: left;
-    margin-top: 5%;
-    margin-left: 43% ;
-    margin-right: 43% ;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    padding : 1em;
-    text-align: center;
-    color: black ;
-}
 
-#infos{
-    position: absolute;
-    display: flex;
-    float: left;
-    margin-left: 25% ;
-    margin-right: 25% ;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    padding : 1em;
-    color: black ;
-}
 
 #boutons{
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -112,28 +86,11 @@ header .headerdroite2{
     overflow: auto;
 }
 
-#liste-ingredients{
-    position: absolute;
-    float: left;
-    margin: 7% 25% auto 15% ;
-    flex-direction: column;
-    align-content: center;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    padding : 1em;
-    color: black ;
-}
-
 .menu_ingredient{
     color: black;
 }
 
 .menu_ingredient option{
-    color: black;
-}
-
-.form-control{
     color: black;
 }
 
@@ -146,7 +103,6 @@ header .headerdroite2{
 }
 
 .envoyer{
-    position: absolute;
     margin: 25% 50% 0% 0% ;
     flex-direction: column;
     align-content: center;
@@ -155,19 +111,6 @@ header .headerdroite2{
     background: cornflowerblue;
     padding : 1em;
     color: black;
-}
-
-#choix-origine{
-    position: absolute;
-    float: left;
-    margin: 7% 65%;
-    flex-direction: column;
-    align-content: center;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    padding : 1em;
-    color: black ;
 }
 
 .origine{
@@ -204,5 +147,75 @@ footer{
     color: white;
 }
 
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em ;
+}
+
+#titre_ajout {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: 40% ;
+    margin-right: 40% ;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding: 1em;
+    text-align: center;
+    color: black;
+}
+
+#infos{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black ;
+}
+
+.form-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.liste {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1em;
+}
+
+.liste-ingredients{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black ;
+}
+
+.menu_ingredient{
+    display: flex;
+    flex-direction: row;
+}
+
+#choix-origine{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black ;
+}
 
 
