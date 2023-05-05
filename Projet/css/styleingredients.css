@@ -32,6 +32,10 @@ header .headerdroite2{
     padding-left: 73%;
 }
 
+.recherche{
+    color: black ;
+}
+
 .navbar-brand {
     text-decoration: none;
 }

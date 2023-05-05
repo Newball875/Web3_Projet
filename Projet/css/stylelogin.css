@@ -37,7 +37,7 @@ header .headerdroite2{
     text-decoration: none;
 }
 
-#recherche{
+.recherche{
     color: black ;
 }
 
@@ -102,13 +102,10 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    color: black;
 }
 #login-form *{
     width: 100%;
     margin: 8px 0;
-    color: black ;
 }
 
 #error{
@@ -132,6 +129,14 @@ footer{
 
 .hidden{
     display: none;
+}
+
+.form-control{
+    color: black;
+}
+
+.envoyer{
+    color: black;
 }
 
 footer{

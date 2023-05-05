@@ -54,7 +54,7 @@
     </div>
 
     <div id="buttons">
-        <button type="submit" class="btn btn-primary">Envoyer</button>
+        <button type="submit" class="envoyer">Envoyer</button>
         <div style="width: 1em"></div>
     </div>
 

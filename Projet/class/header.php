@@ -11,7 +11,7 @@
             <div class="headerdroite2">
                 <a class="navbar-brand">
                     <div id="barre-recherche">
-                    <form id="recherche" method="POST" enctype="multipart/form-data" action="./page_recherche.php">
+                    <form class="recherche" method="POST" enctype="multipart/form-data" action="./page_recherche.php">
                         <input type="text" class="form-control" id="name-recherche" name="recherche" placeholder="Nom de la recette">
                         <div id="bouton-recherche">
                             <button type="submit" name="ok" class="send">A</button>

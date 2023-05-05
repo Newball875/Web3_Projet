@@ -38,7 +38,7 @@ header .headerdroite2{
     text-decoration: none;
 }
 
-#recherche{
+.recherche{
     color: black ;
 }
 
@@ -84,6 +84,7 @@ header .headerdroite2{
 }
 
 #infos{
+    position: absolute;
     display: flex;
     float: left;
     margin-left: 25% ;
@@ -147,7 +148,7 @@ header .headerdroite2{
 
 .envoyer{
     position: absolute;
-    margin: 30% 20% 0% 0% ;
+    margin: 25% 50% 0% 0% ;
     flex-direction: column;
     align-content: center;
     border: 2px solid lightskyblue;
