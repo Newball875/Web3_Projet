@@ -102,17 +102,6 @@ header .headerdroite2{
     color: black;
 }
 
-.envoyer{
-    margin: 25% 50% 0% 0% ;
-    flex-direction: column;
-    align-content: center;
-    border: 2px solid lightskyblue;
-    border-radius: 5px;
-    background: cornflowerblue;
-    padding : 1em;
-    color: black;
-}
-
 .origine{
     color: black;
 }
@@ -135,7 +124,6 @@ header .headerdroite2{
 
 footer{
     height: 5%;
-    position:absolute;
     bottom:0;
     width:100%;
     display: flex;
@@ -192,9 +180,10 @@ footer{
     padding: 1em;
 }
 
-.liste-ingredients{
+#liste-ingredients{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     border: 2px solid lightskyblue;
     border-radius: 5px;
     background: cornflowerblue;
@@ -209,13 +198,23 @@ footer{
 
 #choix-origine{
     display: flex;
-    flex-direction: column;
-    align-content: center;
+    flex-direction: row;
+    justify-content: center;
     border: 2px solid lightskyblue;
     border-radius: 5px;
     background: cornflowerblue;
     padding : 1em;
     color: black ;
+}
+
+.envoyer{
+    display: flex;
+    justify-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black;
 }
 
 

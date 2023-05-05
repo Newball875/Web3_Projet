@@ -32,7 +32,7 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
             <input type="file" class="form-control" id="image" name="image">
         </div>
         <div class="liste">
-            <div class="liste-ingredients">
+            <div id="liste-ingredients">
                 <h1>Ingrédients</h1>
                 <div>
                     <select class="menu_ingredient" name="ingredients0">
