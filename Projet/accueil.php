@@ -18,40 +18,42 @@
 
 <div class="title"></div>
 <form id="accueil" method="POST" enctype="multipart/form-data">
+    <div id="conteneur">
         <div class="présentation">
             <label for="name" class="form-label">Présentation</label>
         </div>
         <div class="pré-description">
             <label for="name" class="form-label">Description</label>
         </div>
-
-        <div class="defile">
-            <div class="recette-jour">
-                <a href="recette.php">
+        <div id="conteneur2">
+            <div class="defile">
+                <div class="recette-jour">
+                    <a href="recette.php">
+                        <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
                     <img src="ressources/img/recettes/gauffre.jpg">
-                </a>
-                <a href="recette.php">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="roulette">
                 <img src="ressources/img/recettes/gauffre.jpg">
-                </a>
-                <a href="recette.php">
                 <img src="ressources/img/recettes/gauffre.jpg">
-                </a>
-                <a href="recette.php">
                 <img src="ressources/img/recettes/gauffre.jpg">
-                </a>
-                <a href="recette.php">
                 <img src="ressources/img/recettes/gauffre.jpg">
-                </a>
+                <img src="ressources/img/recettes/gauffre.jpg">
             </div>
         </div>
-        <div class="roulette">
-            <img src="ressources/img/recettes/gauffre.jpg">
-            <img src="ressources/img/recettes/gauffre.jpg">
-            <img src="ressources/img/recettes/gauffre.jpg">
-            <img src="ressources/img/recettes/gauffre.jpg">
-            <img src="ressources/img/recettes/gauffre.jpg">
-        </div>
-
+    </div>
 </form>
 
     <?php include "class/footer.php" ?>
