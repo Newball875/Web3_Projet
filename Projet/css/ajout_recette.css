@@ -72,6 +72,7 @@ header .headerdroite2{
 #titre_ajout{
     display: flex;
     float: left;
+    margin-top: 5%;
     margin-left: 43% ;
     margin-right: 43% ;
     border: 2px solid lightskyblue;
@@ -99,6 +100,7 @@ header .headerdroite2{
     display: flex;
     flex-direction: column;
     align-content: center;
+    margin-top: 15%;
     overflow: auto;
 }
 
@@ -121,6 +123,11 @@ header .headerdroite2{
 }
 
 .menu_ingredient{
+
+    color: black;
+}
+
+.menu_ingredient option{
     color: black;
 }
 
@@ -137,6 +144,34 @@ header .headerdroite2{
 }
 
 .envoyer{
+    float: left;
+    margin-left: 40% ;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black;
+}
+
+#choix-origine{
+    float: left;
+    margin-left: 40% ;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black ;
+}
+
+.origine{
+    color: black;
+}
+
+.origine option{
     color: black;
 }
 
