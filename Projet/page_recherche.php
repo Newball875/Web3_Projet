@@ -1,10 +1,9 @@
 <?php include "class/init.php";
 $i=0;
 $liste_recherche=[];
+$tab_ingredients=Connexion::prendreTousIngredients($pdo);
+$tab_tags=Connexion::prendreTousTags($pdo);
 if(isset($_POST["recherche"])){
-    if(isset($_POST["tags"])){
-        
-    }
     $liste_recherche=Connexion::rechercheRecette($pdo,$_POST["recherche"]);
 }else{
     $_POST["recherche"]="";
@@ -21,7 +20,7 @@ if(isset($_POST["recherche"])){
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/stylerecherche.css">
-    <script src="js/script.js"></script>
+    <?php include_once "javascript/page_recherche_js.php"?>
 
 </head>
 <body>
@@ -35,11 +34,21 @@ if(isset($_POST["recherche"])){
     <form class="form" action="page_recherche.php" method="POST" enctype="multipart/form-data">
         <input type="text" class="form-control" id="recherche" name="recherche" placeholder="Nom de la recette" value="<?=$_POST["recherche"]?>">
         <div id="filtre">
-            <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Ingrédients">
-            <input type="text" class="form-control" id="tags" name="tags" placeholder="Tags">
+            <div id="ingredients">
+            </div>
+            <div id="tags">
+            </div>
         </div>
         <button type="submit" class="envoyer">Envoyer</button>
     </form>
+    <div id="boutons-ingredients">
+        <button id="moins_ing" class="moins">-</button>
+        <button id="plus_ing" class="plus">+</button>
+    </div>
+    <div id="boutons-tags">
+        <button id="moins_tag" class="moins">-</button>
+        <button id="plus_tag" class="plus">+</button>
+    </div>
 </div>
 
 <div id="resultats-recherche"> <?php

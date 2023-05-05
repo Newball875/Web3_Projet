@@ -80,6 +80,15 @@ class Connexion{
 		return $results;
 	}
 
+	public static function prendreTousTags(PDO $pdo):array{
+		$commande="SELECT nom,tag_id as id
+		FROM tag;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results;
+	}
+
 	public static function prendreTousOrigines(PDO $pdo):array{
 		$commande="SELECT nom,origine_id as id
 		FROM origine;";
