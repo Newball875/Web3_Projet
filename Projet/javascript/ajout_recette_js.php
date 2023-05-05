@@ -8,22 +8,15 @@ let bouton_moins = undefined
 let bouton_plus = undefined
 
 let i=1
+let nombre_ingredients = 0;
 
-let creerInput = function(type_attribut,class_attribut,name_attribut,placeholder_attribut){
-	let conteneur = document.createElement("input")
-	conteneur.type = type_attribut
-	conteneur.classList.toggle(class_attribut)
-	conteneur.name = name_attribut
-	conteneur.placeholder = placeholder_attribut
-	return conteneur
-}
-
-let ajouterOptionSelect = function(conteneur,value){
-	let option = document.createElement("option");
-	option.value = value;
-	option.innerHTML = value;
-
-	conteneur.appendChild(option);
+let compterIngredientBdd = function(){
+    <?php
+    foreach ($tab_ingredients as $ingredient){ ?>
+        nombre_ingredients++;
+        <?php
+        }
+    ?>
 }
 
 let insererIngredientBdd = function(conteneur){
@@ -36,7 +29,8 @@ let insererIngredientBdd = function(conteneur){
             choix.innerHTML="<?=$ingredient->nom?>";
             choix.value="<?=$ingredient->id?>";
             choix.classList.toggle("menu_ingredient");
-            choix.addEventListener('click',function (){
+            choix.addEventListener('click',function(){
+                conteneur.firstElementChild.disabled = true;
                 disabledIngredient();
             })
             conteneur.appendChild(choix)
@@ -44,19 +38,20 @@ let insererIngredientBdd = function(conteneur){
         <?php
         }
     ?>
-    console.log(options_ingredient)
+    // console.log(options_ingredient)
     liste_options_ingredient.push(options_ingredient)
+    // console.log(liste_options_ingredient)
 }
 
 
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
 	select.name = "ingredients"+i;
-	select.class="menu_ingredient";
+	select.classList.toggle("menu_ingredient");
 
 	let option = document.createElement("option");
 	option.innerHTML = "Ingrédients";
-	option.disabled = true;
+	option.disabled = false;
 	select.appendChild(option)
 
 	insererIngredientBdd(select);
@@ -79,6 +74,7 @@ let creerDivIngredient = function(){
 
 let supprimerIngredient = function(conteneur){
 	if(!bouton_moins.disabled){
+        bouton_plus.disabled = false;
 		conteneur.removeChild(conteneur.lastChild)
 		liste_ingredients.pop()
 		if(liste_ingredients.length === 1){
@@ -88,25 +84,56 @@ let supprimerIngredient = function(conteneur){
 }
 
 let ajouterIngredient = function (conteneur){
-	bouton_moins.disabled = false
-	let nouvel_ingredient = creerDivIngredient();
-	liste_ingredients.push(nouvel_ingredient)
-	conteneur.appendChild(nouvel_ingredient)
+    if(!(bouton_plus.disabled === true)){
+        bouton_moins.disabled = false
+        let nouvel_ingredient = creerDivIngredient();
+        liste_ingredients.push(nouvel_ingredient)
+        conteneur.appendChild(nouvel_ingredient)
+
+        // console.log(nombre_ingredients);
+        // console.log(liste_options_ingredient[0].length);
+
+        if(nombre_ingredients === liste_ingredients.length){
+            bouton_plus.disabled = true;
+        }
+    }
+
 }
 
 let disabledIngredient = function(){
+    let liste_value = []
     liste_ingredients.forEach(ingredient => {
-        // console.log(ingredient.firstChild.nextElementSibling)
-        let conteneur = ingredient.firstChild
-        console.log(conteneur.value)
+        let conteneur = ingredient.firstElementChild
+        // console.log(conteneur.value)
+        if(!(conteneur.value === "" || conteneur.value === "Ingrédients")){
+            liste_value.push(conteneur.value)
+        }
+
     })
+
+    // console.log(liste_value)
+
+    for(let i = 0; i < liste_options_ingredient.length;i++){ // pour chaque ingrédient
+        for(let j = 0; j < liste_options_ingredient[i].length;j++){
+            liste_options_ingredient[i][j].classList.remove("none")
+            liste_options_ingredient[i][j].classList.add("initial")
+            liste_options_ingredient[i][j].disabled = false;
+        }
+        for(let j = 0; j < liste_value.length; j++){
+            liste_options_ingredient[i][liste_value[j]-1].classList.remove("initial")
+            liste_options_ingredient[i][liste_value[j]-1].classList.add("none");
+            liste_options_ingredient[i][liste_value[j]-1].disabled = true;
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded',function(){
+    compterIngredientBdd()
+
 	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild.nextElementSibling
 	liste_ingredients.push(li_premier_ingredient)
-	console.log(liste_ingredients.length)
-    console.log(liste_ingredients)
+	// console.log(liste_ingredients.length)
+    // console.log(liste_ingredients)
 
     insererIngredientBdd(liste_ingredients[0].firstChild.nextElementSibling)
 
@@ -120,14 +147,16 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	bouton_moins.addEventListener('click',function (event){
 		supprimerIngredient(conteneur)
-		console.log(liste_ingredients.length)
-		console.log(liste_ingredients)
+		// console.log(liste_ingredients.length)
+		// console.log(liste_ingredients)
+        disabledIngredient()
 	})
 
 	bouton_plus.addEventListener('click',function (){
+
 		ajouterIngredient(conteneur)
-		console.log(liste_ingredients.length)
-		console.log(liste_ingredients)
+		// console.log(liste_ingredients.length)
+		// console.log(liste_ingredients)
         disabledIngredient()
 	})
 
