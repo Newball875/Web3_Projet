@@ -57,61 +57,6 @@ header .headerdroite2{
     box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
 }
 
-.neon{
-    float: left ;
-    border: 2px solid white;
-    border-radius: 5px;
-    background: black;
-    color: white;
-}
-
-.fenetre{
-    float:left;
-    margin-left: 5%;
-    margin-top: 5% ;
-    margin-bottom: 5% ;
-    width : 20% ;
-    padding-left: 10% ;
-    border: 2px solid mistyrose;
-    border-radius: 5px;
-    background: rosybrown;
-    color: white;
-}
-
-.nom{
-    float: right;
-    margin-right: 79%;
-    margin-top: 2%;
-    border: 2px solid mistyrose;
-    border-radius: 5px;
-    background: rosybrown;
-    color: white;
-}
-
-.tag{
-    float: right;
-    margin-right: 80%;
-    border: 2px solid mistyrose;
-    border-radius: 5px;
-    background: rosybrown;
-    color: white;
-}
-
-.description{
-    float: left;
-    margin-top: 1%;
-    margin-left: 16%;
-    margin-bottom: 1%;
-    width: 60%;
-    height: 15% ;
-    border: 2px solid mistyrose;
-    border-radius: 5px;
-    background: rosybrown;
-    color: white;
-    text-align: center;
-    padding : 1em;
-}
-
 #content{
     flex: 1 ;
     background: url("../ressources/img/fond.jpg");
@@ -166,11 +111,79 @@ footer{
     overflow: hidden;
 }
 
+.neon{
+    display: flex;
+    flex-direction: column;
+    padding: 1em ;
+    border: 2px solid white;
+    border-radius: 5px;
+    background: rosybrown;
+    color: white;
+}
+
+.ligne1{
+    display: flex;
+    align-items: flex-end;
+}
+
 .informations{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1em ;
 }
 
 .tag{
+    float: right;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: #d9bfbf;
+    color: white;
     order: 2;
+}
+
+.nom{
+    float: right;
+    order: 1 ;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: #d9bfbf;
+    color: white;
+}
+
+.ligne2{
+    display: flex;
+    justify-content: space-around;
+}
+
+.fenetre{
+    float:left;
+    margin-left: 5%;
+    margin-top: 5% ;
+    margin-bottom: 5% ;
+    width : 20% ;
+    padding-top: 1%;
+    padding-left: 10% ;
+    padding-bottom: 1%;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: #d9bfbf;
+    color: white;
+}
+
+.description{
+    width: 60%;
+    height: 15% ;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: #d9bfbf;
+    color: white;
+    text-align: center;
+    padding : 1em;
+}
+
+.ligne3{
+    display: flex ;
+    justify-content: center;
 }
