@@ -52,7 +52,7 @@ class Connexion{
 	}
 
 	public static function prendreListeIngredients(PDO $pdo, int $id):array{
-		$commande="SELECT nom as ingredient
+		$commande="SELECT nom as ingredient, quantite
         FROM ingredient,ingredient_recette
         WHERE ingredient_recette.ingredient_id=ingredient.ingredient_id and recette_id=$id;";
 		$statement=$pdo->prepare($commande);
@@ -160,4 +160,12 @@ class Connexion{
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
+
+	public static function rechercheRecette(PDO $pdo, string $nom):array{
+		$commande="SELECT recette_id as id,nom,image FROM recette WHERE nom LIKE '%$nom%';";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results;
+	}
 }

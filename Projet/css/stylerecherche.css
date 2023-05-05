@@ -36,6 +36,19 @@ header .headerdroite2{
     text-decoration: none;
 }
 
+.recette{
+    display : flex;
+    margin-top: 5px;
+}
+
+.recette img{
+    width: 150px;
+}
+
+.recette p{
+    margin-left:5px;
+}
+
 footer{
     height: 5%;
     position:absolute;

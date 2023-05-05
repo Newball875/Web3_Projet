@@ -10,9 +10,17 @@
             </a>
             <div class="headerdroite2">
                 <a class="navbar-brand">
-                    <input type="text" class="form-control" id="recherche" name="name" aria-describedby="name" placeholder="Recherche">
+                    <div id="barre-recherche">
+                    <form id="recherche" method="POST" enctype="multipart/form-data" action="./page_recherche.php">
+                        <input type="text" class="form-control" id="name-recherche" name="recherche" placeholder="Nom de la recette">
+                        <div id="bouton-recherche">
+                            <button type="submit" name="ok" class="envoyer">A</button>
+                        </div>
+                    </form>
+                    </div>
                 <a class="navbar-brand" href="./login.php">
                    Login
+                </a>
                 </a>
                 <div style="flex: 1"></div>
             </div>

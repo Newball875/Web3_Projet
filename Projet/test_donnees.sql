@@ -35,21 +35,21 @@ values  ("Farine","farine.png"),
         ("Lait","lait.png"),
         ("Sucre","sucre.png");
 
-insert into ingredient_recette(recette_id,ingredient_id)
-values  (1,1),
-        (1,2),
-        (1,3),
-        (1,4),
-        (1,5),
-        (1,6),
-        (1,7),
-        (2,1),
-        (2,8),
-        (2,3),
-        (2,4),
-        (2,5),
-        (2,6),
-        (2,7);
+insert into ingredient_recette(recette_id,ingredient_id,quantite)
+values  (1,1,1),
+        (1,2,2),
+        (1,3,3),
+        (1,4,4),
+        (1,5,5),
+        (1,6,6),
+        (1,7,7),
+        (2,1,8),
+        (2,8,9),
+        (2,3,10),
+        (2,4,11),
+        (2,5,12),
+        (2,6,13),
+        (2,7,2000);
 
 insert into tag(nom)
 values  ("dessert"),
