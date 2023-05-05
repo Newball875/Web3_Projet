@@ -2,25 +2,6 @@
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);
-if(sizeof($_POST)>0){
-    $i=0;
-    $liste_ingredients=[];
-    $liste_quantite=[];
-    $nom_liste="ingredients".$i;
-    while(isset($_POST[$nom_liste])){
-        $liste_ingredients[$i]=$_POST[$nom_liste];
-        $liste_quantite[$i]=$_POST["quantite".$i];
-        $i=$i+1;
-        $nom_liste="ingredients".$i;
-    }
-    $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"],$_POST["origine"],$_FILES["image"]);
-    $i=0;
-    while($i<sizeof($liste_ingredients)){
-        $ing_id=$liste_ingredients[$i];
-        Connexion::lierIngredientRecette($pdo,$ing_id,$recette_id, $liste_quantite[$i]);
-        $i=$i+1;
-    }
-}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -45,7 +26,7 @@ if(sizeof($_POST)>0){
     <p>Nouvelle recette</p>
 </div>
 <div>
-    <form action="ajout_recette.php" method="POST" enctype="multipart/form-data">
+    <form action="update_recette.php" method="POST" enctype="multipart/form-data">
 	    <div id="infos">
 		    <label for="le_fichier" class="form_label">Uploader une recette :</label>
 		    <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
@@ -84,7 +65,7 @@ if(sizeof($_POST)>0){
             </div>
         </div>
 	    <div id="bouton_final">
-		    <button type="submit">Envoyer</button>
+		    <button type="submit" name="ok" value="1">Envoyer</button>
     	</div>
     </form>
     <div id="boutons">
