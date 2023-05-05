@@ -96,11 +96,11 @@ header .headerdroite2{
 }
 
 #boutons{
-    width: 10%;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin-top: 15%;
+    margin: 8% 25%;
     overflow: auto;
 }
 
@@ -108,11 +108,13 @@ header .headerdroite2{
     flex-direction: column;
     align-content: center;
     color: black ;
+    overflow: auto;
 }
 
 #liste-ingredients{
+    position: absolute;
     float: left;
-    margin-left: 40% ;
+    margin: 7% 25% auto 15% ;
     flex-direction: column;
     align-content: center;
     border: 2px solid lightskyblue;
@@ -123,6 +125,7 @@ header .headerdroite2{
 }
 
 .menu_ingredient{
+
     color: black;
 }
 
@@ -143,8 +146,8 @@ header .headerdroite2{
 }
 
 .envoyer{
-    float: left;
-    margin-left: 40% ;
+    position: absolute;
+    margin: 30% 20% 0% 0% ;
     flex-direction: column;
     align-content: center;
     border: 2px solid lightskyblue;
@@ -155,8 +158,9 @@ header .headerdroite2{
 }
 
 #choix-origine{
+    position: absolute;
     float: left;
-    margin-left: 40% ;
+    margin: 7% 65%;
     flex-direction: column;
     align-content: center;
     border: 2px solid lightskyblue;

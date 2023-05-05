@@ -26,11 +26,11 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
     <p>Nouvelle recette</p>
 </div>
 <div>
-    <form action="update_recette.php" method="POST" enctypew="multipart/form-data">
+    <form class="form" action="update_recette.php" method="POST" enctypew="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Uploader une recette :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette">
-            <textarea id="instructions" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
+            <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"></textarea>
             <input type="file" class="form-control" id="image" name="image">
         </div>
         <div id="origine">
