@@ -217,4 +217,17 @@ class Connexion{
 		return $results;
 	}
 
+	public static function supprimerRecette(PDO $pdo, int $id){
+		$commande="DELETE FROM ingredient_recette
+		WHERE recette_id=$id;
+		
+		DELETE FROM tag_recette
+		WHERE recette_id=$id;
+		
+		DELETE FROM recette
+		WHERE recette_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
 }
