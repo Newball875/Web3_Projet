@@ -14,7 +14,7 @@ if(isset($_GET["id"])){
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/stylerecette.css">
-    <script src="js/stylerecette.js"></script>
+    <script src="javascript/recette.js"></script>
 
 </head>
 <body>
@@ -47,6 +47,16 @@ if(isset($_GET["id"])){
                         </label>
                     </div>
                 </div>
+                <?php
+                if(isset($_SESSION["nick"])){
+                    $_SESSION["id_recette"]=$id;?>
+                    <div class="modifications">
+                        <button id="modif" onclick="window.location.href= 'modifier_recette.php'">Modifier</button>
+                        <input type="button" id="suppr" value="Supprimer">
+                    </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="ligne2">
                 <div class="fenetre">
@@ -76,7 +86,14 @@ if(isset($_GET["id"])){
         </div>
     </div>
     <div id="origine">
-        Origine
+        <?php
+        $results=Connexion::prendreOrigine($pdo,$id);
+        echo "Origine : ".$results->nom;
+        echo "<div id='description'>";
+        echo "<img src='$chemin_image"."/origine/"."$results->image' alt='$results->nom'>";
+        echo "<p>$results->description</p>";
+        ?>
+        </div>
     </div>
 </form>
 

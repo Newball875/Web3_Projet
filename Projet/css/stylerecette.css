@@ -98,6 +98,14 @@ header .headerdroite2{
     scrollbar-width: none;
 }
 
+#description{
+    display:flex;
+}
+
+#description img{
+    width: 100px;
+}
+
 footer{
     height: 5%;
     position:absolute;

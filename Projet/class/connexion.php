@@ -71,6 +71,16 @@ class Connexion{
 		return $results[0]->instructions;
 	}
 
+	public static function prendreOrigine(PDO $pdo, int $id):Commandes{
+		$commande="SELECT origine.nom, origine.description, origine.image
+		FROM origine,recette
+		WHERE recette.origine_id=origine.origine_id and recette.recette_id=$id;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results[0];
+	}
+
 	public static function prendreTousIngredients(PDO $pdo):array{
 		$commande="SELECT nom,ingredient_id as id
 		FROM ingredient;";
