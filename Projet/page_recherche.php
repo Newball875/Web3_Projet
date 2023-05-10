@@ -38,41 +38,55 @@ if(isset($_POST["recherche"])){
 
 <?php include "class/header.php" ?>
 
-<div class="titre-recherche">
-    RECHERCHE
-</div>
-<div id="barre-recherche">
-    <form class="form" action="page_recherche.php" method="POST" enctype="multipart/form-data">
-        <input type="text" class="form-control" id="recherche" name="recherche" placeholder="Nom de la recette" value="<?=$_POST["recherche"]?>">
-        <div id="filtre">
-            <div id="ingredients">
+<div class="page">
+    <div class="border">
+        <div class="titre-recherche">
+            RECHERCHE
+        </div>
+        <div id="barre-recherche">
+            <form class="form" action="page_recherche.php" method="POST" enctype="multipart/form-data">
+                <div class="recherche">
+                    <input type="text" class="form-control" id="recherche" name="recherche" placeholder="Nom de la recette" value="<?=$_POST["recherche"]?>">
+                </div>
+                <div class="filtre">
+                    <div id="ingredients">
+                    </div>
+                    <div id="tags">
+                    </div>
+                </div>
+                <div class="envoyer">
+                    <button type="submit" class="envoyer">Envoyer</button>
+                </div>
+            </form>
+            <div class="boutons-ingredients">
+                <button id="moins_ing" class="moins">-</button>
+                <button id="plus_ing" class="plus">+</button>
             </div>
-            <div id="tags">
+            <div class="boutons-tags">
+                <button id="moins_tag" class="moins">-</button>
+                <button id="plus_tag" class="plus">+</button>
             </div>
         </div>
-        <button type="submit" class="envoyer">Envoyer</button>
-    </form>
-    <div id="boutons-ingredients">
-        <button id="moins_ing" class="moins">-</button>
-        <button id="plus_ing" class="plus">+</button>
-    </div>
-    <div id="boutons-tags">
-        <button id="moins_tag" class="moins">-</button>
-        <button id="plus_tag" class="plus">+</button>
+
+        <div class="resultats-recherche">
+            <?php
+            foreach($liste_recherche as $recette){
+                echo "<a href='recette.php?id=$recette->id'>";
+                echo '<div class="page-recette">';
+                echo '<div class="image-recette">';
+                echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
+                echo "</div>";
+                echo '<div class="nom-recette">';
+                echo "<p>$recette->nom</p>";
+                echo "</div>";
+                echo "</div>";
+                echo "</a>";
+            }
+        ?>
+        </div>
     </div>
 </div>
 
-<div id="resultats-recherche"> <?php
-    foreach($liste_recherche as $recette){
-        echo "<a href='recette.php?id=$recette->id'>";
-        echo '<div class="recette">';
-        echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
-        echo "<p>$recette->nom</p>";
-        echo "</div>";
-        echo "</a>";
-    }
-?>
-</div>
 <?php include "class/footer.php"; ?>
 
 </body>

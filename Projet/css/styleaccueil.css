@@ -21,17 +21,33 @@ body{
 }
 
 header .nav-content{
-    width: 100%;
     display: flex;
-    text-decoration: none;
+    justify-content: space-between;
     align-items: center;
     background: black;
 }
 
-header .headerdroite2{
-    padding-left: 75%;
+header .recette{
+    margin-left: 30px;
 }
 
+header .gauche{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .login{
+    margin-top: 10px;
+}
 .recherche{
     color: black ;
 }

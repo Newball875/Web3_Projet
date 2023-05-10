@@ -21,19 +21,32 @@ body{
 }
 
 header .nav-content{
-    width: 100%;
     display: flex;
-    text-decoration: none;
+    justify-content: space-between;
     align-items: center;
     background: black;
 }
 
-header .headerdroite2{
-    padding-left: 1500px;
+header .recette{
+    margin-left: 30px;
 }
 
-.recherche{
-    color: black;
+header .gauche{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .login{
+    margin-top: 10px;
 }
 
 .form-control{
@@ -42,6 +55,72 @@ header .headerdroite2{
 
 .navbar-brand{
     text-decoration: none;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 1% ;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: rosybrown;
+    color: white;
+}
+
+.titre-recherche{
+    margin-bottom: 25px;
+}
+
+.form{
+    justify-content: center;
+    align-items: center;
+}
+
+.recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.filtre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.envoyer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.boutons-ingredients{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    padding : 1em;
+}
+
+.boutons-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    padding : 1em;
 }
 
 .recette{
@@ -67,11 +146,28 @@ header .headerdroite2{
 }
 
 button{
-    color:black;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+    color: black;
 }
 
 button:disabled{
     color:white;
+}
+
+.page-recette{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 1% ;
+    border: 2px solid mistyrose;
+    border-radius: 5px;
+    background: rosybrown;
+    color: white;
 }
 
 footer{
