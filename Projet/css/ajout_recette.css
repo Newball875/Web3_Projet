@@ -235,6 +235,10 @@ footer{
     color: black ;
 }
 
+.taille-boutons{
+    margin-left: 10px;
+}
+
 .envoyer{
     display: flex;
     justify-content: center;

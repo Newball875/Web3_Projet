@@ -64,16 +64,25 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                 </div>
             </div>
         </div>
-        <div id="bouton_final">
+        <div class="bouton_final">
             <button type="submit" class="envoyer">Envoyer</button>
         </div>
     </form>
-    <div id="boutons">
-        <button id="moins" class="moins">-</button>
-        <button id="plus" class="plus">+</button>
-
-        <button id="moins-tag" class="moins">-</button>
-        <button id="plus-tag" class="plus">+</button>
+    <div class="boutons">
+        <div class="nom_ingrédients">
+            <h1>Ingrédients :</h1>
+        </div>
+        <div class="taille-boutons">
+            <button id="moins" class="moins">-</button>
+            <button id="plus" class="plus">+</button>
+        </div>
+        <div class="nom-tags">
+            <h1>Tags:   </h1>
+        </div>
+        <div class="taille-boutons">                 
+            <button id="moins-tag" class="moins">-</button>
+            <button id="plus-tag" class="plus">+</button>
+        </div>
     </div>
 </div>
 
