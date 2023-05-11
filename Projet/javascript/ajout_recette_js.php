@@ -117,14 +117,13 @@ let disabledIngredient = function(){
 
     for(let i = 0; i < liste_options_ingredient.length;i++){ // pour chaque ingrédient
         for(let j = 0; j < liste_options_ingredient[i].length;j++){
-            liste_options_ingredient[i][j].classList.remove("none")
-            liste_options_ingredient[i][j].classList.add("initial")
             liste_options_ingredient[i][j].disabled = false;
         }
         for(let j = 0; j < liste_value.length; j++){
-            liste_options_ingredient[i][liste_value[j]-1].classList.remove("initial")
-            liste_options_ingredient[i][liste_value[j]-1].classList.add("none");
-            liste_options_ingredient[i][liste_value[j]-1].disabled = true;
+            if(j !== i){
+                liste_options_ingredient[i][liste_value[j]-1].disabled = true;
+            }
+
         }
     }
 }
