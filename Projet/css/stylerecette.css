@@ -111,8 +111,8 @@ header .login{
     scrollbar-width: none;
 }
 
-#description_origine{
-    margin: 1% 2%;
+.description_origine{
+    margin: 1% 2% 0% 2%;
 }
 
 #description{
