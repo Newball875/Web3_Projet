@@ -51,7 +51,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                     </select>
                 </div>
             </div>
-            <div class="choix-origine">
+            <div id="choix-origine" class="choix-origine">
                 <h1>Origine</h1>
                 <div>
                     <select class="origine" name="origine">

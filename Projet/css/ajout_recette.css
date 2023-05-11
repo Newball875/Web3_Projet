@@ -7,6 +7,7 @@
 }
 
 html, body{
+    display: flex;
     height: 100% ;
     margin: 0px;
     background: url("../ressources/img/fond2.jpg");
@@ -193,6 +194,10 @@ footer{
     color: black ;
 }
 
+#infos img{
+    width: 25%;
+}
+
 .form-control{
     display: flex;
     justify-content: center;
@@ -255,6 +260,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .taille-boutons{
