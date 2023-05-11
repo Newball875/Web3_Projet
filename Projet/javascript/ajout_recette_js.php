@@ -4,6 +4,9 @@
 let liste_ingredients = [];
 let liste_options_ingredient = [];
 
+let liste_tags = [];
+let liste_options_tag = [];
+
 let bouton_moins = undefined
 let bouton_plus = undefined
 
@@ -102,18 +105,33 @@ let ajouterIngredient = function (conteneur){
 
 }
 
+function ajouterTag(conteneur){
+    let div = document.createElement('div');
+
+    let select = document.createElement("select");
+    select.classList.add("menu_tag");
+    select.name="tags"+i_tag;
+    i_tag++;
+    mettreTousTags(select);
+
+    div.appendChild(select);
+    conteneur.appendChild(div);
+    liste_tags.push(div);
+}
+
+
 let disabledIngredient = function(){
     let liste_value = []
     liste_ingredients.forEach(ingredient => {
         let conteneur = ingredient.firstElementChild
-        // console.log(conteneur.value)
+        console.log(conteneur.value)
         if(!(conteneur.value === "" || conteneur.value === "Ingrédients")){
             liste_value.push(conteneur.value)
         }
 
     })
 
-    // console.log(liste_value)
+    console.log(liste_value)
 
     for(let i = 0; i < liste_options_ingredient.length;i++){ // pour chaque ingrédient
         for(let j = 0; j < liste_options_ingredient[i].length;j++){
@@ -128,10 +146,34 @@ let disabledIngredient = function(){
     }
 }
 
+function disabledTag(){
+    let liste_value_tag = []
+    liste_tags.forEach(tag => {
+        let conteneur = tag.firstElementChild
+        console.log(conteneur.value)
+        if(!(conteneur.value === "" || conteneur.value === "Tags")){
+            liste_value_tag.push(conteneur.value)
+        }
+    })
 
+    console.log(liste_value_tag)
+
+    for(let i = 0; i < liste_options_tag.length;i++){ // pour chaque ingrédient
+        for(let j = 0; j < liste_options_tag[i].length;j++){
+            liste_options_tag[i][j].disabled = false;
+        }
+        for(let j = 0; j < liste_value_tag.length; j++){
+            if(j !== i){
+                liste_options_tag[i][liste_value_tag[j]-1].disabled = true;
+            }
+
+        }
+    }
+}
 
 function mettreTousTags(conteneur){
 	let choix;
+    let options_tag = [];
 	<?php
 	foreach($tab_tags as $tag){ ?>
 		choix=document.createElement("option");
@@ -139,30 +181,29 @@ function mettreTousTags(conteneur){
 		choix.value="<?=$tag->id?>";
 		choix.classList.toggle("menu_tag");
 		choix.addEventListener('click',function (){
-			disabledIngredient();
+            conteneur.firstElementChild.disabled = true;
+			disabledTag();
 		})
 		conteneur.appendChild(choix)
+        options_tag.push(choix);
 	<?php
 	}
 	?>
+    liste_options_tag.push(options_tag);
 }
 
-function ajouterTag(conteneur){
-	let select=document.createElement("select");
-	select.classList.add("menu_tag");
-	select.name="tags"+i_tag;
-	i_tag++;
-	mettreTousTags(select);
-	conteneur.appendChild(select);
-}
+
 
 function supprimerTag(conteneur){
+    liste_tags.pop();
 	conteneur.removeChild(conteneur.lastChild);
 	i_tag--;
 	if(conteneur.childElementCount==2){
 		bouton_moins_tag.disabled=true;
 	}
 }
+
+
 
 document.addEventListener('DOMContentLoaded',function(){
     compterIngredientBdd()
@@ -211,12 +252,13 @@ document.addEventListener('DOMContentLoaded',function(){
 
     bouton_moins_tag.addEventListener('click',function (event){
 		supprimerTag(menu_tag);
+        disabledTag();
 	})
 
 	bouton_plus_tag.addEventListener('click',function (){
 		ajouterTag(menu_tag);
-        console.log("Oui")
 		bouton_moins_tag.disabled=false;
+        disabledTag();
 	})
 })
 
