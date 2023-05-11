@@ -5,7 +5,6 @@ if(isset($_POST['name']) and isset($_POST['type']) and isset($_POST['image'])){
     $type = $_POST['type'];
     $image = $_POST['image'];
 }
-$tab_ingredients= Connexion::ajouterIngredient($pdo,);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -22,19 +21,18 @@ $tab_ingredients= Connexion::ajouterIngredient($pdo,);
 </head>
 <body>
 
-<?php include "class/header.html"?>
+<?php include "class/header.php"?>
 
 <div id="titre_ajout">
     <p>Nouvel Ingrédient</p>
 </div>
 <div>
-    <form action="ajout_recette.php" method="POST" enctype="multipart/form-data">
+    <form action="update_ingredient.php" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Uploader un ingredient :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'ingrédient">
             <input type="text" class="form-control" id="type" name="type" placeholder="type">
             <input type="file" class="form-control" id="image" name="image">
-            <input type="text" class="form-control" id="tag" name="tag" placeholder="tag">
         </div>
     </form>
 </div>

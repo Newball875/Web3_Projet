@@ -1,17 +1,6 @@
-Hello
-
-Coucou c'est moi
-
-ET oui bonsoir !
-
-Et non LOL
-
-dkqs nique ta mère
-
-retest
-
-C'est encore moi
-re
-
-le test à nouveau
-
+A faire :
+-les ajouts (php)
+-commenter (php/js)
+-la modif (php/un peu js voir commentaires dans le php)
+-les destructions(ingrédients et tags et origines)
+-les éditions (ingrédients et tags et origines)

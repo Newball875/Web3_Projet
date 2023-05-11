@@ -51,7 +51,7 @@ if(isset($_GET["id"])){
                 if(isset($_SESSION["nick"])){
                     $_SESSION["id_recette"]=$id;?>
                     <div class="modifications">
-                        <button id="modif" onclick="window.location.href= 'modifier_recette.php'">Modifier</button>
+                        <input type="button" id="modif" value="Modifier">
                         <input type="button" id="suppr" value="Supprimer">
                     </div>
                 <?php
