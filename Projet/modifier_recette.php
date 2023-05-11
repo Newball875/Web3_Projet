@@ -17,7 +17,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food Culture</title>
 
-    <link rel="stylesheet" href="css/ajout_recette.css">
+    <link rel="stylesheet" href="css/modifier_recette.css">
     <?php include "javascript/ajout_recette_js.php"; ?>
 
 </head>

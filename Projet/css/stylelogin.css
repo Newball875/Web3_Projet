@@ -162,6 +162,14 @@ footer{
     color: black;
 }
 
+#logout{
+    display: flex ;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+}
+
 footer{
     height: 5%;
     position:absolute;

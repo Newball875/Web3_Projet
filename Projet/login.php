@@ -59,7 +59,6 @@ if($login==0){?>
 </form>
 <?php
 }else{
-    echo "HELLO";
     if($login==1){
         $_SESSION["nick"]=$_POST["nick"];
     }?>

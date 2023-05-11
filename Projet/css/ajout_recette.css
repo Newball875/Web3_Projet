@@ -7,7 +7,6 @@
 }
 
 html, body{
-    display: flex;
     height: 100% ;
     margin: 0px;
     background: url("../ressources/img/fond2.jpg");
@@ -85,8 +84,6 @@ header .login{
     height: 15%;
 }
 
-
-
 #boutons{
     display: flex;
     flex-direction: column;
@@ -157,7 +154,6 @@ footer{
 .page{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -192,10 +188,7 @@ footer{
     background: #FF7575;
     padding : 1em;
     color: black ;
-}
 
-#infos img{
-    width: 25%;
 }
 
 .form-control{

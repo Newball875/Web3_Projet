@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive ;
+    font-weight: bold;
+    color: white;
+}
+
+html, body{
+    display: flex;
+    height: 100% ;
+    margin: 0px;
+    background: url("../ressources/img/fond2.jpg");
+    background-size: 100% ;
+    background-position: center;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: black ;
+}
+
+header .nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+}
+
+header .recette{
+    margin-left: 30px;
+}
+
+header .gauche{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .login{
+    margin-top: 10px;
+}
+
+.navbar-brand{
+    text-decoration: none;
+}
+
+.recherche{
+    color: black ;
+}
+
+#content{
+    flex: 1 ;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.title{
+    height: 100px ;
+    display: flex;
+    align-items: center;
+
+    font-size: 2em;
+}
+
+#name{
+    float: top;
+    margin-top: 5%;
+    height: 15%;
+}
+
+
+
+#boutons{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 1% 25%;
+    overflow: auto;
+}
+
+.bouton_final{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    color: black ;
+    margin: 1% 25%;
+    overflow: auto;
+}
+
+.menu_ingredient{
+    color: black;
+}
+
+.menu_ingredient option{
+    color: black;
+}
+
+.moins{
+    color: black;
+}
+
+.plus{
+    color: black;
+}
+
+.origine{
+    color: black;
+}
+
+.origine option{
+    color: black;
+}
+
+.error{
+    background: lightpink;
+}
+
+.none{
+    display: none;
+}
+
+.initial{
+    display: initial
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    color: white;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1em ;
+    margin: 10% 10%;
+}
+
+#titre_ajout {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+    margin-left: 40% ;
+    margin-right: 40% ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding: 1em;
+    text-align: center;
+    color: black;
+}
+
+#infos{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: black ;
+    margin-top: 10%;
+}
+
+#infos img{
+    width: 25%;
+    margin-top: 1%;
+}
+
+.form-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.liste {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+    margin: 1% 25%;
+}
+
+.liste-ingredients{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: black ;
+}
+
+.liste-tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: black ;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+
+.menu_ingredient{
+    display: flex;
+    flex-direction: row;
+}
+
+.choix-origine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: black ;
+}
+
+.boutons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.taille-boutons{
+    margin-left: 1%;
+}
+
+.envoyer{
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: white;
+    margin: 1% 35%;
+}
