@@ -9,7 +9,7 @@
 html, body{
     height: 100% ;
     margin: 0px;
-    background: url("../ressources/img/fond.jpg");
+    background: url("../ressources/img/fond2.jpg");
     background-size: 1500px ;
     background-position: center;
 }
@@ -70,7 +70,7 @@ header .login{
 
 .image img{
     height: 100px;
-    box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+    box-shadow:8px 8px 10px 0 #A00000;
 }
 
 .neon{
@@ -80,9 +80,9 @@ header .login{
     margin-bottom: 5% ;
     width : 20% ;
     padding: 1% ;
-    border: 2px solid white;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: black;
+    background: #FF7575;
     color: white;
 }
 
@@ -91,9 +91,9 @@ header .login{
     margin: 5% ;
     width : 20% ;
     padding: 1% ;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
 }
 
@@ -102,9 +102,9 @@ header .login{
     margin-left: 10%;
     margin-top: 20%;
     margin-right: 10%;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
 }
 

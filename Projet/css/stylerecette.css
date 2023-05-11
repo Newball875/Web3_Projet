@@ -9,7 +9,7 @@
 html, body{
     height: 100% ;
     margin: 0px;
-    background: url("../ressources/img/fond.jpg");
+    background: url("../ressources/img/fond2.jpg");
     background-size: 1500px ;
     background-position: center;
 }
@@ -108,9 +108,9 @@ header .login{
     width: 60%;
     height: 15% ;
     padding: 1%;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
     scrollbar-width: none;
 }
@@ -140,9 +140,9 @@ footer{
     display: flex;
     flex-direction: column;
     padding: 1em ;
-    border: 2px solid white;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
 }
 
@@ -161,9 +161,9 @@ footer{
 
 .tag{
     float: right;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: #d9bfbf;
+    background: #FF7575;
     color: white;
     order: 2;
 }
@@ -171,9 +171,9 @@ footer{
 .nom{
     float: right;
     order: 1 ;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: #d9bfbf;
+    background: #FF7575;
     color: white;
 }
 
@@ -191,18 +191,18 @@ footer{
     padding-top: 1%;
     padding-left: 10% ;
     padding-bottom: 1%;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: #d9bfbf;
+    background: #FF7575;
     color: white;
 }
 
 .description{
     width: 60%;
     height: 15% ;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: #d9bfbf;
+    background: #FF7575;
     color: white;
     text-align: center;
     padding : 1em;

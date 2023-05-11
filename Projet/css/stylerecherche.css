@@ -9,7 +9,7 @@
 html, body{
     height: 100% ;
     margin: 0px;
-    background: url("../ressources/img/fond.jpg");
+    background: url("../ressources/img/fond2.jpg");
     background-size: 100% ;
     background-position: center;
 }
@@ -78,9 +78,9 @@ header .login{
     align-items: center;
     width: 20%;
     padding: 1% ;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
 }
 
@@ -174,9 +174,9 @@ button:disabled{
     align-items: center;
     width: 20%;
     padding: 1% ;
-    border: 2px solid mistyrose;
+    border: 2px solid #A00000;
     border-radius: 5px;
-    background: rosybrown;
+    background: #FF7575;
     color: white;
 }
 

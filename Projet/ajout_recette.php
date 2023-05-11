@@ -33,7 +33,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             <input type="file" class="form-control" id="image" name="image">
         </div>
         <div class="liste">
-            <div id="liste-ingredients">
+            <div class="liste-ingredients">
                 <h1>Ingrédients</h1>
                 <div>
                     <select class="menu_ingredient" name="ingredients0">
@@ -42,7 +42,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                     <input type="number" class="form-control" name="quantite0">
                 </div>
             </div>
-            <div id="liste-tags">
+            <div class="liste-tags">
                 <h1>Tags</h1>
                 <div>
                     <select class="menu_tag" name="tags0">
@@ -50,7 +50,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                     </select>
                 </div>
             </div>
-            <div id="choix-origine">
+            <div class="choix-origine">
                 <h1>Origine</h1>
                 <div>
                     <select class="origine" name="origine">
@@ -64,16 +64,25 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                 </div>
             </div>
         </div>
-        <div id="bouton_final">
+        <div class="bouton_final">
             <button type="submit" class="envoyer">Envoyer</button>
         </div>
     </form>
-    <div id="boutons">
-        <button id="moins" class="moins">-</button>
-        <button id="plus" class="plus">+</button>
-
-        <button id="moins-tag" class="moins">-</button>
-        <button id="plus-tag" class="plus">+</button>
+    <div class="boutons">
+        <div class="nom_ingrédients">
+            <h1>Ingrédients :</h1>
+        </div>
+        <div class="taille-boutons">
+            <button id="moins" class="moins">-</button>
+            <button id="plus" class="plus">+</button>
+        </div>
+        <div class="nom-tags">
+            <h1>Tags:   </h1>
+        </div>
+        <div class="taille-boutons">                 
+            <button id="moins-tag" class="moins">-</button>
+            <button id="plus-tag" class="plus">+</button>
+        </div>
     </div>
 </div>
 
