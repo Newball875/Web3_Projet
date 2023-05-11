@@ -67,6 +67,8 @@ header .login{
     justify-content: center;
     align-items: center;
     margin-top: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .border{
@@ -161,6 +163,10 @@ button:disabled{
     color:white;
 }
 
+.taille-boutons{
+    margin-left: 10px;
+}
+
 .page-recette{
     display: flex;
     flex-direction: row;
@@ -177,7 +183,7 @@ button:disabled{
 .resultats-recherche{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: flex-start;
     margin-top: 10px;
 }
 

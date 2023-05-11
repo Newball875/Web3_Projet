@@ -59,12 +59,22 @@ if(isset($_POST["recherche"])){
                 </div>
             </form>
             <div class="boutons-ingredients">
-                <button id="moins_ing" class="moins">-</button>
-                <button id="plus_ing" class="plus">+</button>
+                <div class="nom-ingrédients">
+                    <p>Ingrédients :</p>
+                </div>
+                <div class="taille-boutons">
+                    <button id="moins_ing" class="moins">-</button>
+                    <button id="plus_ing" class="plus">+</button>
+                </div>
             </div>
             <div class="boutons-tags">
-                <button id="moins_tag" class="moins">-</button>
-                <button id="plus_tag" class="plus">+</button>
+                <div class="nom-tags">
+                    <p>Tags :</p>
+                </div>
+                <div class="taille-boutons">
+                    <button id="moins_tag" class="moins">-</button>
+                    <button id="plus_tag" class="plus">+</button>
+                </div>
             </div>
         </div>
     </div>
