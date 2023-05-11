@@ -1,11 +1,4 @@
-<?php include_once "class/init.php";
-
-if(isset($_POST['name']) and isset($_POST['type']) and isset($_POST['image'])){
-    $name = $_POST['name'];
-    $type = $_POST['type'];
-    $image = $_POST['image'];
-}
-?>
+<?php include_once "class/init.php"; ?>
 <!doctype html>
 <html lang="fr">
 <head>
