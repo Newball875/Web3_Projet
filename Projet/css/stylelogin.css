@@ -9,7 +9,7 @@
 html, body{
     height: 100% ;
     margin: 0px;
-    background: url("../ressources/img/fond.jpg");
+    background: url("../ressources/img/fond2.jpg");
     background-size: 100% ;
     background-position: center;
 }
@@ -59,14 +59,14 @@ header .login{
 
 #content{
     flex: 1 ;
-    background: url("../ressources/img/fond.jpg");
+    background: #FF7575;
     background-size: cover;
     background-position: center;
-
+    border: 2px solid #A00000;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding: 1em;
     overflow: hidden;
 }
 
@@ -122,6 +122,9 @@ footer{
 #login-form *{
     width: 100%;
     margin: 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #error{
@@ -152,6 +155,10 @@ footer{
 }
 
 .envoyer{
+    display: flex ;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     color: black;
 }
 
