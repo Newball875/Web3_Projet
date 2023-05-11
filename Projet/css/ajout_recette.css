@@ -192,11 +192,11 @@ footer{
 .liste {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     padding: 1em;
 }
 
-#liste-ingredients{
+.liste-ingredients{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,14 +207,26 @@ footer{
     color: black ;
 }
 
+.liste-tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background: cornflowerblue;
+    padding : 1em;
+    color: black ;
+}
+
+
 .menu_ingredient{
     display: flex;
     flex-direction: row;
 }
 
-#choix-origine{
+.choix-origine{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     border: 2px solid lightskyblue;
     border-radius: 5px;
