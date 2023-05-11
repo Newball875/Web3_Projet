@@ -20,6 +20,10 @@ body{
     flex-direction: column;
 }
 
+body img{
+    width: 100%;
+}
+
 header .nav-content{
     display: flex;
     justify-content: space-between;
@@ -63,6 +67,8 @@ header .login{
     justify-content: center;
     align-items: center;
     margin-top: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .border{
@@ -129,7 +135,7 @@ header .login{
     text-decoration: none;
 }
 
-.recette img{
+.image img{
     width: 150px;
 }
 
@@ -157,6 +163,10 @@ button:disabled{
     color:white;
 }
 
+.taille-boutons{
+    margin-left: 10px;
+}
+
 .page-recette{
     display: flex;
     flex-direction: row;
@@ -168,6 +178,13 @@ button:disabled{
     border-radius: 5px;
     background: rosybrown;
     color: white;
+}
+
+.resultats-recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
 
 footer{
