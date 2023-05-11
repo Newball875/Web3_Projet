@@ -33,7 +33,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             <input type="file" class="form-control" id="image" name="image">
         </div>
         <div class="liste">
-            <div class="liste-ingredients">
+            <div id="liste-ingredients" class="liste-ingredients">
                 <h1>Ingrédients</h1>
                 <div>
                     <select class="menu_ingredient" name="ingredients0">
@@ -42,7 +42,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                     <input type="number" class="form-control" name="quantite0">
                 </div>
             </div>
-            <div class="liste-tags">
+            <div id="liste-tags" class="liste-tags">
                 <h1>Tags</h1>
                 <div>
                     <select class="menu_tag" name="tags0">
