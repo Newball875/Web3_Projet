@@ -24,7 +24,8 @@ $tab_tags=Connexion::prendreTousTags($pdo);
 <div id="titre_ajout">
     <p>Nouvelle recette</p>
 </div>
-<div>
+
+<div class="page">
     <form class="form" action="update_recette.php" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Uploader une recette :</label>

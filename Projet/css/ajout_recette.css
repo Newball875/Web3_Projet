@@ -153,13 +153,19 @@ footer{
     color: white;
 }
 
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 1em ;
-    overflow-x: hidden;
-    overflow-y: scroll;
     margin: 0% 10%;
 }
 
