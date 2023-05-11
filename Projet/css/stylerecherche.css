@@ -20,6 +20,10 @@ body{
     flex-direction: column;
 }
 
+body img{
+    width: 100%;
+}
+
 header .nav-content{
     display: flex;
     justify-content: space-between;
@@ -129,7 +133,7 @@ header .login{
     text-decoration: none;
 }
 
-.recette img{
+.image img{
     width: 150px;
 }
 
@@ -168,6 +172,13 @@ button:disabled{
     border-radius: 5px;
     background: rosybrown;
     color: white;
+}
+
+.resultats-recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-top: 10px;
 }
 
 footer{

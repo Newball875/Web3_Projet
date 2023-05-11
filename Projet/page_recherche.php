@@ -67,25 +67,25 @@ if(isset($_POST["recherche"])){
                 <button id="plus_tag" class="plus">+</button>
             </div>
         </div>
-
-        <div class="resultats-recherche">
-            <?php
-            foreach($liste_recherche as $recette){
-                echo "<a href='recette.php?id=$recette->id'>";
-                echo '<div class="page-recette">';
-                echo '<div class="image-recette">';
-                echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
-                echo "</div>";
-                echo '<div class="nom-recette">';
-                echo "<p>$recette->nom</p>";
-                echo "</div>";
-                echo "</div>";
-                echo "</a>";
-            }
-        ?>
-        </div>
     </div>
 </div>
+<div class="resultats-recherche">
+    <?php
+        foreach($liste_recherche as $recette){
+            echo "<a href='recette.php?id=$recette->id'>";
+            echo '<div class="page-recette">';
+            echo '<div class="image-recette">';
+            echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
+            echo "</div>";
+            echo '<div class="nom-recette">';
+            echo "<p>$recette->nom</p>";
+            echo "</div>";
+            echo "</div>";
+            echo "</a>";
+        }
+    ?>
+</div>
+    
 
 <?php include "class/footer.php"; ?>
 
