@@ -2,6 +2,7 @@
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);
+$tab_tags=Connexion::prendreTousTags($pdo);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -13,7 +14,7 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php include_once "javascript/ajout_recette_js.php"; ?>
+    <?php include "javascript/ajout_recette_js.php"; ?>
 
 </head>
 <body>
@@ -41,6 +42,14 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
                     <input type="number" class="form-control" name="quantite0">
                 </div>
             </div>
+            <div id="liste-tags">
+                <h1>Tags</h1>
+                <div>
+                    <select class="menu_tag" name="tags0">
+                        <option value="">Tags</option>
+                    </select>
+                </div>
+            </div>
             <div id="choix-origine">
                 <h1>Origine</h1>
                 <div>
@@ -62,6 +71,9 @@ $tab_origine=Connexion::prendreTousOrigines($pdo);
     <div id="boutons">
         <button id="moins" class="moins">-</button>
         <button id="plus" class="plus">+</button>
+
+        <button id="moins-tag" class="moins">-</button>
+        <button id="plus-tag" class="plus">+</button>
     </div>
 </div>
 

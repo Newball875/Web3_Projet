@@ -9,6 +9,7 @@ let bouton_plus = undefined
 
 let i=1
 let nombre_ingredients = 0;
+let i_tag=1;
 
 let compterIngredientBdd = function(){
     <?php
@@ -128,6 +129,42 @@ let disabledIngredient = function(){
     }
 }
 
+
+
+function mettreTousTags(conteneur){
+	let choix;
+	<?php
+	foreach($tab_tags as $tag){ ?>
+		choix=document.createElement("option");
+		choix.innerHTML="<?=$tag->nom?>";
+		choix.value="<?=$tag->id?>";
+		choix.classList.toggle("menu_tag");
+		choix.addEventListener('click',function (){
+			disabledIngredient();
+		})
+		conteneur.appendChild(choix)
+	<?php
+	}
+	?>
+}
+
+function ajouterTag(conteneur){
+	let select=document.createElement("select");
+	select.classList.add("menu_tag");
+	select.name="tags"+i_tag;
+	i_tag++;
+	mettreTousTags(select);
+	conteneur.appendChild(select);
+}
+
+function supprimerTag(conteneur){
+	conteneur.removeChild(conteneur.lastChild);
+	i_tag--;
+	if(conteneur.childElementCount==2){
+		bouton_moins_tag.disabled=true;
+	}
+}
+
 document.addEventListener('DOMContentLoaded',function(){
     compterIngredientBdd()
 
@@ -161,6 +198,27 @@ document.addEventListener('DOMContentLoaded',function(){
         disabledIngredient()
 	})
 
+
+
+
+    let menu_tag=document.getElementById("liste-tags");
+    let elements=document.getElementsByClassName("menu_tag");
+
+    mettreTousTags(elements[0])
+
+    bouton_moins_tag = document.getElementById("moins-tag")
+	bouton_plus_tag = document.getElementById("plus-tag")
+    bouton_moins_tag.disabled = true
+
+    bouton_moins_tag.addEventListener('click',function (event){
+		supprimerTag(menu_tag);
+	})
+
+	bouton_plus_tag.addEventListener('click',function (){
+		ajouterTag(menu_tag);
+        console.log("Oui")
+		bouton_moins_tag.disabled=false;
+	})
 })
 
 })()
