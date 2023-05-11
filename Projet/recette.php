@@ -85,7 +85,7 @@ if(isset($_GET["id"])){
             </div>
         </div>
     </div>
-    <div id="origine">
+    <div class="origine" id="origine">
         <?php
         $results=Connexion::prendreOrigine($pdo,$id);
         echo "Origine : ".$results->nom;
