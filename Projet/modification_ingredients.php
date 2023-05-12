@@ -9,9 +9,9 @@ if(isset($_GET["id"]) || !(Connexion::ingredientExiste($pdo,$_GET["id"]))){
     header("Location: liste_tags.php");
     exit();
 }
-
 $ingredient=Connexion::prendreImageIngredient($pdo,$id);
-if(isset($_FILES["image"])){
+
+if($_FILES["image"]["error"]==0){
 	Connexion::modifierIngredient($pdo, $id, $_POST['name'],$_FILES['image']['name']);
     $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
     $nom_fic=$_FILES["image"]['name'];
