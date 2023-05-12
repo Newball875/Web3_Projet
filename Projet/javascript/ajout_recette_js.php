@@ -208,11 +208,13 @@ function supprimerTag(conteneur){
 document.addEventListener('DOMContentLoaded',function(){
     compterIngredientBdd()
 
-	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild.nextElementSibling
+	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild.nextElementSibling.nextElementSibling
 	liste_ingredients.push(li_premier_ingredient)
 	// console.log(liste_ingredients.length)
     // console.log(liste_ingredients)
 
+
+    console.log(liste_ingredients[0].firstChild.nextElementSibling)
     insererIngredientBdd(liste_ingredients[0].firstChild.nextElementSibling)
 
 	let conteneur = document.querySelector("#liste-ingredients")
