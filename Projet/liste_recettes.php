@@ -4,7 +4,7 @@ if(!isset($_SESSION["nick"])){
     header("Location: accueil.php");
     exit();
 }
-$liste_ingredients=Connexion::re($pdo);
+$liste_recettes=Connexion::prendreListeRecette($pdo);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -28,9 +28,8 @@ $liste_ingredients=Connexion::re($pdo);
 <div class="page">
     <?php
     foreach($liste_recettes as $recette){
-        $image=Connexion::prendreImageRecette($pdo,$recette->id);
-        echo "<div class='recettes' id='$recette->id'>";
-        echo "<img src='$chemin_image"."/ingredients/"."$image->image' alt='$recette->nom'>";
+        echo "<div class='recettes' id='$recette->recette_id'>";
+        echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
         echo "<p>$recette->nom</p>";
         echo "<input type='button' class='modif' value='Modifier'>";
         echo "<input type='button' class='suppr' value='Supprimer'>";
