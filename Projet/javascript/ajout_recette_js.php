@@ -287,6 +287,8 @@ document.addEventListener('DOMContentLoaded',function(){
 		bouton_moins_tag.disabled=false;
         disabledTag();
 	})
+
+
 })
 
 })()

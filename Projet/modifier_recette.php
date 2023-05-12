@@ -7,6 +7,8 @@ $tab_tags=Connexion::prendreTousTags($pdo);
 $id=$_SESSION["id_recette"];
 $recette=Connexion::prendreImageRecette($pdo,$id);
 $instructions=Connexion::prendreInstructions($pdo,$id);
+$tags=Connexion::prendreListeTag($pdo,$id);
+$ingredients=Connexion::prendreListeIngredients($pdo,$id);
 ?>
 <!doctype html>
 <html lang="fr">
