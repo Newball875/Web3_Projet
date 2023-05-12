@@ -64,7 +64,6 @@ header .login{
 .page{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -75,18 +74,67 @@ header .login{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    padding: 1% ;
+    padding: 1em ;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
     color: white;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.ingredients input{
+    display: flex;
+    background-color: #A00000;
+    color: white;
 }
 
 .ingredients img{
-    width: 25%;
+     width: 10em;
+}
+
+.origines{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.origines input{
+    display: flex;
+    background-color: #A00000;
+    color: white;
+}
+
+.origines img{
+    width: 10em;
+}
+
+.tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.tags input{
+    display: flex;
+    background-color: #A00000;
+    color: white;
 }
 
 button{
@@ -99,10 +147,6 @@ button{
 
 button:disabled{
     color:white;
-}
-
-.taille-boutons{
-    margin-left: 10px;
 }
 
 footer{

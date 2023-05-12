@@ -23,15 +23,18 @@ $liste_tags=Connexion::prendreTousTags($pdo);
 </head>
 <body>
 
-<?php include "class/header.php";
-foreach($liste_tags as $tag){
-	echo "<div class='tags' id='$tag->id'>";
-	echo "<p>$tag->nom</p>";
-	echo "<input type='button' class='modif' value='Modifier'>";
-	echo "<input type='button' class='suppr' value='Supprimer'>";
-	echo "</div>";
-}
-include "class/footer.php";?>
+<?php include "class/header.php";?>
+<div class="page">
+    <?php
+    foreach($liste_tags as $tag){
+        echo "<div class='tags' id='$tag->id'>";
+        echo "<p>$tag->nom</p>";
+        echo "<input type='button' class='modif' value='Modifier'>";
+        echo "<input type='button' class='suppr' value='Supprimer'>";
+        echo "</div>";
+    }?>
+</div>
+<?php include "class/footer.php";?>
 
 </body>
 </html>
