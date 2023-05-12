@@ -29,10 +29,17 @@
             <div class="defile">
                 <div class="recette-jour">
                     <?php
-                        Connexion::p
+                        $liste_recette  = Connexion::prendreListeRecette($pdo);
+
+                        foreach($liste_recette as $recette){?>
+                            <a href="recette.php?id=<?php echo $recette->recette_id ?>">
+                                <img src="ressources/img/recettes/<?php echo $recette->image?>">
+                            </a>
+                        <?php
+                        }
                     ?>
-                    <a href="recette.php">
-                        <img src="ressources/img/recettes/gauffre.jpg">
+                   <!-- <a href="recette.php">
+                        <img src="ressources/img/recettes/<?php /*echo $result[0]->image*/?>">
                     </a>
                     <a href="recette.php">
                     <img src="ressources/img/recettes/gauffre.jpg">
@@ -45,7 +52,7 @@
                     </a>
                     <a href="recette.php">
                     <img src="ressources/img/recettes/gauffre.jpg">
-                    </a>
+                    </a>-->
                 </div>
             </div>
             <div class="roulette">
