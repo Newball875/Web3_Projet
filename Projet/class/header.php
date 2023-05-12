@@ -7,8 +7,8 @@
                     <a href="index.php"><img src="./ressources/img/logoweb3.png" alt="" height="100" class="d-inline-block align-top"></a>
                 </div>
                 <div class="recette">
-                    <a class="navbar-brand" href="./recette.php">
-                        Recette
+                    <a class="navbar-brand" href="./liste_recettes.php">
+                        Recettes
                     </a>
                 </div>
             </div>

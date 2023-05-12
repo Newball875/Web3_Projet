@@ -28,12 +28,12 @@ $liste_recettes=Connexion::prendreListeRecette($pdo);
 <div class="page">
     <?php
     foreach($liste_recettes as $recette){
+        echo "<a href='recette.php?id=$recette->recette_id'>";
         echo "<div class='recettes' id='$recette->recette_id'>";
         echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
         echo "<p>$recette->nom</p>";
-        echo "<input type='button' class='modif' value='Modifier'>";
-        echo "<input type='button' class='suppr' value='Supprimer'>";
         echo "</div>";
+        echo "</a>";
     }?>
 </div>
 <?php include "class/footer.php";?>
