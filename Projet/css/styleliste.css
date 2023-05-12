@@ -140,6 +140,30 @@ header .login{
     color: white;
 }
 
+.recettes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    color: white;
+    margin-top: 1%;
+    margin-bottom: 3%;
+}
+
+.recettes input{
+    display: flex;
+    background-color: #A00000;
+    color: white;
+}
+
+.recettes img{
+    width: 10em
+}
+
 button{
     display: flex;
     flex-direction: column;
