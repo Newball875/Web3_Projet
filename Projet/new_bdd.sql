@@ -36,8 +36,7 @@ DROP TABLE IF EXISTS ingredient;
 CREATE TABLE `ingredient` (
     `ingredient_id` int PRIMARY KEY AUTO_INCREMENT,
     `nom` varchar(50) NOT NULL,
-    `image` varchar(255) DEFAULT NULL,
-    `type` varchar(25)
+    `image` varchar(255) DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS ingredient_recette;
