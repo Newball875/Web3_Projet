@@ -103,7 +103,7 @@ class Connexion{
 		return $results;
 	}
 
-    public static function prendretag(PDO $pdo, int $id):string{
+    public static function prendreTag(PDO $pdo, int $id):string{
         $commande="select nom from tag
         WHERE tag_id = $id;";
         $statement=$pdo->prepare($commande);
@@ -288,5 +288,15 @@ class Connexion{
 	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $image, int $origine_id){
 		
 	}
+
+    public static function tagExiste(PDO $pdo, int $id): bool{
+        $commande="select from tag
+        where tag_id = $id";
+
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return ($results) ? true : false;
+    }
 
 }
