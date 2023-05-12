@@ -16,8 +16,7 @@
 
 <?php include "class/header.php" ?>
 
-<div class="title"></div>
-<form id="accueil" method="POST" enctype="multipart/form-data">
+<div id="accueil" method="POST" enctype="multipart/form-data">
     <div id="conteneur">
         <div class="présentation">
             <label for="name" class="form-label">Présentation</label>
@@ -47,9 +46,9 @@
                     ?>
         </div>
     </div>
-</form>
+</div>
 
-    <?php include "class/footer.php" ?>
+<?php include "class/footer.php" ?>
 
-    </body>
-    </html>
+</body>
+</html>

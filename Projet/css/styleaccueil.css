@@ -150,7 +150,6 @@ header .login{
     padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
-    overflow: auto;
 }
 
 .roulette{
