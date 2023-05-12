@@ -153,8 +153,9 @@ class Connexion{
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
-        $commande="INSERT INTO origine(nom,description,origine_id,image)
-		VALUES('$nom','$description',$id,'$nom_fic');";
+        $commande='INSERT INTO origine(nom,description,image)
+		VALUES("'.$nom.'","'.$description.'","'.$nom_fic.'");';
+		echo $commande;
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
