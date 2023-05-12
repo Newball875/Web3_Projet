@@ -90,7 +90,6 @@ header .login{
     flex-direction: column;
     align-content: center;
     margin: 1% 25%;
-    overflow: auto;
 }
 
 .bouton_final{
@@ -175,7 +174,7 @@ footer{
     flex-direction: column;
     justify-content: space-around;
     padding: 1em ;
-    margin: 10% 1%;
+    margin: 10%;
 }
 
 #titre_ajout {
@@ -248,7 +247,6 @@ footer{
     margin-right: 1%;
 }
 
-
 .menu_ingredient{
     display: flex;
     flex-direction: row;
@@ -270,7 +268,7 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3%;
+    margin-bottom: 5%;
 }
 
 .taille-boutons{
