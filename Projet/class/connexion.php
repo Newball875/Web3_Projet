@@ -103,6 +103,15 @@ class Connexion{
 		return $results;
 	}
 
+    public static function prendretag(PDO $pdo, int $id):string{
+        $commande="select nom from tag
+        WHERE tag_id = $id;";
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return $results[0]->nom;
+    }
+
 	public static function prendreTousOrigines(PDO $pdo):array{
 		$commande="SELECT nom,origine_id as id, description, image
 		FROM origine;";
@@ -234,6 +243,16 @@ class Connexion{
 		$statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
+
+    public static function modifierTag(PDO $pdo,int $id, string $nom_modifie){
+        $commande="update tag
+
+        set nom = '$nom_modifie'
+        
+        WHERE tag_id=$id;";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
 
 	public static function supprimerTag(PDO $pdo, int $id){
 		$commande="DELETE FROM tag_recette

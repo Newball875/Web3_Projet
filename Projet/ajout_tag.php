@@ -17,7 +17,7 @@
 <?php include "class/header.php"?>
 
 <div id="titre_ajout">
-    <p>Nouveeau Tag</p>
+    <p>Nouveau Tag</p>
 </div>
 <div>
     <form action="update_tag.php" method="POST" enctype="multipart/form-data">
