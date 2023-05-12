@@ -152,6 +152,19 @@ button:disabled{
     color:white;
 }
 
+#content{
+    flex: 1 ;
+    background: url("../ressources/img/fond2.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
 footer{
     height: 5%;
     position:absolute;

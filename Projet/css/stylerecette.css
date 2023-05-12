@@ -112,6 +112,12 @@ header .login{
     margin: auto 20% auto 20%;
 }
 
+.modifications input{
+    display: flex;
+    background-color: #A00000;
+    color: white;
+}
+
 .description_origine{
     margin: 1% 2% 0% 2%;
 }
