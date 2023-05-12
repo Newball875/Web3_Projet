@@ -78,10 +78,10 @@ class Connexion{
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
-		if($results[0]!=null){
-			return $results[0];
+		if($results!=null){
+			return $results;
 		}
-		$aux[]=[null];
+		$aux=[null];
 		return $aux;
 	}
 

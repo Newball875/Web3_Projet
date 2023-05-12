@@ -88,12 +88,15 @@ if(isset($_GET["id"])){
     <div class="origine" id="origine">
         <?php
         $results=Connexion::prendreOrigine($pdo,$id);
-        if($results!=null){
+        if($results[0]!=null){
+            $results=$results[0];
             echo "Origine : ".$results->nom;
             echo "<div class='description_origine'>";
             echo "<div id='description'>";
             echo "<img src='$chemin_image"."/origine/"."$results->image' alt='$results->nom'>";
             echo "<p>$results->description</p>";
+        }else{
+            echo "Aucune origine";
         }
         ?>
         </div>
