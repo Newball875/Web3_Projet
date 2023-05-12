@@ -244,16 +244,6 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
 
-    public static function modifierTag(PDO $pdo,int $id, string $nom_modifie){
-        $commande="update tag
-
-        set nom = '$nom_modifie'
-        
-        WHERE tag_id=$id;";
-        $statement = $pdo->prepare($commande);
-        $statement->execute() or die(var_dump($statement->errorInfo()));
-    }
-
 	public static function supprimerTag(PDO $pdo, int $id){
 		$commande="DELETE FROM tag_recette
 		WHERE tag_id=$id;
@@ -283,6 +273,20 @@ class Connexion{
 		WHERE origine_id=$id;";
 		$statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
+	    public static function modifierTag(PDO $pdo,int $id, string $nom_modifie){
+        $commande="update tag
+
+        set nom = '$nom_modifie'
+        
+        WHERE tag_id=$id;";
+        $statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+    }
+
+	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $image, int $origine_id){
+		
 	}
 
 }

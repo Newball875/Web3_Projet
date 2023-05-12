@@ -31,7 +31,7 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
     <p>Modification de la recette : <?=$recette->nom?></p>
 </div>
 <div class="page">
-    <form class="form" action="update_recette.php" method="POST" enctype="multipart/form-data">
+    <form class="form" action="modification_recette.php" method="POST" enctype="multipart/form-data">
         <div id="infos" class="infos">
             <label for="le_fichier" class="form_label">Changer la recette :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette" value="<?=$recette->nom?>">
