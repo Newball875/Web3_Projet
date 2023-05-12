@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+*{
+    font-family: 'Comfortaa', cursive ;
+    font-weight: bold;
+    color: white;
+}
+
+html, body{
+    height: 100% ;
+    margin: 0px;
+    background: url("../ressources/img/fond2.jpg");
+    background-size: 100% ;
+    background-position: center;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+body img{
+    width: 100%;
+}
+
+header .nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+}
+
+header .recette{
+    margin-left: 30px;
+}
+
+header .gauche{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header .droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
+}
+
+header .login{
+    margin-top: 10px;
+}
+
+.form-control{
+    color: black;
+}
+
+.navbar-brand{
+    text-decoration: none;
+}
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 1% ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    color: white;
+}
+
+.titre-recherche{
+    margin-bottom: 25px;
+}
+
+.form{
+    justify-content: center;
+    align-items: center;
+}
+
+.recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.filtre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.envoyer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.boutons-ingredients{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    padding : 1em;
+}
+
+.boutons-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    padding : 1em;
+}
+
+.recette{
+    display : flex;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.image img{
+    width: 150px;
+}
+
+.recette p{
+    margin-left:5px;
+}
+
+.menu_ingredient{
+    color:black;
+}
+
+.menu_tag{
+    color:black;
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    overflow: auto;
+    color: black;
+}
+
+button:disabled{
+    color:white;
+}
+
+.taille-boutons{
+    margin-left: 10px;
+}
+
+.page-recette{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 1% ;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    color: white;
+}
+
+.resultats-recherche{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+footer{
+    height: 5%;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+}

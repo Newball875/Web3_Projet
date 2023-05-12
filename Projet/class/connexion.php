@@ -100,7 +100,7 @@ class Connexion{
 	}
 
 	public static function prendreTousOrigines(PDO $pdo):array{
-		$commande="SELECT nom,origine_id as id
+		$commande="SELECT nom,origine_id as id, description, image
 		FROM origine;";
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));

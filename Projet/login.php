@@ -48,6 +48,11 @@ if(!isset($_SESSION["nick"])){?>
 </form>
 <?php
 }else{?>
+    <div id="admin" class="admin">
+        <a href="liste_tags.php">Liste des tags</a>
+        <a href="liste_ingredients.php">Liste des ingrédients</a>
+        <a href="liste_origines.php">Liste des origines</a>
+    </div>
     <input type="button" id="logout" value="LOG OUT">
     <?php
 }
