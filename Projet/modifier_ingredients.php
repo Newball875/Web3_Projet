@@ -1,31 +1,15 @@
 <?php include "class/init.php";
-$message="";
 if(!isset($_SESSION["nick"])){
     header("Location: accueil.php");
     exit();
 }
-
-if(isset($_GET["id"])){
+if(!isset($_GET["id"]) || (Connexion::ingredientExiste($pdo,$_GET["id"]))){
     $id = $_GET["id"];
 }else{
-    header("Location: liste_tags.php");
-    exit();
-}
-if(!Connexion::ingredientExiste($pdo,$_GET["id"])) {
     header("Location: liste_ingredients.php");
     exit();
 }
 $ingredient=Connexion::prendreImageIngredient($pdo,$id);
-if(isset($_POST['name']) && isset($_GET['id']) && isset($_FILES['image'])){
-    Connexion::modifierIngredient($pdo, $id, $_POST['name'],$_FILES['image']['name']);
-    $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
-    $nom_fic=$_FILES["image"]['name'];
-    $nom_final=$nom_dos.$_FILES["image"]['name'];
-    move_uploaded_file($_FILES['image']["tmp_name"],$nom_final);
-}
-elseif (isset($_POST['name']) && isset($_GET['id'])){
-    Connexion::modifierIngredient($pdo, $id, $_POST['name'],$ingredient->image);
-}
 
 
 ?>
@@ -51,7 +35,7 @@ elseif (isset($_POST['name']) && isset($_GET['id'])){
     <p>Modifier Ingrédient</p>
 </div>
 <div>
-    <form action="modifier_ingredients.php?id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
+    <form action="modification_ingredients.php?id=<?=$id?>" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">modifier <?= $ingredient->nom ?> :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'ingrédient" value="<?= $ingredient->nom ?>">

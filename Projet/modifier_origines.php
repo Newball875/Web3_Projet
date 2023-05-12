@@ -27,7 +27,7 @@ $origine=Connexion::prendreInfosOrigine($pdo,$id);
     <p>Modifier <?=$origine->nom?></p>
 </div>
 <div>
-    <form action="update_origine.php" method="POST" enctype="multipart/form-data">
+    <form action="modification_origine.php?id=<?=$origine->id?>" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'origine" value="<?=$origine->nom?>">
             <textarea id="instructions" class="form-control" name="description" rows="5" cols="33" placeholder="Description"><?=$origine->description?></textarea>
