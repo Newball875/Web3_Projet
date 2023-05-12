@@ -84,7 +84,7 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
             <button id="plus" class="plus">+</button>
         </div>
         <div class="nom-tags">
-            <h1>Tags:   </h1>
+            <h1>Tags: </h1>
         </div>
         <div class="taille-boutons">                 
             <button id="moins-tag" class="moins">-</button>
@@ -97,7 +97,3 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
 
 </body>
 </html>
-
-<?php // à faire :
-//click() en js (appuyer sur les boutons)
-//selected sur les select pour mettres les ingrédients, tags et origines par défaut
