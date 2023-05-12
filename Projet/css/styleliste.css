@@ -66,12 +66,11 @@ header .login{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 25px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
 
-.border{
+.ingredients{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,73 +81,12 @@ header .login{
     border-radius: 5px;
     background: #FF7575;
     color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 
-.titre-recherche{
-    margin-bottom: 25px;
-}
-
-.form{
-    justify-content: center;
-    align-items: center;
-}
-
-.recherche{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.filtre{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.envoyer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.boutons-ingredients{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-    padding : 1em;
-}
-
-.boutons-tags{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 10px;
-    padding : 1em;
-}
-
-.recette{
-    display : flex;
-    margin-top: 5px;
-    text-decoration: none;
-}
-
-.image img{
-    width: 150px;
-}
-
-.recette p{
-    margin-left:5px;
-}
-
-.menu_ingredient{
-    color:black;
-}
-
-.menu_tag{
-    color:black;
+.ingredients img{
+    width: 25%;
 }
 
 button{
@@ -165,26 +103,6 @@ button:disabled{
 
 .taille-boutons{
     margin-left: 10px;
-}
-
-.page-recette{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-    padding: 1% ;
-    border: 2px solid #A00000;
-    border-radius: 5px;
-    background: #FF7575;
-    color: white;
-}
-
-.resultats-recherche{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 10px;
 }
 
 footer{

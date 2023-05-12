@@ -23,7 +23,7 @@ let compterIngredientBdd = function(){
     ?>
 }
 
-let insererIngredientBdd = function(conteneur){
+let insererIngredientsBdd = function(conteneur){
     let choix;
     let options_ingredient = [];
 
@@ -47,6 +47,27 @@ let insererIngredientBdd = function(conteneur){
     // console.log(liste_options_ingredient)
 }
 
+let insererTagsBdd = function(conteneur){
+    let choix;
+    let options_tag = [];
+    <?php
+    foreach($tab_tags as $tag){ ?>
+        choix=document.createElement("option");
+        choix.innerHTML="<?=$tag->nom?>";
+        choix.value="<?=$tag->id?>";
+        choix.classList.toggle("menu_tag");
+        choix.addEventListener('click',function (){
+            conteneur.firstElementChild.disabled = true;
+            disabledTag();
+        })
+        conteneur.appendChild(choix)
+        options_tag.push(choix);
+        <?php
+    }
+    ?>
+    liste_options_tag.push(options_tag);
+}
+
 
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
@@ -58,7 +79,7 @@ let genererContenuDivIngredient = function(conteneur){
 	option.disabled = false;
 	select.appendChild(option)
 
-	insererIngredientBdd(select);
+	insererIngredientsBdd(select);
 
 	let input=document.createElement("input");
 	input.type="number";
@@ -70,10 +91,32 @@ let genererContenuDivIngredient = function(conteneur){
 	i=i+1;
 }
 
+let genererContenuDivTag = function(conteneur){
+    let select = document.createElement("select");
+    select.classList.toggle("menu_tag");
+    select.name = "tags"+i_tag;
+
+    let option = document.createElement("option");
+    option.innerHTML = "Tags";
+    option.disabled = false;
+    select.appendChild(option)
+
+    insererTagsBdd(select);
+    conteneur.appendChild(select)
+    i_tag = i_tag + 1
+}
+
 let creerDivIngredient = function(){
 	let div_ingredient = document.createElement("div")
 	genererContenuDivIngredient(div_ingredient)
 	return div_ingredient
+}
+
+let creerDivTag = function(){
+    let div_tag = document.createElement("div")
+    div_tag.classList.toggle("select")
+    genererContenuDivTag(div_tag)
+    return div_tag
 }
 
 
@@ -106,7 +149,11 @@ let ajouterIngredient = function (conteneur){
 }
 
 function ajouterTag(conteneur){
-    let div = document.createElement('div');
+    let nouveau_tag = creerDivTag();
+    liste_tags.push(nouveau_tag);
+    conteneur.appendChild(nouveau_tag);
+
+    /*let div = document.createElement('div');
 
     let select = document.createElement("select");
     select.classList.add("menu_tag");
@@ -116,7 +163,7 @@ function ajouterTag(conteneur){
 
     div.appendChild(select);
     conteneur.appendChild(div);
-    liste_tags.push(div);
+    liste_tags.push(div);*/
 }
 
 
@@ -148,7 +195,10 @@ let disabledIngredient = function(){
 
 function disabledTag(){
     let liste_value_tag = []
+    console.log( "liste des tags du départ : ")
+    console.log(liste_tags)
     liste_tags.forEach(tag => {
+        console.log(tag)
         let conteneur = tag.firstElementChild
         console.log(conteneur.value)
         if(!(conteneur.value === "" || conteneur.value === "Tags")){
@@ -171,29 +221,6 @@ function disabledTag(){
     }
 }
 
-function mettreTousTags(conteneur){
-	let choix;
-    let options_tag = [];
-	<?php
-	foreach($tab_tags as $tag){ ?>
-		choix=document.createElement("option");
-		choix.innerHTML="<?=$tag->nom?>";
-		choix.value="<?=$tag->id?>";
-		choix.classList.toggle("menu_tag");
-		choix.addEventListener('click',function (){
-            conteneur.firstElementChild.disabled = true;
-			disabledTag();
-		})
-		conteneur.appendChild(choix)
-        options_tag.push(choix);
-	<?php
-	}
-	?>
-    liste_options_tag.push(options_tag);
-}
-
-
-
 function supprimerTag(conteneur){
     liste_tags.pop();
 	conteneur.removeChild(conteneur.lastChild);
@@ -206,19 +233,25 @@ function supprimerTag(conteneur){
 
 
 document.addEventListener('DOMContentLoaded',function(){
+
     compterIngredientBdd()
 
-	let li_premier_ingredient = document.querySelector("#liste-ingredients").firstElementChild.nextElementSibling.nextElementSibling
+    let li_premier_ingredient = document.querySelector("#liste-ingredients").querySelector('div')
 	liste_ingredients.push(li_premier_ingredient)
 	// console.log(liste_ingredients.length)
     // console.log(liste_ingredients)
-
-
-    console.log(liste_ingredients[0].firstChild.nextElementSibling)
-    insererIngredientBdd(liste_ingredients[0].firstChild.nextElementSibling)
+    // console.log(liste_ingredients[0].querySelector('select'))
+    insererIngredientsBdd(liste_ingredients[0].querySelector('select'))
 
 	let conteneur = document.querySelector("#liste-ingredients")
 
+    let menu_tag=document.getElementById("liste-tags");
+    let li_premier_tag =document.querySelector("#liste-tags").querySelector('div');
+
+    // console.log(elements[0])
+    liste_tags.push(li_premier_tag)
+
+    insererTagsBdd(liste_tags[0].querySelector('select'))
 
 	bouton_moins = document.querySelector("#moins")
 	bouton_plus = document.querySelector("#plus")
@@ -239,14 +272,6 @@ document.addEventListener('DOMContentLoaded',function(){
 		// console.log(liste_ingredients)
         disabledIngredient()
 	})
-
-
-
-
-    let menu_tag=document.getElementById("liste-tags");
-    let elements=document.getElementsByClassName("menu_tag");
-
-    mettreTousTags(elements[0])
 
     bouton_moins_tag = document.getElementById("moins-tag")
 	bouton_plus_tag = document.getElementById("plus-tag")
