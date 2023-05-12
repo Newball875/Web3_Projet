@@ -319,4 +319,24 @@ class Connexion{
         return(!$results==null);
     }
 
+	public static function origineExiste(PDO $pdo, int $id): bool{
+        $commande="SELECT origine_id as id
+		FROM origine
+		WHERE origine_id=$id;";
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return(!$results==null);
+    }
+
+	public static function ingredientExiste(PDO $pdo, int $id): bool{
+        $commande="SELECT ingredient_id as id
+		FROM ingredient
+		WHERE ingredient_id=$id;";
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return(!$results==null);
+    }
+
 }
