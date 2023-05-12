@@ -12,6 +12,7 @@ let bouton_plus_tag = undefined
 let i_ingredient=0
 let i_tag=0
 
+//Permet de mettre tout les choix d'ingrédients possible dans un conteneur
 function mettreTousIngredients(conteneur){
 	let choix;
 	<?php
@@ -29,6 +30,7 @@ function mettreTousIngredients(conteneur){
 	?>
 }
 
+//Permet de mettre tout les choix de tags possible dans un conteneur
 function mettreTousTags(conteneur){
 	let choix;
 	<?php
@@ -46,6 +48,7 @@ function mettreTousTags(conteneur){
 	?>
 }
 
+//Permet d'ajouter une nouvelle interface de choix d'un ingrédient avec les éléments d'un conteneur
 function ajouterIngredient(conteneur){
 	let select=document.createElement("select");
 	select.classList.add("menu_ingredient");
@@ -55,6 +58,7 @@ function ajouterIngredient(conteneur){
 	conteneur.appendChild(select);
 }
 
+//Retire un ingrédient d'un conteneur et rend le bouton disable si il ne reste qu'un seul ingrédient
 function supprimerIngredient(conteneur){
 	conteneur.removeChild(conteneur.lastChild);
 	i_ingredient--;
@@ -63,6 +67,7 @@ function supprimerIngredient(conteneur){
 	}
 }
 
+//Permet d'ajouter une nouvelle interface de choix d'un Tag avec les éléments d'un conteneur
 function ajouterTag(conteneur){
 	let select=document.createElement("select");
 	select.classList.add("menu_tag");
@@ -72,6 +77,7 @@ function ajouterTag(conteneur){
 	conteneur.appendChild(select);
 }
 
+//Retire un Tag d'un conteneur et rend le bouton disable si il ne reste qu'un seul Tag
 function supprimerTag(conteneur){
 	conteneur.removeChild(conteneur.lastChild);
 	i_tag--;
@@ -80,6 +86,8 @@ function supprimerTag(conteneur){
 	}
 }
 
+/*Quand la page charge, elle applique à chacun des boutons "plus" et "moins" et des événements sur les boutons qui permettent d'ajouter
+ou enlever des selects avec les ingrédients ou tag*/
 document.addEventListener('DOMContentLoaded',function(){
 	let menu_ingredient=document.getElementById("ingredients");
 	let menu_tag=document.getElementById("tags");
