@@ -23,55 +23,28 @@
             <label for="name" class="form-label">Présentation</label>
         </div>
         <div class="pré-description">
-            <label for="name" class="form-label">Description</label>
+<!--            <label for="name" class="form-label">Description</label>-->
+            <p>Le seul site pour tout les amateurs de jeux vidéos et de séries TV qui veulent ajouter leurs recettes préférées</p>
         </div>
         <div id="conteneur2">
             <div class="defile">
+                <p>Mes dernières recettes</p>
                 <div class="recette-jour">
-                    <p>Mes dernières recettes</p>
+
                     <?php
                         $liste_recette  = Connexion::prendreDernieresRecettes($pdo,5);
 
                         foreach($liste_recette as $recette){?>
                             <a href="recette.php?id=<?php echo $recette->recette_id ?>">
-                                <img src="ressources/img/recettes/<?php echo $recette->image?>">
+                                <div class="dernieres-recettes">
+                                    <img src="ressources/img/recettes/<?php echo $recette->image?>">
+                                    <p><?php echo $recette->nom ?></p>
+                                </div>
+
                             </a>
                         <?php
                         }
                     ?>
-
-
-                   <!-- <a href="recette.php">
-                        <img src="ressources/img/recettes/<?php /*echo $result[0]->image*/?>">
-                    </a>
-                    <a href="recette.php">
-                    <img src="ressources/img/recettes/gauffre.jpg">
-                    </a>
-                    <a href="recette.php">
-                    <img src="ressources/img/recettes/gauffre.jpg">
-                    </a>
-                    <a href="recette.php">
-                    <img src="ressources/img/recettes/gauffre.jpg">
-                    </a>
-                    <a href="recette.php">
-                    <img src="ressources/img/recettes/gauffre.jpg">
-                    </a>-->
-                </div>
-            </div>
-            <div class="roulette">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-                <img src="ressources/img/recettes/gauffre.jpg">
-            </div>
         </div>
     </div>
 </form>

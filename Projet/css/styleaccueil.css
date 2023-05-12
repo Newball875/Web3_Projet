@@ -118,7 +118,7 @@ header .login{
 .recette-jour img{
     float: left;
     margin: 3%;
-    width: 9%;
+    width: 5em;
     padding: 1em;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -132,6 +132,12 @@ header .login{
 
 .recette-jour img:hover {
     transform:scale(1.2);
+}
+
+.recette-jour{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #accueil{
@@ -182,6 +188,12 @@ header .login{
 
 .error{
     background: lightpink;
+}
+
+.dernieres-recettes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 footer{
