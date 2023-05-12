@@ -290,16 +290,13 @@ class Connexion{
 	}
 
     public static function tagExiste(PDO $pdo, int $id): bool{
-        $commande="select from tag
-        where tag_id = $id";
-
+        $commande="SELECT tag_id as id
+		FROM tag
+		WHERE tag_id=$id;";
         $statement=$pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
         $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
-        if($results == false){
-            return false;
-        }
-        return true;
+        return(!$results==null);
     }
 
 }

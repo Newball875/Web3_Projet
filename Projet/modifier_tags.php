@@ -11,10 +11,10 @@ if(isset($_GET["id"])){
     header("Location: liste_tags.php");
     exit();
 }
-//if(!Connexion::tagExiste($pdo,$_GET["id"])) {
-//    header("Location: liste_tags.php");
-//    exit();
-//}
+if(!Connexion::tagExiste($pdo,$_GET["id"])) {
+    header("Location: liste_tags.php");
+    exit();
+}
 if(isset($_POST['name']) && isset($_GET['id'])){
     Connexion::modifierTag($pdo, $id, $_POST['name']);
 
