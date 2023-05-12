@@ -7,12 +7,12 @@
 }
 
 html, body{
-    display: flex;
+    margin: auto;
     height: 100% ;
-    margin: 0px;
     background: url("../ressources/img/fond2.jpg");
     background-size: 100% ;
     background-position: center;
+    overflow: hidden;
 }
 
 body{
@@ -67,8 +67,6 @@ header .login{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    overflow: hidden;
 }
 
 .title{
@@ -148,7 +146,7 @@ header .login{
 }
 
 footer{
-    height: 5%;
+    height: 3%;
     position:absolute;
     bottom:0;
     width:100%;
@@ -157,7 +155,6 @@ footer{
     justify-content: center;
     align-items: center;
     background: black;
-    overflow: hidden;
     color: white;
 }
 
@@ -165,8 +162,8 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden ;
+    overflow-y: visible;
 }
 
 .form{
@@ -174,7 +171,7 @@ footer{
     flex-direction: column;
     justify-content: space-around;
     padding: 1em ;
-    margin: 10%;
+    margin-top: 5%;
 }
 
 #titre_ajout {
@@ -199,11 +196,10 @@ footer{
     background: #FF7575;
     padding : 1em;
     color: black ;
-    margin-top: 20%;
 }
 
 .infos img{
-    width: 25%;
+    width: 10em;
     margin-top: 1%;
 }
 

@@ -61,12 +61,15 @@ header .login{
     text-decoration: none;
 }
 
+.marge{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .page{
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: scroll;
 }
 
 .ingredients{

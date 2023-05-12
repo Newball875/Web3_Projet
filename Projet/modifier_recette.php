@@ -27,71 +27,71 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
 
 <?php include "class/header.php"?>
 
-<div id="titre_ajout">
-    <p>Modification de la recette : <?=$recette->nom?></p>
-</div>
-<div class="page">
-    <form class="form" action="modification_recette.php" method="POST" enctype="multipart/form-data">
-        <div id="infos" class="infos">
-            <label for="le_fichier" class="form_label">Changer la recette :</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette" value="<?=$recette->nom?>">
-            <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"><?=$instructions?></textarea>
-            <input type="file" class="form-control" id="image" name="image"><?php
-	        echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";?>
-        </div>
-        <div class="liste">
-            <div id="liste-ingredients" class="liste-ingredients">
-                <h1>Ingrédients</h1>
-                <div class="select">
-                    <select class="menu_ingredient" name="ingredients0">
-                        <option value="">Ingrédients</option>
-                    </select>
-                    <input type="number" class="form-control" name="quantite0">
+    <div id="titre_ajout">
+        <p>Modification de la recette : <?=$recette->nom?></p>
+    </div>
+    <div class="page">
+        <form class="form" action="modification_recette.php" method="POST" enctype="multipart/form-data">
+            <div id="infos" class="infos">
+                <label for="le_fichier" class="form_label">Changer la recette :</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette" value="<?=$recette->nom?>">
+                <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"><?=$instructions?></textarea>
+                <input type="file" class="form-control" id="image" name="image"><?php
+                echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";?>
+            </div>
+            <div class="liste">
+                <div id="liste-ingredients" class="liste-ingredients">
+                    <h1>Ingrédients</h1>
+                    <div class="select">
+                        <select class="menu_ingredient" name="ingredients0">
+                            <option value="">Ingrédients</option>
+                        </select>
+                        <input type="number" class="form-control" name="quantite0">
+                    </div>
+                </div>
+                <div id="liste-tags" class="liste-tags">
+                    <h1>Tags</h1>
+                    <div class="select">
+                        <select class="menu_tag" name="tags0">
+                            <option value="">Tags</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="choix-origine" class="choix-origine">
+                    <h1>Origine</h1>
+                    <div class="select">
+                        <select class="origine" name="origine">
+                            <option value="" disabled>Origine</option>
+                            <?php
+                            foreach($tab_origine as $media){
+                                echo "<option value='$media->id'>$media->nom</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div id="liste-tags" class="liste-tags">
-                <h1>Tags</h1>
-                <div class="select">
-                    <select class="menu_tag" name="tags0">
-                        <option value="">Tags</option>
-                    </select>
-                </div>
+            <div id="bouton_final">
+                <button type="submit" class="envoyer">Envoyer</button>
             </div>
-            <div id="choix-origine" class="choix-origine">
-                <h1>Origine</h1>
-                <div class="select">
-                    <select class="origine" name="origine">
-                        <option value="" disabled>Origine</option>
-                        <?php
-                        foreach($tab_origine as $media){
-                            echo "<option value='$media->id'>$media->nom</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
+        </form>
+        <div class="boutons">
+            <div class="nom_ingrédients">
+                <h1>Ingrédients :</h1>
             </div>
-        </div>
-        <div id="bouton_final">
-            <button type="submit" class="envoyer">Envoyer</button>
-        </div>
-    </form>
-    <div class="boutons">
-        <div class="nom_ingrédients">
-            <h1>Ingrédients :</h1>
-        </div>
-        <div class="taille-boutons">
-            <button id="moins" class="moins">-</button>
-            <button id="plus" class="plus">+</button>
-        </div>
-        <div class="nom-tags">
-            <h1>Tags: </h1>
-        </div>
-        <div class="taille-boutons">                 
-            <button id="moins-tag" class="moins">-</button>
-            <button id="plus-tag" class="plus">+</button>
+            <div class="taille-boutons">
+                <button id="moins" class="moins">-</button>
+                <button id="plus" class="plus">+</button>
+            </div>
+            <div class="nom-tags">
+                <h1>Tags: </h1>
+            </div>
+            <div class="taille-boutons">
+                <button id="moins-tag" class="moins">-</button>
+                <button id="plus-tag" class="plus">+</button>
+            </div>
         </div>
     </div>
-</div>
 
 <?php include "class/footer.php"?>
 
