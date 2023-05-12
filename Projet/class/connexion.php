@@ -333,13 +333,9 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
 
-	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $instructions, array $fichier, int $origine_id){
-		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
-        $nom_fic=$fichier["name"];
-        $nom_final=$nom_dos.$fichier["name"];
-        move_uploaded_file($fichier["tmp_name"],$nom_final);
+	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $instructions, string $fichier, int $origine_id){
 		$commande="UPDATE recette
-		SET nom='$nom',instructions='$instructions',image='$nom_fic',origine_id=$origine_id
+		SET nom='$nom',instructions='$instructions',image='$fichier',origine_id=$origine_id
 		WHERE recette_id=$id;";
 		$statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));

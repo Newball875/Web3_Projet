@@ -2,9 +2,17 @@
 $id=$_SESSION["id_recette"];
 
 var_dump($_POST);
-
+$recette=Connexion::prendreImageRecette($pdo,$id);
 //Etape 1 : modifier la recette même
-Connexion::modifierRecette($pdo, $id, $_POST["name"], $_POST["instructions"],$_FILES["image"],$_POST["origine"]);
+if($_FILES["image"]["error"]==0){
+	Connexion::modifierRecette($pdo, $id, $_POST["name"], $_POST["instructions"],$_FILES["image"]["name"],$_POST["origine"]);
+	$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
+    $nom_fic=$_FILES["image"]["name"];
+    $nom_final=$nom_dos.$_FILES["image"]["name"];
+    move_uploaded_file($_FILES["image"]["tmp_name"],$nom_final);
+}else{
+	Connexion::modifierRecette($pdo, $id, $_POST["name"], $_POST["instructions"],$recette->image,$_POST["origine"]);
+}
 
 Connexion::supprimerLiensTag($pdo,$id);
 Connexion::supprimerLiensIngredients($pdo,$id);
