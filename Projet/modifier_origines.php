@@ -1,10 +1,10 @@
 <?php include_once "class/init.php"; 
-if(!isset($_GET["id"])){
+if(!isset($_GET["id"]) || !(Connexion::origineExiste($pdo,$_GET["id"]))){
 	header("Location: liste_origines.php");
 	exit();
 }
 $id=$_GET["id"];
-
+$origine=Connexion::prendreInfosOrigine($pdo,$id);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -24,7 +24,7 @@ $id=$_GET["id"];
 <?php include "class/header.php"?>
 
 <div id="titre_ajout">
-    <p>Modifier <?=?></p>
+    <p>Modifier <?=$origine->nom?></p>
 </div>
 <div>
     <form action="update_origine.php" method="POST" enctype="multipart/form-data">

@@ -104,13 +104,24 @@ class Connexion{
 	}
 
     public static function prendreTag(PDO $pdo, int $id):string{
-        $commande="select nom from tag
+        $commande="SELECT nom
+		FROM tag
         WHERE tag_id = $id;";
         $statement=$pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
         $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
         return $results[0]->nom;
     }
+
+	public static function prendreInfosOrigine(PDO $pdo, int $id):Commandes{
+		$commande="SELECT nom,image,description
+		FROM origine
+		WHERE origine_id=$id;";
+		$statement=$pdo->prepare($commande);
+		$statement->execute() or die(var_dump($statement->errorInfo()));
+		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+		return $results[0];
+	}
 
 	public static function prendreTousOrigines(PDO $pdo):array{
 		$commande="SELECT nom,origine_id as id, description, image
