@@ -16,13 +16,12 @@
 
 <?php include "class/header.php" ?>
 
-<div id="accueil" method="POST" enctype="multipart/form-data">
+<div id="accueil">
     <div id="conteneur">
         <div class="présentation">
             <label for="name" class="form-label">Présentation</label>
         </div>
         <div class="pré-description">
-<!--            <label for="name" class="form-label">Description</label>-->
             <p>Le seul site pour tous les amateurs de jeux vidéo et de séries TV qui veulent ajouter leurs recettes préférées.</p>
         </div>
         <div id="conteneur2">
@@ -44,6 +43,8 @@
                         <?php
                         }
                     ?>
+                </div>
+            </div>
         </div>
     </div>
 </div>
