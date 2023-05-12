@@ -14,7 +14,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php include "javascript/ajout_recette_js.php"; ?>
+    <?php include_once "javascript/ajout_recette_js.php"; ?>
 
 </head>
 <body>
@@ -36,6 +36,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
         <div class="liste">
             <div id="liste-ingredients" class="liste-ingredients">
                 <h1>Ingrédients</h1>
+                <a href="ajout_ingredient.php">Nouvel ingrédient</a>
                 <div>
                     <select class="menu_ingredient" name="ingredients0">
                         <option value="">Ingrédients</option>
@@ -45,6 +46,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             </div>
             <div id="liste-tags" class="liste-tags">
                 <h1>Tags</h1>
+                <a href="ajout_tag.php">Nouveau tag</a>
                 <div>
                     <select class="menu_tag" name="tags0">
                         <option value="">Tags</option>
@@ -53,6 +55,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             </div>
             <div id="choix-origine" class="choix-origine">
                 <h1>Origine</h1>
+                <a href="ajout_origine.php">Nouvelle origine</a>
                 <div>
                     <select class="origine" name="origine">
                         <option value="" disabled>Origine</option>
