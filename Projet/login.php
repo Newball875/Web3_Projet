@@ -1,4 +1,12 @@
-<?php include "class/init.php";?>
+<?php include "class/init.php";
+$message="";
+if(isset($_GET["nick"]) and $_GET["nick"]==0){
+    $message="Pseudo incorrect !";
+}elseif(isset($_GET["pwd"]) and $_GET["pwd"]==0){
+    $message="Mot de passe incorrect !";
+}
+
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -17,27 +25,8 @@
 <body>
 
 <?php include "class/header.php";
-$login=0;
-$message="";
-if(isset($_SESSION["nick"]) and $_SESSION["nick"]=="recette"){
-    $login=2;
-}else{
-    if(isset($_POST["nick"])){
-        if($_POST["nick"]=="recette"){
-            if(isset($_POST["password"])){
-                if($_POST["password"]=="1234"){
-                    $login=1;
-                }else{
-                    $message="Mot de passe incorrect !";
-                }
-            }
-        }else{
-            $message="Pseudo incorrect !";
-        }
-    }
-}
-if($login==0){?>
-<form id="login-form" action="login.php" method="post">
+if(!isset($_SESSION["nick"])){?>
+<form id="login-form" action="log.php" method="post">
     <h1 style="text-align: center">Login</h1>
     <div id="content">
         <div id="inputs">
@@ -58,17 +47,11 @@ if($login==0){?>
     </div>
 </form>
 <?php
-}else{
-    if($login==1){
-        $_SESSION["nick"]=$_POST["nick"];
-    }?>
-    <button id="logout" onclick="window.location.href= 'unlog.php'">LOG OUT</button>
+}else{?>
+    <input type="button" id="logout" value="LOG OUT">
     <?php
 }
 ?>
-
-
-
 <?php include "class/footer.php" ?>
 
 </body>
