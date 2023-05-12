@@ -52,6 +52,18 @@ class Connexion{
         return $results;
     }
 
+    public static function prendreDernieresRecettes(PDO $pdo,int $i){
+        $commande="SELECT * 
+        FROM `recette`
+        ORDER BY recette_id 
+        DESC LIMIT $i;";
+
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return $results;
+    }
+
 	public static function prendreListeTag(PDO $pdo, int $id):array{
 		$commande="SELECT nom as tag
         FROM tag,tag_recette

@@ -28,8 +28,9 @@
         <div id="conteneur2">
             <div class="defile">
                 <div class="recette-jour">
+                    <p>Mes dernières recettes</p>
                     <?php
-                        $liste_recette  = Connexion::prendreListeRecette($pdo);
+                        $liste_recette  = Connexion::prendreDernieresRecettes($pdo,5);
 
                         foreach($liste_recette as $recette){?>
                             <a href="recette.php?id=<?php echo $recette->recette_id ?>">
@@ -38,6 +39,8 @@
                         <?php
                         }
                     ?>
+
+
                    <!-- <a href="recette.php">
                         <img src="ressources/img/recettes/<?php /*echo $result[0]->image*/?>">
                     </a>
