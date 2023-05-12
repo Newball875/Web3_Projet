@@ -71,14 +71,18 @@ class Connexion{
 		return $results[0]->instructions;
 	}
 
-	public static function prendreOrigine(PDO $pdo, int $id):Commandes{
+	public static function prendreOrigine(PDO $pdo, int $id):array{
 		$commande="SELECT origine.nom, origine.description, origine.image
 		FROM origine,recette
 		WHERE recette.origine_id=origine.origine_id and recette.recette_id=$id;";
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
-		return $results[0];
+		if($results[0]!=null){
+			return $results[0];
+		}
+		$aux[]=[null];
+		return $aux;
 	}
 
 	public static function prendreTousIngredients(PDO $pdo):array{
@@ -227,6 +231,37 @@ class Connexion{
 		
 		DELETE FROM recette
 		WHERE recette_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
+	public static function supprimerTag(PDO $pdo, int $id){
+		$commande="DELETE FROM tag_recette
+		WHERE tag_id=$id;
+		
+		DELETE FROM tag
+		WHERE tag_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
+	public static function supprimerIngredient(PDO $pdo, int $id){
+		$commande="DELETE FROM ingredient_recette
+		WHERE ingredient_id=$id;
+		
+		DELETE FROM ingredient
+		WHERE ingredient_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
+	public static function supprimerOrigine(PDO $pdo, int $id){
+		$commande="UPDATE recette
+		SET origine_id=0
+		WHERE origine_id=$id;
+		
+		DELETE FROM origine
+		WHERE origine_id=$id;";
 		$statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
