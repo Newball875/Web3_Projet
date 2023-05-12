@@ -17,21 +17,6 @@ CREATE TABLE `recette` (
     FOREIGN KEY (`origine_id`) REFERENCES origine(`origine_id`)
 );
 
-DROP TABLE IF EXISTS ustensile;
-CREATE TABLE `ustensile` (
-     `ustensile_id` int PRIMARY KEY AUTO_INCREMENT,
-     `nom` varchar(50) NOT NULL,
-     `image` varchar(255) DEFAULT NULL
-);
-
-DROP TABLE IF EXISTS ustensile_recette;
-CREATE TABLE `ustensile_recette` (
-    `recette_id` int REFERENCES `recette`(`recette_id`),
-    `ustensile_id` int REFERENCES `ustensile`(`ustensile_id`),
-
-    PRIMARY KEY (`recette_id`,`ustensile_id`)
-);
-
 DROP TABLE IF EXISTS ingredient;
 CREATE TABLE `ingredient` (
     `ingredient_id` int PRIMARY KEY AUTO_INCREMENT,
