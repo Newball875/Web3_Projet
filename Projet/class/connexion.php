@@ -296,7 +296,10 @@ class Connexion{
         $statement=$pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
         $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
-        return ($results) ? true : false;
+        if($results == false){
+            return false;
+        }
+        return true;
     }
 
 }

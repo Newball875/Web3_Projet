@@ -4,21 +4,24 @@ if(!isset($_SESSION["nick"])){
     header("Location: accueil.php");
     exit();
 }
+
 if(isset($_GET["id"])){
     $id = $_GET["id"];
 }else{
     header("Location: liste_tags.php");
     exit();
 }
+//if(!Connexion::tagExiste($pdo,$_GET["id"])) {
+//    header("Location: liste_tags.php");
+//    exit();
+//}
 if(isset($_POST['name']) && isset($_GET['id'])){
-    if(Connexion::tagExiste($pdo,$id)) {
-        Connexion::modifierTag($pdo, $id, $_POST['name']);
-    }
-    header("Location: liste_tags.php");
-    exit();
-}
+    Connexion::modifierTag($pdo, $id, $_POST['name']);
 
+}
 $tag=Connexion::prendreTag($pdo, $id);
+
+
 ?>
 
 <!doctype html>
