@@ -88,7 +88,7 @@ if(isset($_POST["recherche"])){
             echo "<img src='$chemin_image"."/recettes/"."$recette->image' alt='$recette->nom'>";
             echo "</div>";
             echo '<div class="nom-recette">';
-            echo "<p>$recette->nom</p>";
+            echo "<a>$recette->nom</a>";
             echo "</div>";
             echo "</div>";
             echo "</a>";

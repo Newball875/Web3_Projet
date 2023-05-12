@@ -67,12 +67,6 @@ if(isset($_GET["id"])){
                     endforeach;
                     ?>
                 </div>
-                <div class="fenetre">
-                    <label for="name" class="form-label">Ustensiles</label>
-                    <li>.</li>
-                    <li>.</li>
-                    <li>.</li>
-                </div>
             </div>
             <div class="ligne3">
                 <div class="description">
@@ -85,7 +79,7 @@ if(isset($_GET["id"])){
             </div>
         </div>
     </div>
-    <div class="origine" id="origine">
+    <div class="origines" id="origine">
         <?php
         $results=Connexion::prendreOrigine($pdo,$id);
         if($results[0]!=null){

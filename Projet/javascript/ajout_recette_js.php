@@ -14,6 +14,7 @@ let i=1
 let nombre_ingredients = 0;
 let i_tag=1;
 
+//Compte le nombre d'ingrédients contenus dans la base de donnée
 let compterIngredientBdd = function(){
     <?php
     foreach ($tab_ingredients as $ingredient){ ?>
@@ -23,6 +24,7 @@ let compterIngredientBdd = function(){
     ?>
 }
 
+//Insère dans une option le choix des ingrédients présents dans la base de donnée
 let insererIngredientsBdd = function(conteneur){
     let choix;
     let options_ingredient = [];
@@ -47,6 +49,7 @@ let insererIngredientsBdd = function(conteneur){
     // console.log(liste_options_ingredient)
 }
 
+//Insère dans une option le choix des tags présents dans la base de donnée
 let insererTagsBdd = function(conteneur){
     let choix;
     let options_tag = [];
@@ -68,7 +71,7 @@ let insererTagsBdd = function(conteneur){
     liste_options_tag.push(options_tag);
 }
 
-
+//Génére toutes les options d'ingrédients dans un select
 let genererContenuDivIngredient = function(conteneur){
 	let select = document.createElement("select");
 	select.classList.toggle("menu_ingredient");
@@ -91,6 +94,7 @@ let genererContenuDivIngredient = function(conteneur){
 	i=i+1;
 }
 
+//Génére toutes les options de tag dans un select
 let genererContenuDivTag = function(conteneur){
     let select = document.createElement("select");
     select.classList.toggle("menu_tag");
@@ -106,12 +110,14 @@ let genererContenuDivTag = function(conteneur){
     i_tag = i_tag + 1
 }
 
+//Créer une div pour le contenu des ingrédients
 let creerDivIngredient = function(){
 	let div_ingredient = document.createElement("div")
 	genererContenuDivIngredient(div_ingredient)
 	return div_ingredient
 }
 
+//Créer une div pour le contenu des tags
 let creerDivTag = function(){
     let div_tag = document.createElement("div")
     div_tag.classList.toggle("select")
@@ -119,7 +125,7 @@ let creerDivTag = function(){
     return div_tag
 }
 
-
+//Permet de supprimer un ingrédient afin qu'il ne puisse pas être choisi à nouveau
 let supprimerIngredient = function(conteneur){
 	if(!bouton_moins.disabled){
         bouton_plus.disabled = false;
@@ -131,6 +137,7 @@ let supprimerIngredient = function(conteneur){
 	}
 }
 
+//Ajouter
 let ajouterIngredient = function (conteneur){
     if(!(bouton_plus.disabled === true)){
         bouton_moins.disabled = false
