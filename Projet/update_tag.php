@@ -1,8 +1,7 @@
 <?php include_once "class/init.php";
 $i=0;
 
-Connexion::ajouterIngredient($pdo, $_POST["name"], $_FILES["image"]);
-echo "<br>";
+Connexion::ajouterTag($pdo, $_POST["name"]);
 header("Location: ajout_recette.php");
 exit;
 ?>

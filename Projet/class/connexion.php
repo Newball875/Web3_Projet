@@ -137,18 +137,18 @@ class Connexion{
 		return $results[0]->id;
 	}
 
-    public static function ajouterIngredient(PDO $pdo, string $nom, string $type, int $id ,array $fichier){
+    public static function ajouterIngredient(PDO $pdo, string $nom, array $fichier){
         $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
         move_uploaded_file($fichier["tmp_name"],$nom_final);
-        $commande="INSERT INTO ingredient(nom,type,ingredient_id,image)
-		VALUES('$nom','$type',$id,'$nom_fic');";
+        $commande="INSERT INTO ingredient(nom,image)
+		VALUES('$nom','$nom_fic');";
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
 
-    public static function ajouterOrigine(PDO $pdo, string $nom, string $description, int $id ,array $fichier){
+    public static function ajouterOrigine(PDO $pdo, string $nom, string $description ,array $fichier){
         $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."origine".DIRECTORY_SEPARATOR;
         $nom_fic=$fichier["name"];
         $nom_final=$nom_dos.$fichier["name"];
@@ -159,9 +159,9 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
 
-    public static function ajouterTag(PDO $pdo, string $nom, int $id){
-        $commande="INSERT INTO tag(nom,tag_id)
-		VALUES('$nom',$id);";
+    public static function ajouterTag(PDO $pdo, string $nom){
+        $commande="INSERT INTO tag(nom)
+		VALUES('$nom');";
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }

@@ -17,15 +17,13 @@
 <?php include "class/header.php"?>
 
 <div id="titre_ajout">
-    <p>Nouvelle Origine</p>
+    <p>Nouveeau Tag</p>
 </div>
 <div>
-    <form action="update_origine.php" method="POST" enctype="multipart/form-data">
+    <form action="update_tag.php" method="POST" enctype="multipart/form-data">
         <div id="infos">
-            <label for="le_fichier" class="form_label">Uploader une origine :</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'origine">
-            <textarea id="instructions" class="form-control" name="description" rows="5" cols="33" placeholder="Description"></textarea>
-            <input type="file" class="form-control" id="image" name="image">
+            <label for="le_fichier" class="form_label">Créer un tag :</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nom du tag">
             <div class="bouton_final">
                 <button type="submit" class="envoyer">Envoyer</button>
             </div>
