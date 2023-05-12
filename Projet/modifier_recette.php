@@ -7,6 +7,8 @@ $tab_tags=Connexion::prendreTousTags($pdo);
 $id=$_SESSION["id_recette"];
 $recette=Connexion::prendreImageRecette($pdo,$id);
 $instructions=Connexion::prendreInstructions($pdo,$id);
+$tags=Connexion::prendreListeTag($pdo,$id);
+$ingredients=Connexion::prendreListeIngredients($pdo,$id);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -82,7 +84,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
             <button id="plus" class="plus">+</button>
         </div>
         <div class="nom-tags">
-            <h1>Tags:   </h1>
+            <h1>Tags: </h1>
         </div>
         <div class="taille-boutons">                 
             <button id="moins-tag" class="moins">-</button>
@@ -95,7 +97,3 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
 
 </body>
 </html>
-
-<?php // à faire :
-//click() en js (appuyer sur les boutons)
-//selected sur les select pour mettres les ingrédients, tags et origines par défaut
