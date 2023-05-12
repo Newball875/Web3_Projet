@@ -28,6 +28,9 @@
         <div id="conteneur2">
             <div class="defile">
                 <div class="recette-jour">
+                    <?php
+                        Connexion::p
+                    ?>
                     <a href="recette.php">
                         <img src="ressources/img/recettes/gauffre.jpg">
                     </a>
@@ -46,6 +49,13 @@
                 </div>
             </div>
             <div class="roulette">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
                 <img src="ressources/img/recettes/gauffre.jpg">
                 <img src="ressources/img/recettes/gauffre.jpg">
                 <img src="ressources/img/recettes/gauffre.jpg">

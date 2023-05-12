@@ -41,6 +41,15 @@ class Connexion{
 		return $results[0];
 	}
 
+    public static function prendreListeRecette(PDO $pdo):array{
+        $commande="SELECT *  
+        FROM recette;";
+        $statement=$pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+        $results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
+        return $results;
+    }
+
 	public static function prendreListeTag(PDO $pdo, int $id):array{
 		$commande="SELECT nom as tag
         FROM tag,tag_recette
