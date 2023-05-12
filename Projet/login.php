@@ -51,7 +51,6 @@ if(!isset($_SESSION["nick"])){?>
     <div class="page-admin">
         <div id="admin" class="admin">
             <a href="ajout_recette.php">Ajouter une recette</a>
-            <a href="liste_recettes.php">Liste des recettes</a>
         </div>
         <div id="admin" class="admin">
             <a href="liste_tags.php">Liste des tags</a>
