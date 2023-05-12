@@ -1,6 +1,8 @@
 <?php
 
+//Class qui gère toutes les commandes de
 class Connexion{
+	$default="default.png";
 	public static function connect():PDO{
 		$db_name="bdd";
 		$db_host="127.0.0.1";
@@ -152,10 +154,14 @@ class Connexion{
 	}
 
 	public static function ajouterRecette(PDO $pdo, string $nom, string $instructions, int $id ,array $fichier):int{
-		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
-		$nom_fic=$fichier["name"];
-		$nom_final=$nom_dos.$fichier["name"];
-		move_uploaded_file($fichier["tmp_name"],$nom_final);
+		if($fichier["name"]!=""){
+			$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
+			$nom_fic=$fichier["name"];
+			$nom_final=$nom_dos.$fichier["name"];
+			move_uploaded_file($fichier["tmp_name"],$nom_final);
+		}else{
+			$nom_fic=$default;
+		}
 		$commande='INSERT INTO recette(nom,instructions,origine_id,image)
 		VALUES("'.$nom.'","'.$instructions.'",'.$id.',"'.$nom_fic.'");';
 		$statement = $pdo->prepare($commande);
@@ -171,10 +177,14 @@ class Connexion{
 	}
 
     public static function ajouterIngredient(PDO $pdo, string $nom, array $fichier){
-        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
-        $nom_fic=$fichier["name"];
-        $nom_final=$nom_dos.$fichier["name"];
-        move_uploaded_file($fichier["tmp_name"],$nom_final);
+		if($fichier["name"]!=""){
+			$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."ingredients".DIRECTORY_SEPARATOR;
+        	$nom_fic=$fichier["name"];
+        	$nom_final=$nom_dos.$fichier["name"];
+        	move_uploaded_file($fichier["tmp_name"],$nom_final);
+		}else{
+			$nom_fic=$default;
+		}
         $commande="INSERT INTO ingredient(nom,image)
 		VALUES('$nom','$nom_fic');";
         $statement = $pdo->prepare($commande);
@@ -182,10 +192,14 @@ class Connexion{
     }
 
     public static function ajouterOrigine(PDO $pdo, string $nom, string $description ,array $fichier){
-        $nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."origine".DIRECTORY_SEPARATOR;
-        $nom_fic=$fichier["name"];
-        $nom_final=$nom_dos.$fichier["name"];
-        move_uploaded_file($fichier["tmp_name"],$nom_final);
+		if($fic["name"]!=""){
+			$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."origine".DIRECTORY_SEPARATOR;
+        	$nom_fic=$fichier["name"];
+        	$nom_final=$nom_dos.$fichier["name"];
+        	move_uploaded_file($fichier["tmp_name"],$nom_final);
+		}else{
+			$nom_fic=$default;
+		}
         $commande='INSERT INTO origine(nom,description,image)
 		VALUES("'.$nom.'","'.$description.'","'.$nom_fic.'");';
 		echo $commande;
