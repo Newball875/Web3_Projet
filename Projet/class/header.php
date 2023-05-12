@@ -19,9 +19,11 @@
                     </a>
                 </div>
                 <div class="login">
-                    <a class="navbar-brand" href="./login.php">
-                        Login
-                    </a>
+                <?php $log="Login";
+                if(isset($_SESSION["nick"])){
+                    $log="Admin";
+                }
+                echo '<a class="navbar-brand" href="./login.php">'.$log.'</a>'; ?>
                 </div>
                 <div style="flex: 1"></div>
             </div>
