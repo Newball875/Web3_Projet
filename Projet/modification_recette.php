@@ -5,7 +5,7 @@ var_dump($_POST);
 
 //Etape 1 : modifier la recette même
 
-Connexion::modifierRecette(PDO $pdo, $id, $_POST["name"], string $image, int $origine_id)
+Connexion::modifierRecette($pdo, $id, $_POST["name"], string $image, int $origine_id)
 
 
 $i=0;

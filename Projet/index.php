@@ -1,5 +1,6 @@
+<?php include "class/init.php";?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,10 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food Culture</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleaccueil.css">
     <script src="js/script.js"></script>
-    <script src="javascript/form_ingredient.js"></script>
-
 
 </head>
 <body>
@@ -18,35 +17,46 @@
 <?php include "class/header.php" ?>
 
 <div class="title"></div>
-<form id="form-ingredient">
-
-</form>
 <form id="accueil" method="POST" enctype="multipart/form-data">
-    <div class="origine">
-        <div class="neon">
-            <img src="images/dinosaur.jpg">
-            <div class="neon">
-                <label for="name" class="form-label">Nom</label>
-            </div>
-            <div class="neon">
-                <label for="description" class="form-label">Description</label>
-            </div>
+    <div id="conteneur">
+        <div class="présentation">
+            <label for="name" class="form-label">Présentation</label>
         </div>
-    </div>
-    <div class="fenetre">
-        <div class="neon">
-            <img src="images/dinosaur.jpg">
-            <div class="neon">
-                <label for="name" class="form-label">Nom</label>
+        <div class="pré-description">
+            <label for="name" class="form-label">Description</label>
+        </div>
+        <div id="conteneur2">
+            <div class="defile">
+                <div class="recette-jour">
+                    <a href="recette.php">
+                        <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                    <a href="recette.php">
+                    <img src="ressources/img/recettes/gauffre.jpg">
+                    </a>
+                </div>
             </div>
-            <div class="neon">
-                <label for="description" class="form-label">Description</label>
+            <div class="roulette">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
+                <img src="ressources/img/recettes/gauffre.jpg">
             </div>
         </div>
     </div>
 </form>
 
-<?php include "class/footer.php" ?>
+    <?php include "class/footer.php" ?>
 
-</body>
-</html>
+    </body>
+    </html>

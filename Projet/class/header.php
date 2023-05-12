@@ -4,7 +4,7 @@
             <div class="gauche" >
                 <div style="width: 0.5em"></div>
                 <div class="logo">
-                    <a href="accueil.php"><img src="./ressources/img/logoweb3.png" alt="" height="100" class="d-inline-block align-top"></a>
+                    <a href="index.php"><img src="./ressources/img/logoweb3.png" alt="" height="100" class="d-inline-block align-top"></a>
                 </div>
                 <div class="recette">
                     <a class="navbar-brand" href="./recette.php">
