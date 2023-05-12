@@ -4,7 +4,7 @@ if(!isset($_SESSION["nick"])){
     header("Location: accueil.php");
     exit();
 }
-$liste_ingredients=Connexion::prendreTousRecette($pdo);
+$liste_ingredients=Connexion::re($pdo);
 ?>
 <!doctype html>
 <html lang="fr">
