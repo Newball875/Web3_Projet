@@ -161,9 +161,9 @@ class Connexion{
 		$statement = $pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 
-		$commande="SELECT recette_id as id
+		$commande='SELECT recette_id as id
 		FROM recette
-		WHERE nom='$nom' and instructions='$instructions' and origine_id=$id and image='$nom_fic';";
+		WHERE nom="'.$nom.'" and instructions="'.$instructions.'" and origine_id='.$id.' and image="'.$nom_fic.'";';
 		$statement=$pdo->prepare($commande);
 		$statement->execute() or die(var_dump($statement->errorInfo()));
 		$results=$statement->fetchAll(PDO::FETCH_CLASS,"commandes");
