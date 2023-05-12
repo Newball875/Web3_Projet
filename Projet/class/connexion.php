@@ -2,7 +2,7 @@
 
 //Class qui gère toutes les commandes de
 class Connexion{
-	$default="default.png";
+	const $default="default.png";
 	public static function connect():PDO{
 		$db_name="bdd";
 		$db_host="127.0.0.1";
