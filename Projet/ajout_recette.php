@@ -1,7 +1,6 @@
 <?php include_once "class/init.php";
-
 if(!isset($_SESSION["nick"])){
-    header("Location: accueil.php");
+    header("Location: index.php");
     exit();
 }
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);

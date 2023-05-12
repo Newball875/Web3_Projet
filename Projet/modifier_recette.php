@@ -1,4 +1,8 @@
 <?php include_once "class/init.php";
+if(!isset($_SESSION["nick"])){
+    header("Location: liste_recettes.php");
+    exit();
+}
 
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);

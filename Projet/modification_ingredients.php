@@ -1,6 +1,6 @@
 <?php include "class/init.php";
 if(!isset($_SESSION["nick"])){
-    header("Location: accueil.php");
+    header("Location: index.php");
     exit();
 }
 if(isset($_GET["id"]) || !(Connexion::ingredientExiste($pdo,$_GET["id"]))){

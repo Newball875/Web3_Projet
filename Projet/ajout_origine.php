@@ -1,4 +1,9 @@
-<?php include_once "class/init.php"; ?>
+<?php include_once "class/init.php";
+if(!isset($_SESSION)){
+    header("Location: index.php");
+    exit();
+}
+?>
 <!doctype html>
 <html lang="fr">
 <head>

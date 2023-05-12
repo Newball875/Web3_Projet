@@ -1,4 +1,8 @@
 <?php include_once "class/init.php";
+if(!isset($_SESSION["nick"])){
+	header("Location: index.php");
+	exit();
+}
 $id=$_SESSION["id_recette"];
 
 var_dump($_POST);

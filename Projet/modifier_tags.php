@@ -1,7 +1,7 @@
 <?php include "class/init.php";
 $message="";
 if(!isset($_SESSION["nick"])){
-    header("Location: accueil.php");
+    header("Location: index.php");
     exit();
 }
 
