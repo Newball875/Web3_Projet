@@ -1,8 +1,4 @@
 <?php include "class/init.php";
-if(!isset($_SESSION["nick"])){
-    header("Location: index.php");
-    exit();
-}
 $liste_recettes=Connexion::prendreListeRecette($pdo);
 ?>
 <!doctype html>
