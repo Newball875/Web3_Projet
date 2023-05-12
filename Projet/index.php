@@ -24,7 +24,7 @@
         </div>
         <div class="pré-description">
 <!--            <label for="name" class="form-label">Description</label>-->
-            <p>Le seul site pour tout les amateurs de jeux vidéos et de séries TV qui veulent ajouter leurs recettes préférées</p>
+            <p>Le seul site pour tous les amateurs de jeux vidéo et de séries TV qui veulent ajouter leurs recettes préférées.</p>
         </div>
         <div id="conteneur2">
             <div class="defile">
