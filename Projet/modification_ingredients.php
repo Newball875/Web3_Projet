@@ -6,7 +6,7 @@ if(!isset($_SESSION["nick"])){
 if(isset($_GET["id"]) || !(Connexion::ingredientExiste($pdo,$_GET["id"]))){
     $id = $_GET["id"];
 }else{
-    header("Location: liste_tags.php");
+    header("Location: liste_ingredients.php");
     exit();
 }
 $ingredient=Connexion::prendreImageIngredient($pdo,$id);

@@ -316,6 +316,14 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
 
+	public static function modifierOrigine(PDO $pdo, int $id, string $nom, string $description,string $image){
+		$commande="UPDATE origine
+		SET nom='$nom',description='$description',image='$image'
+		WHERE origine_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
 	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $instructions, array $fichier, int $origine_id){
 		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
         $nom_fic=$fichier["name"];
