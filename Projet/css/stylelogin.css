@@ -162,11 +162,39 @@ footer{
     color: black;
 }
 
-#logout{
-    display: flex ;
+.page-admin{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: center;
-    align-items: center;
+    align-content: center;
+    margin: 15% 25%;
+}
+
+.admin{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    background: #FF7575;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #A00000;
+    padding: 1em;
+}
+
+.admin a{
+    text-decoration: none;
+}
+
+.logout{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 5% auto;
+}
+
+.logout input{
+    background-color: #A00000;
     color: white;
 }
 
