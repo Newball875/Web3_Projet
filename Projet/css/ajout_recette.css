@@ -92,13 +92,18 @@ header .login{
     overflow: auto;
 }
 
+
 .bouton_final{
     display: flex;
     flex-direction: column;
     align-content: center;
     color: black ;
-    margin: 1% 25%;
-    overflow: auto;
+    margin: 1% 10%;
+}
+
+.bouton_final button{
+    margin: 1% 5%;
+    background: #A00000;
 }
 
 .menu_ingredient{
@@ -183,12 +188,13 @@ footer{
 #infos{
     display: flex;
     justify-content: space-around;
+    align-content: center;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
     padding : 1em;
     color: black ;
-
+    margin: 1% 5%;
 }
 
 .form-control{

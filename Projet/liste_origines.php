@@ -23,17 +23,20 @@ $liste_origines=Connexion::prendreTousOrigines($pdo);
 </head>
 <body>
 
-<?php include "class/header.php";
-foreach($liste_origines as $origine){
-	echo "<div class='origines' id='$origine->id'>";
-	echo "<img src='$chemin_image"."/origine/"."$origine->image' alt='$origine->nom'>";
-	echo "<p>$origine->nom</p>";
-	echo "<p>$origine->description</p>";
-	echo "<input type='button' class='modif' value='Modifier'>";
-	echo "<input type='button' class='suppr' value='Supprimer'>";
-	echo "</div>";
-}
-include "class/footer.php";?>
+<?php include "class/header.php";?>
+<div class="page">
+    <?php
+    foreach($liste_origines as $origine){
+        echo "<div class='origines' id='$origine->id'>";
+        echo "<img src='$chemin_image"."/origine/"."$origine->image' alt='$origine->nom'>";
+        echo "<p>$origine->nom</p>";
+        echo "<p>$origine->description</p>";
+        echo "<input type='button' class='modif' value='Modifier'>";
+        echo "<input type='button' class='suppr' value='Supprimer'>";
+        echo "</div>";
+    }?>
+</div>
+<?php include "class/footer.php";?>
 
 </body>
 </html>
