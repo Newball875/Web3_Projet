@@ -20,7 +20,7 @@ $recette_id=Connexion::ajouterRecette($pdo,$_POST["name"], $_POST["instructions"
 
 $i=0;
 while($i<sizeof($liste_ingredients)){
-    $ing_id=(int)$liste_ingredients[$i]; // ici ça ne donne pas l'id de l'ingredient en (int)
+    $ing_id=(int)$liste_ingredients[$i];
     $quantite=(int)$liste_quantite[$i];
     Connexion::lierIngredientRecette($pdo,$ing_id,$recette_id,$quantite);
     $i=$i+1;

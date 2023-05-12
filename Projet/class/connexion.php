@@ -275,18 +275,38 @@ class Connexion{
         $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
 
-	    public static function modifierTag(PDO $pdo,int $id, string $nom_modifie){
-        $commande="update tag
+	public static function supprimerLiensTag(PDO $pdo, int $id){
+		$commande="DELETE FROM tag_recette
+		WHERE recette_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
 
-        set nom = '$nom_modifie'
-        
+	public static function supprimerLiensIngredients(PDO $pdo, int $id){
+		$commande="DELETE FROM ingredient_recette
+		WHERE recette_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
+	}
+
+	public static function modifierTag(PDO $pdo,int $id, string $nom_modifie){
+    	$commande="UPDATE tag
+    	SET nom = '$nom_modifie'
         WHERE tag_id=$id;";
         $statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));
     }
 
-	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $image, int $origine_id){
-		
+	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $instructions, array $fichier, int $origine_id){
+		$nom_dos=getcwd().DIRECTORY_SEPARATOR."ressources".DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR."recettes".DIRECTORY_SEPARATOR;
+        $nom_fic=$fichier["name"];
+        $nom_final=$nom_dos.$fichier["name"];
+        move_uploaded_file($fichier["tmp_name"],$nom_final);
+		$commande="UPDATE recette
+		SET nom='$nom',instructions='$instructions',image='$nom_fic',origine_id=$origine_id
+		WHERE recette_id=$id;";
+		$statement = $pdo->prepare($commande);
+        $statement->execute() or die(var_dump($statement->errorInfo()));
 	}
 
     public static function tagExiste(PDO $pdo, int $id): bool{

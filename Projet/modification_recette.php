@@ -4,9 +4,10 @@ $id=$_SESSION["id_recette"];
 var_dump($_POST);
 
 //Etape 1 : modifier la recette même
+Connexion::modifierRecette($pdo, $id, $_POST["name"], $_POST["instructions"],$_FILES["image"],$_POST["origine"]);
 
-Connexion::modifierRecette($pdo, $id, $_POST["name"], string $image, int $origine_id)
-
+Connexion::supprimerLiensTag($pdo,$id);
+Connexion::supprimerLiensIngredients($pdo,$id);
 
 $i=0;
 $liste_ingredients=[];
@@ -25,8 +26,20 @@ while(isset($_POST["tags".$i])){
     $i=$i+1;
 }
 
+$i=0;
+while($i<sizeof($liste_ingredients)){
+    $ing_id=(int)$liste_ingredients[$i];
+    $quantite=(int)$liste_quantite[$i];
+    Connexion::lierIngredientRecette($pdo,$ing_id,$id,$quantite);
+    $i=$i+1;
+}
+$i=0;
+while($i<sizeof($liste_tags)){
+    $tag_id=(int)$liste_tags[$i];
+    Connexion::lierTagRecette($pdo,$tag_id,$id);
+    $i=$i+1;
+}
 
-
-//header("Location: ajout_recette.php");
-//exit;
+header("Location: recette.php?id=$id");
+exit;
 ?>
