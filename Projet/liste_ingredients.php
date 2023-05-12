@@ -23,17 +23,21 @@ $liste_ingredients=Connexion::prendreTousIngredients($pdo);
 </head>
 <body>
 
-<?php include "class/header.php";
-foreach($liste_ingredients as $ingredient){
-	$image=Connexion::prendreImageIngredient($pdo,$ingredient->id);
-	echo "<div class='ingredients' id='$ingredient->id'>";
-	echo "<img src='$chemin_image"."/ingredients/"."$image->image' alt='$ingredient->nom'>";
-	echo "<p>$ingredient->nom</p>";
-	echo "<input type='button' class='modif' value='Modifier'>";
-	echo "<input type='button' class='suppr' value='Supprimer'>";
-	echo "</div>";
-}
-include "class/footer.php";?>
+<?php include "class/header.php";?>
+
+<div class="page">
+    <?php
+    foreach($liste_ingredients as $ingredient){
+        $image=Connexion::prendreImageIngredient($pdo,$ingredient->id);
+        echo "<div class='ingredients' id='$ingredient->id'>";
+        echo "<img src='$chemin_image"."/ingredients/"."$image->image' alt='$ingredient->nom'>";
+        echo "<p>$ingredient->nom</p>";
+        echo "<input type='button' class='modif' value='Modifier'>";
+        echo "<input type='button' class='suppr' value='Supprimer'>";
+        echo "</div>";
+    }?>
+</div>
+<?php include "class/footer.php";?>
 
 </body>
 </html>

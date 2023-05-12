@@ -207,6 +207,11 @@ footer{
     margin: 1% 25%;
 }
 
+.liste a{
+    text-decoration: none;
+    color: #A00000;
+}
+
 .liste-ingredients{
     display: flex;
     flex-direction: column;
@@ -218,10 +223,16 @@ footer{
     color: black ;
 }
 
+.liste-ingredients a{
+    text-decoration: none;
+    color: #A00000;
+}
+
 .liste-tags{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
@@ -231,6 +242,22 @@ footer{
     margin-right: 1%;
 }
 
+.liste-tags a{
+    text-decoration: none;
+    color: #A00000;
+}
+
+.select{
+    margin-top: 5%;
+}
+
+.select select{
+    color: black;
+}
+
+.select option{
+    color: black;
+}
 
 .menu_ingredient{
     display: flex;

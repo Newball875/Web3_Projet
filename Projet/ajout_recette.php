@@ -41,7 +41,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             <div id="liste-ingredients" class="liste-ingredients">
                 <h1>Ingrédients</h1>
                 <a href="ajout_ingredient.php">Nouvel ingrédient</a>
-                <div>
+                <div class="select">
                     <select class="menu_ingredient" name="ingredients0">
                         <option value="">Ingrédients</option>
                     </select>
@@ -51,7 +51,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             <div id="liste-tags" class="liste-tags">
                 <h1>Tags</h1>
                 <a href="ajout_tag.php">Nouveau tag</a>
-                <div>
+                <div class="select">
                     <select class="menu_tag" name="tags0">
                         <option value="">Tags</option>
                     </select>
@@ -60,7 +60,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
             <div id="choix-origine" class="choix-origine">
                 <h1>Origine</h1>
                 <a href="ajout_origine.php">Nouvelle origine</a>
-                <div>
+                <div class="select">
                     <select class="origine" name="origine">
                         <option value="" disabled>Origine</option>
                         <?php
