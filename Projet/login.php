@@ -50,6 +50,10 @@ if(!isset($_SESSION["nick"])){?>
 }else{?>
     <div class="page-admin">
         <div id="admin" class="admin">
+            <a href="ajout_recette.php">Ajouter une recette</a>
+            <a href="liste_recettes.php">Liste des recettes</a>
+        </div>
+        <div id="admin" class="admin">
             <a href="liste_tags.php">Liste des tags</a>
             <a href="liste_ingredients.php">Liste des ingrédients</a>
             <a href="liste_origines.php">Liste des origines</a>

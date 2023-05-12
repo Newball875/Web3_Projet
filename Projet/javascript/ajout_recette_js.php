@@ -137,7 +137,7 @@ let supprimerIngredient = function(conteneur){
 	}
 }
 
-//Ajouter
+//Ajoute un ingrédient dans le conteneur
 let ajouterIngredient = function (conteneur){
     if(!(bouton_plus.disabled === true)){
         bouton_moins.disabled = false
@@ -155,6 +155,7 @@ let ajouterIngredient = function (conteneur){
 
 }
 
+//Ajoute un Tag dans le conteneur
 function ajouterTag(conteneur){
     let nouveau_tag = creerDivTag();
     liste_tags.push(nouveau_tag);
@@ -173,7 +174,7 @@ function ajouterTag(conteneur){
     liste_tags.push(div);*/
 }
 
-
+//Rend un ingrédient impossible à sélectionner
 let disabledIngredient = function(){
     let liste_value = []
     liste_ingredients.forEach(ingredient => {
@@ -200,6 +201,7 @@ let disabledIngredient = function(){
     }
 }
 
+//Rend un Tag impossible à sélectionner
 function disabledTag(){
     let liste_value_tag = []
     console.log( "liste des tags du départ : ")
@@ -228,6 +230,7 @@ function disabledTag(){
     }
 }
 
+//Supprime un Tag du conteneur
 function supprimerTag(conteneur){
     liste_tags.pop();
 	conteneur.removeChild(conteneur.lastChild);
@@ -238,7 +241,7 @@ function supprimerTag(conteneur){
 }
 
 
-
+//Quand la page se charge, elle compte le nombre d'ingrédient dans la base de donnée et organise les
 document.addEventListener('DOMContentLoaded',function(){
 
     compterIngredientBdd()
