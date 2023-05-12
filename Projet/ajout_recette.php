@@ -64,6 +64,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
                     <select class="origine" name="origine">
                         <option value="" disabled>Origine</option>
                         <?php
+                        //Affiche les
                         foreach($tab_origine as $media){
                             echo "<option value='$media->id'>$media->nom</option>";
                         }

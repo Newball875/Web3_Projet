@@ -30,7 +30,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
 </div>
 <div class="page">
     <form class="form" action="update_recette.php" method="POST" enctype="multipart/form-data">
-        <div id="infos">
+        <div id="infos" class="infos">
             <label for="le_fichier" class="form_label">Changer la recette :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette" value="<?=$recette->nom?>">
             <textarea id="instructions" class="form-control" name="instructions" rows="5" cols="33" placeholder="Instructions"><?=$instructions?></textarea>
@@ -40,7 +40,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
         <div class="liste">
             <div id="liste-ingredients" class="liste-ingredients">
                 <h1>Ingrédients</h1>
-                <div>
+                <div class="select">
                     <select class="menu_ingredient" name="ingredients0">
                         <option value="">Ingrédients</option>
                     </select>
@@ -49,7 +49,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
             </div>
             <div id="liste-tags" class="liste-tags">
                 <h1>Tags</h1>
-                <div>
+                <div class="select">
                     <select class="menu_tag" name="tags0">
                         <option value="">Tags</option>
                     </select>
@@ -57,7 +57,7 @@ $instructions=Connexion::prendreInstructions($pdo,$id);
             </div>
             <div id="choix-origine" class="choix-origine">
                 <h1>Origine</h1>
-                <div>
+                <div class="select">
                     <select class="origine" name="origine">
                         <option value="" disabled>Origine</option>
                         <?php
