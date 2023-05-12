@@ -29,9 +29,9 @@ $origine=Connexion::prendreInfosOrigine($pdo,$id);
 <div>
     <form action="update_origine.php" method="POST" enctype="multipart/form-data">
         <div id="infos">
-            <label for="le_fichier" class="form_label">Uploader une origine :</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'origine">
-            <textarea id="instructions" class="form-control" name="description" rows="5" cols="33" placeholder="Description"></textarea>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'origine" value="<?=$origine->nom?>">
+            <textarea id="instructions" class="form-control" name="description" rows="5" cols="33" placeholder="Description"><?=$origine->description?></textarea>
+            <?="<img src='$chemin_image"."/origine/"."$origine->image' alt='$origine->nom'>"?>
             <input type="file" class="form-control" id="image" name="image">
             <div class="bouton_final">
                 <button type="submit" class="envoyer">Envoyer</button>

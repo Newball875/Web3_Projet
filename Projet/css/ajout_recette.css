@@ -197,6 +197,10 @@ footer{
     margin: 1% 5%;
 }
 
+#infos img{
+    height: 10em;
+}
+
 .form-control{
     display: flex;
     justify-content: center;
