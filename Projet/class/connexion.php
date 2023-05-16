@@ -413,7 +413,7 @@ class Connexion{
 	//Fonction pour modifier le nom, les instructions, l'image et l'origine d'une recette
 	public static function modifierRecette(PDO $pdo, int $id, string $nom, string $instructions, string $fichier, int $origine_id){
 		$commande="UPDATE recette
-		SET nom='$nom',instructions='$instructions',image='$fichier',origine_id=$origine_id
+		SET nom='$nom',instructions=\"$instructions\",image='$fichier',origine_id=$origine_id
 		WHERE recette_id=$id;";
 		$statement = $pdo->prepare($commande);
         $statement->execute() or die(var_dump($statement->errorInfo()));

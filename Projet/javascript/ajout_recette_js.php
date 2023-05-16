@@ -276,7 +276,6 @@ document.addEventListener('DOMContentLoaded',function(){
 	})
 
 	bouton_plus.addEventListener('click',function (){
-
 		ajouterIngredient(conteneur)
 		// console.log(liste_ingredients.length)
 		// console.log(liste_ingredients)

@@ -14,6 +14,11 @@ function modifier(){
 	document.location.href="modifier_recette.php";
 }
 
+function modifier_2_test(){
+	console.log("Oui");
+	document.location.href="modifier_recette_2_test.php";
+}
+
 /*Quand la page charge, elle applique à chacun des boutons "modifier" et "supprimer" un événement qui appelle
 Les fonction modifier() et supprimer() quand ils sont cliqués*/
 document.addEventListener('DOMContentLoaded',function(){
@@ -27,7 +32,8 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	if(bouton_modif!=null){
 		bouton_modif.addEventListener("click",function(event){
-			modifier();
+			// modifier();
+			modifier_2_test();
 		})
 	}
 })
