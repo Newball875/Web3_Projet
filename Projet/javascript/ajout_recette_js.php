@@ -12,15 +12,26 @@ let bouton_plus = undefined
 
 let i=1
 let nombre_ingredients = 0;
+let nombre_tags=0;
 let i_tag=1;
 
-//Compte le nombre d'ingrédients contenus dans la base de donnée
+//Compte le nombre d'ingrédients contenus dans la base de données
 let compterIngredientBdd = function(){
     <?php
     foreach ($tab_ingredients as $ingredient){ ?>
         nombre_ingredients++;
         <?php
-        }
+    }
+    ?>
+}
+
+//Compte le nombre de tags contenus dans la base de données
+let compterTagsBdd=function(){
+    <?php
+    foreach ($tab_tags as $tag){ ?>
+        nombre_tags++;
+        <?php
+    }
     ?>
 }
 
@@ -240,11 +251,108 @@ function supprimerTag(conteneur){
 	}
 }
 
+function mettreTags(){
+    let le_tag=0;
+    let num_select;
+    let le_select;
+    let option;
+
+    <?php
+    //On met les selects à la bonne valeur
+    $i=0;
+    while($i<count($tags)){?>
+        num_select=<?=$i?>;
+        <?php
+        $j=0;
+        //While pour avoir le bon id de tag
+        while($j<count($tab_tags)){
+            if($tab_tags[$j]->nom==$tags[$i]->tag){?>
+                le_tag=<?=$tab_tags[$j]->id?>;
+                <?php
+                $j=count($tab_tags);
+            }
+            $j++;
+        }?>
+        //On récupère la bonne option
+        le_select=document.getElementsByName("tags"+num_select)[0];
+        option=le_select.firstChild;
+        while(option.value!=le_tag){
+            option=option.nextSibling;
+        }
+        option.selected="true";
+        <?php
+        $i=$i+1;    
+    }
+    ?>
+}
+
+
+function mettreIngredients(){
+    let l_ingredient=0;
+    let num_select;
+    let le_select;
+    let option;
+    let la_quantite=0;
+
+    <?php
+    //On met les selects à la bonne valeur
+    $i=0;
+    while($i<count($ingredients)){?>
+        num_select=<?=$i?>;
+        <?php
+        $j=0;
+        //While pour avoir le bon id de l'ingrédient
+        while($j<count($tab_ingredients)){
+            if($tab_ingredients[$j]->nom==$ingredients[$i]->ingredient){?>
+                l_ingredient=<?=$tab_ingredients[$j]->id?>;
+                la_quantite=<?=$ingredients[$i]->quantite?>;
+                <?php
+                $j=count($tab_ingredients);
+            }
+            $j++;
+        }?>
+        //On récupère la bonne option
+        le_select=document.getElementsByName("ingredients"+num_select)[0];
+        option=le_select.firstChild;
+        while(option.value!=l_ingredient){
+            option=option.nextSibling;
+        }
+        option.selected="true";
+        le_select=document.getElementsByName("quantite"+num_select)[0];
+        le_select.value=la_quantite;
+        <?php
+        $i=$i+1;    
+    }
+    ?>
+}
+
+function mettreOrigine(){
+    let le_select=document.getElementsByClassName("origine")[1];
+    let option=le_select.firstChild;
+    let l_origine;
+    <?php
+    $j=0;
+    //While pour avoir le bon id de l'origine
+    while($j<count($tab_origine)){
+        if($tab_origine[$j]->nom==$origine[0]->nom){?>
+            l_origine=<?=$tab_origine[$j]->id?>;
+            <?php
+            $j=count($tab_origine);
+        }
+        $j++;
+    }?>
+    while(option.value!=l_origine){
+        option=option.nextSibling;
+    }
+    option.selected="true";
+}
+
 
 //Quand la page se charge, elle compte le nombre d'ingrédient dans la base de donnée et organise les
 document.addEventListener('DOMContentLoaded',function(){
 
-    compterIngredientBdd()
+    compterIngredientBdd();
+    compterTagsBdd();
 
     let li_premier_ingredient = document.querySelector("#liste-ingredients").querySelector('div')
 	liste_ingredients.push(li_premier_ingredient)
@@ -297,6 +405,28 @@ document.addEventListener('DOMContentLoaded',function(){
         disabledTag();
 	})
 
+    
+    <?php
+    //On met tous les selects
+    $i=1;
+    while($i<count($tags)){
+        ?>
+        bouton_plus_tag.click();
+        <?php
+        $i=$i+1;
+    }
+    $i=1;
+    while($i<count($ingredients)){
+        ?>
+        bouton_plus.click();
+        <?php
+        $i=$i+1;
+    }
+    ?>
+    
+    mettreTags();
+    mettreIngredients();
+    mettreOrigine();
 
 })
 

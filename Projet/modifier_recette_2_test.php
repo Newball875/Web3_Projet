@@ -7,12 +7,12 @@ if(!isset($_SESSION["nick"])){
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);
 $tab_tags=Connexion::prendreTousTags($pdo);
-
 $id=$_SESSION["id_recette"];
 $recette=Connexion::prendreImageRecette($pdo,$id);
 $instructions=Connexion::prendreInstructions($pdo,$id);
 $tags=Connexion::prendreListeTag($pdo,$id);
 $ingredients=Connexion::prendreListeIngredients($pdo,$id);
+$origine=Connexion::prendreOrigine($pdo,$id);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -88,7 +88,7 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
                         <h1>Ingrédients</h1>
                         <div class="select">
                             <select class="menu_ingredient" name="ingredients0">
-                                <option value="">Ingrédients</option>
+                                <option>Ingrédients</option>
                             </select>
                             <input type="number" class="form-control" name="quantite0">
                         </div>
@@ -110,21 +110,20 @@ $ingredients=Connexion::prendreListeIngredients($pdo,$id);
         <div id="choix-origine" class="choix-origine">
             <h1>Origine</h1>
             <?php
-            $results=Connexion::prendreOrigine($pdo,$id);
-            if($results[0]!=null){
-                $results=$results[0];
-                echo "Origine : ".$results->nom;
+            if($origine[0]!=null){
+                $origine=$origine[0];
+                echo "Origine : ".$origine->nom;
                 echo "<div class='description_origine'>";
                 echo "<div id='description'>";
-                echo "<img src='$chemin_image"."/origine/"."$results->image' alt='$results->nom'>";
-                echo "<p>$results->description</p>";
+                echo "<img src='$chemin_image"."/origine/"."$origine->image' alt='$origine->nom'>";
+                echo "<p>$origine->description</p>";
             }else{
                 echo "Aucune origine";
             }
             ?>
             <div class="select">
                 <select class="origine" name="origine">
-                    <option value="" disabled>Origine</option>
+                    <option disabled>Origine</option>
                     <?php
                     foreach($tab_origine as $media){
                         echo "<option value='$media->id'>$media->nom</option>";

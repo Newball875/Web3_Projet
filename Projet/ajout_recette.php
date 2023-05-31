@@ -6,6 +6,9 @@ if(!isset($_SESSION["nick"])){
 $tab_ingredients=Connexion::prendreTousIngredients($pdo);
 $tab_origine=Connexion::prendreTousOrigines($pdo);
 $tab_tags=Connexion::prendreTousTags($pdo);
+
+$tags=[];
+$ingredients=[];
 ?>
 <!doctype html>
 <html lang="fr">
