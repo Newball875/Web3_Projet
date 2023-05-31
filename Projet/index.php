@@ -26,7 +26,7 @@
         </div>
         <div id="conteneur2">
             <div class="defile">
-                <p>Mes dernières recettes</p>
+                <p> Mes dernières recettes</p>
                 <div class="recette-jour">
 
                     <?php

@@ -193,7 +193,15 @@ header .login{
 .dernieres-recettes{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;  
+    text-align : center;
+}
+
+.defile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    text-align : center;
 }
 
 footer{

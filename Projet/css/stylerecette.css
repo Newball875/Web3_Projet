@@ -146,7 +146,7 @@ footer{
 .neon{
     display: flex;
     flex-direction: column;
-    padding: 1em ;
+    padding: em ;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
@@ -186,7 +186,7 @@ footer{
 
 .ligne2{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .fenetre{
@@ -197,6 +197,7 @@ footer{
     width : 20% ;
     padding-top: 1%;
     padding-left: 10% ;
+    padding-right: 10% ;
     padding-bottom: 1%;
     border: 2px solid #A00000;
     border-radius: 5px;
@@ -216,6 +217,68 @@ footer{
 }
 
 .ligne3{
+    padding: 1em;
     display: flex ;
     justify-content: center;
+}
+
+.select select{
+    color: black;
+}
+
+.select option{
+    color: black;
+}
+
+.menu_ingredient{
+    color: black;
+}
+
+.menu_ingredient option{
+    color: black;
+}
+
+.moins{
+    color: black;
+}
+
+.plus{
+    color: black;
+}
+
+.origine{
+    color: black;
+}
+
+.origine option{
+    color: black;
+}
+
+.form-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.choix-origine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: black ;
+}
+
+.envoyer{
+    display: flex;
+    justify-content: center;
+    border: 2px solid #A00000;
+    border-radius: 5px;
+    background: #FF7575;
+    padding : 1em;
+    color: white;
+    margin: 1% 35%;
 }
