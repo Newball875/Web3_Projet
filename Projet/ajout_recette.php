@@ -9,6 +9,7 @@ $tab_tags=Connexion::prendreTousTags($pdo);
 
 $tags=[];
 $ingredients=[];
+$origine=[];
 ?>
 <!doctype html>
 <html lang="fr">
@@ -20,7 +21,7 @@ $ingredients=[];
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php include_once "javascript/ajout_recette_js.php"; ?>
+    <?php include "javascript/ajout_recette_js.php"; ?>
 
 </head>
 <body>

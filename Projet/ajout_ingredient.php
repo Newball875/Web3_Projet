@@ -14,12 +14,12 @@ if(!isset($_SESSION["nick"])){
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php include_once "javascript/ajout_recette_js.php"?>
+    <?php// include_once "javascript/ajout_recette_js.php"?>
 
 </head>
 <body>
 
-<?php include "class/header.php"?>
+<?php include_once "class/header.php"?>
 
 <div id="titre_ajout">
     <p>Nouvel Ingrédient</p>
@@ -37,7 +37,7 @@ if(!isset($_SESSION["nick"])){
     </form>
 </div>
 
-<?php include "class/footer.php"?>
+<?php include_once "class/footer.php"?>
 
 </body>
 </html>
