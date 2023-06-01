@@ -7,6 +7,6 @@ if(isset($_GET["id"])){
 }
 
 Connexion::supprimerTag($pdo,$id);
-header("Location: index.php");
+header("Location: liste_tags.php");
 exit;
 ?>

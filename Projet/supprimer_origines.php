@@ -7,6 +7,6 @@ if(isset($_GET["id"])){
 }
 
 Connexion::supprimerOrigine($pdo,$id);
-header("Location: index.php");
+header("Location: liste_origines.php");
 exit;
 ?>

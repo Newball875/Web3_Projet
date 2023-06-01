@@ -26,6 +26,12 @@ $origine=Connexion::prendreOrigine($pdo,$id);
     <link rel="stylesheet" href="css/stylerecette.css">
     <link rel="stylesheet" href="css/style_modifier_recette.css">
     <link rel="stylesheet" href="css/title.css">
+    <style>
+        .lien{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
 
     <script src="javascript/recette.js"></script>
     <?php include "javascript/modif_recette_js.php"; ?>
@@ -70,6 +76,7 @@ $origine=Connexion::prendreOrigine($pdo,$id);
                         <button type="button" id="plus-tag" class="plus">+</button>
                     </div>
                     <div id="liste-tags" class="liste-tags">
+                        <a class="lien" href="ajout_tag.php">Nouveau tag</a>
                         <h1>Modifier tags</h1>
                         <div class="select">
                             <select class="menu_tag" name="tags0">
@@ -87,8 +94,10 @@ $origine=Connexion::prendreOrigine($pdo,$id);
                         ?>
 
                         <div class='description_origine'>
+                            <a class="lien" href="ajout_origine.php">Nouvelle origine</a>
                             <div id='description'>
                                 <div id="or-desc">
+
                                     <div>Modifier origine : </div>
                                     <div class="origine-title"><?= $results->nom ?></div>
                                     <p><?= $results->description ?></p>
@@ -115,19 +124,13 @@ $origine=Connexion::prendreOrigine($pdo,$id);
             </div>
             <div class="ligne2">
                 <div class="fenetre ">
-                    <!--<label for="name" class="form-label">Ingrédients</label> --><?php
-/*                    $results=Connexion::prendreListeIngredients($pdo,$id);
-                    foreach($results as $info):
-                        echo "<li>$info->ingredient</li>";
-                    endforeach;
-                    */?>
 
                     <div class="taille-boutons">
                         <button type="button" id="moins" class="moins">-</button>
                         <button type="button" id="plus" class="plus">+</button>
                     </div>
                     <div id="liste-ingredients" class="liste-ingredients">
-
+                        <a class="lien" href="ajout_ingredient.php">Nouvel ingrédient</a>
                         <h1>Modifier ingrédients</h1>
                         <div class="select">
                             <select class="menu_ingredient" name="ingredients0">

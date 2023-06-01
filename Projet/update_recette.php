@@ -34,6 +34,6 @@ while($i<sizeof($liste_tags)){
 
 var_dump($_POST);
 echo "<br>";
-header("Location: ajout_recette.php");
+header("Location: liste_recettes.php");
 exit;
 ?>

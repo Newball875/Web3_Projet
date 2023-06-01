@@ -31,18 +31,17 @@ if(isset($_POST["recherche"])){
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/stylerecherche.css">
+    <link rel="stylesheet" href="css/title.css">
     <?php include_once "javascript/page_recherche_js.php"?>
 
 </head>
 <body>
 
 <?php include "class/header.php" ?>
+<div class="title">Recherche</div>
 
 <div class="page">
     <div class="border">
-        <div class="titre-recherche">
-            RECHERCHE
-        </div>
         <div id="barre-recherche">
             <form class="form" action="page_recherche.php" method="POST" enctype="multipart/form-data">
                 <div class="recherche">

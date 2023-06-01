@@ -7,6 +7,6 @@ if(isset($_GET["id"])){
 }
 
 Connexion::supprimerIngredient($pdo,$id);
-header("Location: index.php");
+header("Location: liste_ingredients.php");
 exit;
 ?>
