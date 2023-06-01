@@ -62,15 +62,13 @@ header .login{
     padding-bottom: 10%;
 }
 
-.image{
-    float: left;
-    margin-left: 1%;
-    margin-top: 1%;
+.image img{
+    height: 12em;
 }
 
-.image img{
-    height: 100px;
+img{
     box-shadow:8px 8px 10px 0 rgba(0,0,0,0.5);
+    height: 6em;
 }
 
 #content{
@@ -89,7 +87,7 @@ header .login{
 #accueil{
     width: 50%;
     display: flex;
-    padding-left: 20%;
+    padding-left: 25%;
     padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
@@ -102,14 +100,14 @@ header .login{
 #origine{
     display: flex;
     justify-content: center;
-    align-items: center;
+    width: 34%;
+    /*align-items: center;*/
     padding: 1%;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
     color: white;
     scrollbar-width: none;
-    margin: auto 20% auto 20%;
 }
 
 .modifications input{
@@ -118,16 +116,9 @@ header .login{
     color: white;
 }
 
-.description_origine{
-    margin: 1% 2% 0% 2%;
-}
-
 #description{
     display:flex;
-}
-
-#description img{
-    width: 100px;
+    padding-left: 2%;
 }
 
 footer{
@@ -143,6 +134,12 @@ footer{
     overflow: hidden;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    /*text-align: center;*/
+}
+
 .neon{
     display: flex;
     flex-direction: column;
@@ -156,7 +153,8 @@ footer{
 .ligne1{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    /*align-items: flex-end;*/
+    align-items: flex-start;
     border: 2px solid #A00000;
     border-radius: 5px;
     background: #FF7575;
@@ -168,31 +166,39 @@ footer{
     margin-right: 1% ;
 }
 
+.ligne1 div{
+    margin-right: 1em;
+}
+
 .informations{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: baseline;
-    padding: 1em;
+    /*padding: 0 1em 0 1em;*/
+}
+
+li div{
+    display: flex;
+    flex-direction: row;
+}
+
+li div img{
+    height: 2.5em;
+    margin-right: 2em;
+    margin-bottom: 1em;
 }
 
 .tag{
     float: right;
-    border: 2px solid #A00000;
-    border-radius: 5px;
-    background: #FF7575;
+    /*border: 2px solid #A00000;*/
+    /*border-radius: 5px;*/
+    /*background: #FF7575;*/
     color: white;
     order: 2;
 }
 
-.nom{
-    float: right;
-    order: 1 ;
-    border: 2px solid #A00000;
-    border-radius: 5px;
-    background: #FF7575;
-    color: white;
-}
+
 
 .ligne2{
     display: flex;
@@ -222,8 +228,13 @@ footer{
     border-radius: 5px;
     background: #FF7575;
     color: white;
-    text-align: center;
+    /*text-align: center;*/
     padding : 1em;
+}
+
+#or-desc{
+    display: flex;
+    flex-direction: column;
 }
 
 .ligne3{
@@ -284,11 +295,19 @@ footer{
 
 .envoyer{
     display: flex;
+    height: 7%;
     justify-content: center;
-    border: 2px solid #A00000;
-    border-radius: 5px;
-    background: #FF7575;
+    /*margin-left: -0.1%;*/
+    margin-left: 12.5%;
+    border: 2px solid #000000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #741414;
     padding : 1em;
     color: white;
-    margin: 1% 35%;
+    /*margin: 1% 35%;*/
+    position: absolute;
+    top: 23%;
+    width: 25%;
+    font-size: 1.2em;
 }

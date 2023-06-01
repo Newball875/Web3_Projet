@@ -80,7 +80,7 @@ class Connexion{
 
 	//Fonction qui permet de prendre tous les ingrédients d'une recette dont l'id est passé en paramètre
 	public static function prendreListeIngredients(PDO $pdo, int $id):array{
-		$commande="SELECT nom as ingredient, quantite
+		$commande="SELECT nom as ingredient, quantite,image
         FROM ingredient,ingredient_recette
         WHERE ingredient_recette.ingredient_id=ingredient.ingredient_id and recette_id=$id;";
 		$statement=$pdo->prepare($commande);

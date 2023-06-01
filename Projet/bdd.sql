@@ -54,8 +54,6 @@ CREATE TABLE `tag_recette` (
 
 
 describe recette;
-describe ustensile;
-describe ustensile_recette;
 describe ingredient;
 describe ingredient_recette;
 describe tag;

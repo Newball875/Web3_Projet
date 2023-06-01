@@ -17,12 +17,14 @@ $liste_origines=Connexion::prendreTousOrigines($pdo);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/styleliste.css">
+    <link rel="stylesheet" href="css/title.css">
 	<script src="javascript/liste.js"></script>
 
 </head>
 <body>
 
 <?php include "class/header.php";?>
+<div class="title">Liste des origines</div>
 <div class="page">
     <?php
     foreach($liste_origines as $origine){

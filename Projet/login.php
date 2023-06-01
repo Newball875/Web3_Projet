@@ -18,6 +18,7 @@ if(isset($_GET["nick"]) and $_GET["nick"]==0){
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/title.css">
     <link rel="stylesheet" href="css/stylelogin.css">
     <script src="javascript/login.js"></script>
 
@@ -26,8 +27,8 @@ if(isset($_GET["nick"]) and $_GET["nick"]==0){
 
 <?php include "class/header.php";
 if(!isset($_SESSION["nick"])){?>
+<div class="title">Login</div>
 <form id="login-form" action="log.php" method="post">
-    <h1 style="text-align: center">Login</h1>
     <div id="content">
         <div id="inputs">
             <div class="form-group">
@@ -48,6 +49,7 @@ if(!isset($_SESSION["nick"])){?>
 </form>
 <?php
 }else{?>
+    <div class="title">Bienvenue <?= $_SESSION["nick"]?></div>
     <div class="page-admin">
         <div id="admin" class="admin">
             <a href="ajout_recette.php">Ajouter une recette</a>

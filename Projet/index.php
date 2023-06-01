@@ -9,18 +9,17 @@
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/styleaccueil.css">
+    <link rel="stylesheet" href="css/title.css">
     <script src="js/script.js"></script>
 
 </head>
 <body>
 
 <?php include "class/header.php" ?>
-
+<div class="title">Accueil</div>
 <div id="accueil">
     <div id="conteneur">
-        <div class="présentation">
-            <label for="name" class="form-label">Présentation</label>
-        </div>
+
         <div class="pré-description">
             <p>Le seul site pour tous les amateurs de jeux vidéo et de séries TV qui veulent ajouter leurs recettes préférées.</p>
         </div>

@@ -24,6 +24,9 @@ $origine=Connexion::prendreOrigine($pdo,$id);
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/stylerecette.css">
+    <link rel="stylesheet" href="css/style_modifier_recette.css">
+    <link rel="stylesheet" href="css/title.css">
+
     <script src="javascript/recette.js"></script>
     <?php include "javascript/modif_recette_js.php"; ?>
 
@@ -31,42 +34,83 @@ $origine=Connexion::prendreOrigine($pdo,$id);
 <body>
 <?php include "class/header.php" ?>
 
-<div class="title"></div>
+<div class="title">Modifier <?= Connexion::prendreNomRecette($pdo,$id) ?></div>
 <form id="accueil" action="modification_recette.php" method="POST" enctype="multipart/form-data">
 
-    <div id="bouton_final">
-        <button type="submit" class="envoyer">Envoyer</button>
-    </div>
+
 
     <div class="origine">
+
         <div class="neon">
+            <div id="bouton_final">
+                <button type="submit" class="envoyer">Envoyer</button>
+            </div>
+
             <div class="ligne1">
-                <div class="image"> <?php
-                    $results=Connexion::prendreImageRecette($pdo,$id);
-                    echo "<img src='$chemin_image"."/recettes/"."$results->image' alt='$results->nom'>";
-                    ?>
-                </div>
-                <div class="informations">
+
+                <div class="nom-image">
+                    <div class="image"> <?php
+                        $results=Connexion::prendreImageRecette($pdo,$id);
+                        echo "<img src='$chemin_image"."/recettes/"."$results->image' alt='$results->nom'>";
+                        ?>
+                    </div>
                     <div class="nom">
-                        <label for="name" class="form-label"><?php
-/*                            echo Connexion::prendreNomRecette($pdo,$id);
-                            */?>
+                        <label for="name" class="form-label">
+                            <p>Modifier nom</p>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la recette" value="<?=$recette->nom?>">
                         </label>
                     </div>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+
+                <div class="informations">
+
                     <div class="taille-boutons">
                         <button type="button" id="moins-tag" class="moins">-</button>
                         <button type="button" id="plus-tag" class="plus">+</button>
                     </div>
                     <div id="liste-tags" class="liste-tags">
-                        <h1>Tags</h1>
+                        <h1>Modifier tags</h1>
                         <div class="select">
                             <select class="menu_tag" name="tags0">
                                 <option value="">Tags</option>
                             </select>
                         </div>
                     </div>
-                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+
+                <div id="choix-origine" class="choix-origine">
+                    <?php
+                    $results=Connexion::prendreOrigine($pdo,$id);
+                    if($results[0]!=null){
+                        $results=$results[0];
+                        ?>
+
+                        <div class='description_origine'>
+                            <div id='description'>
+                                <div id="or-desc">
+                                    <div>Modifier origine : </div>
+                                    <div class="origine-title"><?= $results->nom ?></div>
+                                    <p><?= $results->description ?></p>
+                                </div>
+                                <img src='<?= $chemin_image."/origine/". $results->image?>' alt='<?= $results->nom ?>'>
+                            </div>
+                        </div>
+                        <?php
+                    }else{
+                        echo "Aucune origine";
+                    }
+                    ?>
+                    <div class="select">
+                        <select id="select-origine" name="origine">
+                            <option disabled>Origine</option>
+                            <?php
+                            foreach($tab_origine as $media){
+                                echo "<option value='$media->id'>$media->nom</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="ligne2">
@@ -84,7 +128,7 @@ $origine=Connexion::prendreOrigine($pdo,$id);
                     </div>
                     <div id="liste-ingredients" class="liste-ingredients">
 
-                        <h1>Ingrédients</h1>
+                        <h1>Modifier ingrédients</h1>
                         <div class="select">
                             <select class="menu_ingredient" name="ingredients0">
                                 <option>Ingrédients</option>
@@ -106,33 +150,7 @@ $origine=Connexion::prendreOrigine($pdo,$id);
             </div>
         </div>
     </div>
-        <div id="choix-origine" class="choix-origine">
-            <h1>Origine</h1>
-            <?php
-            if($origine[0]!=null){
-                $origine=$origine[0];
-                echo "Origine : ".$origine->nom;
-                echo "<div class='description_origine'>";
-                echo "<div id='description'>";
-                echo "<img src='$chemin_image"."/origine/"."$origine->image' alt='$origine->nom'>";
-                echo "<p>$origine->description</p>";
-            }else{
-                echo "Aucune origine";
-            }
-            ?>
-            <div class="select">
-                <select class="origine" name="origine">
-                    <option disabled>Origine</option>
-                    <?php
-                    foreach($tab_origine as $media){
-                        echo "<option value='$media->id'>$media->nom</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-        </div>
-    </div>
-    </div>
+
 </form>
 
 <?php include "class/footer.php" ?>
