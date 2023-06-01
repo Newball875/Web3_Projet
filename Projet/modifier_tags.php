@@ -1,9 +1,9 @@
 <?php include "class/init.php";
-$message="";
+/*$message="";
 if(!isset($_SESSION["nick"])){
     header("Location: index.php");
     exit();
-}
+}*/
 
 if(isset($_GET["id"])){
     $id = $_GET["id"];
@@ -11,6 +11,7 @@ if(isset($_GET["id"])){
     header("Location: liste_tags.php");
     exit();
 }
+/*
 if(!Connexion::tagExiste($pdo,$_GET["id"])) {
     header("Location: liste_tags.php");
     exit();
@@ -18,7 +19,7 @@ if(!Connexion::tagExiste($pdo,$_GET["id"])) {
 if(isset($_POST['name']) && isset($_GET['id'])){
     Connexion::modifierTag($pdo, $id, $_POST['name']);
 
-}
+}*/
 $tag=Connexion::prendreTag($pdo, $id);
 
 
@@ -34,7 +35,6 @@ $tag=Connexion::prendreTag($pdo, $id);
     <title>Food Culture</title>
 
     <link rel="stylesheet" href="css/ajout_recette.css">
-    <?php include_once "javascript/ajout_recette_js.php"?>
 
 </head>
 <body>
@@ -45,7 +45,7 @@ $tag=Connexion::prendreTag($pdo, $id);
     <p>Modifier Tag</p>
 </div>
 <div>
-    <form action="modifier_tags.php?id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
+    <form action="modification_tags.php?id=<?php echo $id?>" method="POST" enctype="multipart/form-data">
         <div id="infos">
             <label for="le_fichier" class="form_label">Modifier <?= $tag ?> :</label>
             <input type="text" class="form-control" id="name" name="name" placeholder="Nom du tag" value="<?= $tag ?>">
