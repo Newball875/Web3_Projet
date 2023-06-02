@@ -43,13 +43,13 @@ $origine=Connexion::prendreInfosOrigine($pdo,$id);
 
                 <div>
                     <div style="display: flex;flex-direction: row;margin-bottom: 5em" class="nom">
-                        <label style="margin-right: 6em;margin-top: 1%" for="le_fichier" class="form_label">modifier nom</label>
+                        <label style="margin-right: 1em;margin-top: 1%" for="le_fichier" class="form_label">modifier nom</label>
                         <input style="height: 30%;padding: 1%;font-size: 1.1em;margin-right: 5%" type="text" class="form-control" id="name" name="name" placeholder="Nom de l'origine" value="<?=$origine->nom?>">
                     </div>
 
                     <div style="display: flex;flex-direction: row" class="descriptO">
                         <label style="margin-right: 2.3em;margin-top: 1%" for="le_fichier" class="form_label">modifier description</label>
-                        <textarea id="instructions" class="form-control" name="description" rows="5" cols="25" placeholder="Description"><?=$origine->description?></textarea>
+                        <textarea id="instructions" class="form-control" name="description" rows="5" cols="20" placeholder="Description"><?=$origine->description?></textarea>
                     </div>
                 </div>
 

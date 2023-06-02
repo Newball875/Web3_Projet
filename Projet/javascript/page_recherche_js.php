@@ -1,5 +1,5 @@
 <script>
-	(function (){
+(function (){
 
 let liste_ingredients = [];
 let liste_options_ingredient = [];

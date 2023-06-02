@@ -91,10 +91,7 @@ img{
     padding-bottom: 5%;
     flex-direction: column;
     align-content: center;
-    overflow: auto;
-    scrollbar-width: none;
     background-color: transparent;
-    overflow-y: scroll;
 }
 
 #origine{
@@ -123,7 +120,7 @@ img{
 
 footer{
     height: 5%;
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
     display: flex;
@@ -297,8 +294,8 @@ li div img{
     display: flex;
     height: 7%;
     justify-content: center;
-    /*margin-left: -0.1%;*/
-    margin-left: 12.5%;
+    margin-top: 1em;
+    margin-left: 40%;
     border: 2px solid #000000;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -306,7 +303,6 @@ li div img{
     padding : 1em;
     color: white;
     /*margin: 1% 35%;*/
-    position: absolute;
     top: 23%;
     width: 25%;
     font-size: 1.2em;

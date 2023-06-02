@@ -133,6 +133,7 @@ header .login{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin-bottom:10em;
 }
 
 #accueil{
@@ -200,7 +201,7 @@ header .login{
 
 footer{
     height: 5%;
-    position:absolute;
+    position:fixed;
     bottom:0;
     width:100%;
     display: flex;
